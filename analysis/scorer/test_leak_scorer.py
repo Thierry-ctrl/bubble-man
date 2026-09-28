@@ -1,7 +1,6 @@
-"""Worked checks for the scorer. Run: python3 analysis/scorer/test_leak_scorer.py
+"""Worked checks for scorer v2. Run: python3 analysis/scorer/test_leak_scorer.py
 
-Each check is a tiny hand-built example whose right answer can be read off by eye,
-so the counting rules can be trusted before they are pointed at real data.
+Each check is a tiny hand-built example whose right answer can be read off by eye.
 """
 import sys
 from pathlib import Path
@@ -9,14 +8,14 @@ from pathlib import Path
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from leak_scorer import Rules, group_alerts, mark_eligibility, score  # noqa: E402
+from leak_scorer import Rules, find_alerts, mark_eligibility, score  # noqa: E402
 
 HOURS = pd.date_range('2018-01-01', '2018-03-01 23:00', freq='h')
-RULES = Rules(min_history_days=0)          # eligibility is tested separately
+OPEN = Rules(max_delay_hours=None)     # no deadline; exercised separately
+ONE = 1                                # one unusual hour is enough unless stated
 
 
-def warnings(*spans):
-    """Boolean series, True during each (start, end) span given as strings."""
+def above(*spans):
     flagged = pd.Series(False, index=HOURS)
     for start, end in spans:
         flagged.loc[start:end] = True
@@ -25,8 +24,8 @@ def warnings(*spans):
 
 def leaks(*rows):
     return pd.DataFrame([{'link': link, 'start': pd.Timestamp(s), 'end': pd.Timestamp(e),
-                          'type': kind, 'diameter_m': 0.02, 'peak': pd.Timestamp(s)}
-                         for link, s, e, kind in rows])
+                          'type': kind, 'diameter_m': 0.02, 'peak': pd.Timestamp(s),
+                          'zone': 'main'} for link, s, e, kind in rows])
 
 
 checks = []
@@ -34,143 +33,153 @@ checks = []
 
 def check(name):
     def wrap(fn):
-        checks.append((name, fn))
-        return fn
+        checks.append((name, fn)); return fn
     return wrap
 
 
-@check('1. a caught leak is matched, with the right delay')
+@check('1. delay is measured from when the alert could be ISSUED, not when it began')
 def _():
-    result = score(warnings(('2018-02-02 00:00', '2018-02-02 04:00')),
-                   leaks(('pA', '2018-02-01 00:00', '2018-02-10 00:00', 'abrupt')), RULES)
-    assert result['overall']['matched'] == 1, result['overall']
-    assert result['overall']['missed'] == 0
-    assert result['leaks'][0]['delay_hours'] == 24.0, result['leaks'][0]
-    assert result['leaks'][0]['match_confidence'] == 'single_candidate'
+    # unusual from 02:00; persistence 6 met at 07:00; issuable 08:00. Leak began 00:00.
+    r = score(above(('2018-02-01 02:00', '2018-02-01 20:00')), 6,
+              leaks(('pA', '2018-02-01 00:00', '2018-02-10 00:00', 'abrupt')), OPEN)
+    event = r['events'][0]
+    assert event['run_start'].endswith('02:00:00'), event
+    assert event['rule_satisfied_at'].endswith('07:00:00'), event
+    assert event['issuable_at'].endswith('08:00:00'), event
+    assert r['leaks'][0]['delay_hours'] == 8.0, r['leaks'][0]
 
 
-@check('2. a leak with no warning is missed, not silently dropped')
+@check('2. a run shorter than the persistence requirement raises no alert at all')
 def _():
-    result = score(warnings(), leaks(('pA', '2018-02-01 00:00', '2018-02-10 00:00', 'abrupt')), RULES)
-    assert result['overall']['matched'] == 0
-    assert result['overall']['missed'] == 1
-    assert result['leaks'][0]['outcome'] == 'missed'
-    assert result['leaks'][0]['delay_hours'] is None
+    r = score(above(('2018-02-01 02:00', '2018-02-01 04:00')), 6,
+              leaks(('pA', '2018-02-01 00:00', '2018-02-10 00:00', 'abrupt')), OPEN)
+    assert r['alert_events_total'] == 0, r
+    assert r['overall']['missed'] == 1
 
 
-@check('3. a warning with no leak running is an unnecessary warning')
+@check('3. a leak with no warning is missed, not silently dropped')
 def _():
-    result = score(warnings(('2018-01-05 00:00', '2018-01-05 06:00')),
-                   leaks(('pA', '2018-02-01 00:00', '2018-02-10 00:00', 'abrupt')), RULES)
-    assert result['unmatched_alerts'] == 1, result
-    assert result['overall']['matched'] == 0
-    assert result['events'][0]['outcome'] == 'unmatched'
+    r = score(above(), ONE, leaks(('pA', '2018-02-01 00:00', '2018-02-10 00:00', 'abrupt')), OPEN)
+    assert r['overall']['credited'] == 0 and r['overall']['missed'] == 1
+    assert r['leaks'][0]['delay_hours'] is None
 
 
-@check('4. repeated warnings about one leak count once, and are not false alarms')
+@check('4. a warning with NO leak running is a confirmed false alert')
 def _():
-    result = score(warnings(('2018-02-02 00:00', '2018-02-02 04:00'),
-                            ('2018-02-04 00:00', '2018-02-04 04:00'),
-                            ('2018-02-06 00:00', '2018-02-06 04:00')),
-                   leaks(('pA', '2018-02-01 00:00', '2018-02-10 00:00', 'abrupt')), RULES)
-    assert result['alert_events_total'] == 3, result['alert_events_total']
-    assert result['overall']['matched'] == 1, 'one leak must not be caught three times'
-    assert result['repeat_alerts_scored_zero'] == 2, result
-    assert result['unmatched_alerts'] == 0, 'repeats must not be charged as false alarms'
+    r = score(above(('2018-01-05 00:00', '2018-01-05 06:00')), ONE,
+              leaks(('pA', '2018-02-01 00:00', '2018-02-10 00:00', 'abrupt')), OPEN)
+    assert r['outcomes']['false_alert'] == 1, r['outcomes']
+    assert r['events'][0]['leaks_running'] == []
 
 
-@check('5. overlapping leaks give an ambiguous match, with candidates recorded')
+@check('5. repeats of a credited leak score zero and are NOT false alerts')
 def _():
-    result = score(warnings(('2018-02-06 00:00', '2018-02-06 04:00')),
-                   leaks(('pA', '2018-02-01 00:00', '2018-02-20 00:00', 'abrupt'),
-                         ('pB', '2018-02-05 00:00', '2018-02-15 00:00', 'abrupt')), RULES)
-    event = result['events'][0]
-    assert sorted(event['candidates']) == ['pA', 'pB'], event
+    r = score(above(('2018-02-02 00:00', '2018-02-02 04:00'),
+                    ('2018-02-04 00:00', '2018-02-04 04:00'),
+                    ('2018-02-06 00:00', '2018-02-06 04:00')), ONE,
+              leaks(('pA', '2018-02-01 00:00', '2018-02-10 00:00', 'abrupt')), OPEN)
+    assert r['alert_events_total'] == 3
+    assert r['overall']['credited'] == 1, 'one leak must not be caught three times'
+    assert r['outcomes']['repeat_of_credited_leak'] == 2, r['outcomes']
+    assert r['outcomes']['false_alert'] == 0
+
+
+@check('6. a warning while an uncredited leak runs but past the deadline is UNATTRIBUTABLE')
+def _():
+    # leak starts 1 Feb; warning 20 Feb, far past a 7-day deadline; nothing credited yet.
+    r = score(above(('2018-02-20 00:00', '2018-02-20 06:00')), ONE,
+              leaks(('pA', '2018-02-01 00:00', '2018-02-28 00:00', 'abrupt')),
+              Rules(max_delay_hours=168))
+    assert r['outcomes']['unattributable'] == 1, r['outcomes']
+    assert r['outcomes']['false_alert'] == 0, 'a leak WAS running; this is not a false alert'
+    assert r['overall']['missed'] == 1, 'and the leak is still not credited'
+
+
+@check('7. overlapping leaks give an ambiguous match with candidates recorded')
+def _():
+    r = score(above(('2018-02-06 00:00', '2018-02-06 04:00')), ONE,
+              leaks(('pA', '2018-02-01 00:00', '2018-02-20 00:00', 'abrupt'),
+                    ('pB', '2018-02-05 00:00', '2018-02-15 00:00', 'abrupt')), OPEN)
+    event = r['events'][0]
+    assert sorted(event['leaks_running']) == ['pA', 'pB'], event
     assert event['match_confidence'] == 'ambiguous'
     assert event['matched_leak'] == 'pB', 'most recent onset wins by default'
-    assert result['overall']['matched'] == 1, 'one warning cannot catch two leaks'
-    assert result['overall']['missed'] == 1
+    assert r['overall']['credited'] == 1 and r['overall']['missed'] == 1
 
 
-@check('6. a warning already running before onset is NOT credited to that leak')
+@check('8. a run already under way before onset is NOT credited to that leak')
 def _():
-    result = score(warnings(('2018-01-31 22:00', '2018-02-03 00:00')),
-                   leaks(('pA', '2018-02-01 00:00', '2018-02-10 00:00', 'abrupt')), RULES)
-    assert result['overall']['matched'] == 0, 'must not take credit for a pre-existing alert'
-    assert result['overall']['missed'] == 1
-    assert result['unmatched_alerts'] == 1
+    r = score(above(('2018-01-31 22:00', '2018-02-03 00:00')), ONE,
+              leaks(('pA', '2018-02-01 00:00', '2018-02-10 00:00', 'abrupt')), OPEN)
+    assert r['overall']['credited'] == 0, 'must not claim a pre-existing run'
+    assert r['overall']['missed'] == 1
+    assert r['outcomes']['false_alert'] == 1, 'it began when nothing was leaking'
 
 
-@check('7. grouping: a one-hour lull splits events only when tolerance is 0')
+@check('9. the deadline blocks a credit that arrives too late')
 def _():
-    flagged = warnings(('2018-02-02 00:00', '2018-02-02 03:00'),
-                       ('2018-02-02 05:00', '2018-02-02 08:00'))
-    assert len(group_alerts(flagged, Rules(gap_tolerance_hours=0))) == 2
-    assert len(group_alerts(flagged, Rules(gap_tolerance_hours=1))) == 1
+    late = score(above(('2018-02-20 00:00', '2018-02-20 06:00')), ONE,
+                 leaks(('pA', '2018-02-01 00:00', '2018-02-28 00:00', 'abrupt')),
+                 Rules(max_delay_hours=168))
+    open_ = score(above(('2018-02-20 00:00', '2018-02-20 06:00')), ONE,
+                  leaks(('pA', '2018-02-01 00:00', '2018-02-28 00:00', 'abrupt')), OPEN)
+    assert late['overall']['credited'] == 0 and open_['overall']['credited'] == 1
 
 
-@check('8. one event cannot claim two leaks; the second stays missed')
+@check('10. grouping: a one-hour lull splits runs only when tolerance is 0')
 def _():
-    result = score(warnings(('2018-02-06 00:00', '2018-02-19 00:00')),
-                   leaks(('pA', '2018-02-01 00:00', '2018-02-20 00:00', 'abrupt'),
-                         ('pB', '2018-02-05 00:00', '2018-02-15 00:00', 'abrupt')), RULES)
-    assert result['overall']['matched'] == 1
-    assert result['overall']['missed'] == 1
+    flagged = above(('2018-02-02 00:00', '2018-02-02 03:00'),
+                    ('2018-02-02 05:00', '2018-02-02 08:00'))
+    assert len(find_alerts(flagged, 1, Rules(gap_tolerance_hours=0))) == 2
+    assert len(find_alerts(flagged, 1, Rules(gap_tolerance_hours=1))) == 1
 
 
-@check('9. leaks beginning before the window are excluded, not counted as missed')
+@check('11. one event cannot claim two leaks; the second stays missed')
 def _():
-    result = score(warnings(), leaks(('pA', '2017-12-20 00:00', '2018-02-10 00:00', 'abrupt')),
-                   Rules(min_history_days=0))
-    assert result['overall']['eligible_leaks'] == 0, result['overall']
-    assert result['leaks'][0]['outcome'] == 'not_scored'
-    assert 'began before' in result['leaks'][0]['eligibility']
+    r = score(above(('2018-02-06 00:00', '2018-02-19 00:00')), ONE,
+              leaks(('pA', '2018-02-01 00:00', '2018-02-20 00:00', 'abrupt'),
+                    ('pB', '2018-02-05 00:00', '2018-02-15 00:00', 'abrupt')), OPEN)
+    assert r['overall']['credited'] == 1 and r['overall']['missed'] == 1
 
 
-@check('10. insufficient history excludes a leak, and says so')
+@check('12. leaks beginning before the window are excluded, not counted as missed')
 def _():
-    frame = mark_eligibility(leaks(('pA', '2018-01-05 00:00', '2018-02-10 00:00', 'abrupt')),
-                             '2018-01-01', '2018-03-01', Rules(min_history_days=14))
-    assert 'fewer than 14 days of history' in frame.eligibility.iloc[0]
+    r = score(above(), ONE, leaks(('pA', '2017-12-20 00:00', '2018-02-10 00:00', 'abrupt')), OPEN)
+    assert r['overall']['eligible_leaks'] == 0
+    assert r['leaks'][0]['outcome'] == 'not_scored'
+    assert 'began before' in r['leaks'][0]['eligibility']
 
 
-@check('11. an alert coinciding with an excluded leak is neither hit nor false alarm')
+@check('13. abrupt and gradual leaks are summarised separately')
 def _():
-    result = score(warnings(('2018-01-20 00:00', '2018-01-20 06:00')),
-                   leaks(('pA', '2018-01-05 00:00', '2018-02-10 00:00', 'abrupt')),
-                   Rules(min_history_days=14))
-    assert result['alerts_coinciding_with_excluded_leak'] == 1, result
-    assert result['unmatched_alerts'] == 0
-    assert result['overall']['eligible_leaks'] == 0
+    r = score(above(('2018-02-02 00:00', '2018-02-02 04:00')), ONE,
+              leaks(('pA', '2018-02-01 00:00', '2018-02-10 00:00', 'abrupt'),
+                    ('pB', '2018-02-15 00:00', '2018-02-20 00:00', 'incipient')), OPEN)
+    assert r['abrupt']['credited'] == 1 and r['abrupt']['missed'] == 0
+    assert r['incipient']['credited'] == 0 and r['incipient']['missed'] == 1
+    assert r['abrupt']['median_delay_hours'] == 25.0, r['abrupt']
 
 
-@check('12. abrupt and incipient leaks are reported separately')
+@check('14. a leak running past the window end is flagged as censored')
 def _():
-    result = score(warnings(('2018-02-02 00:00', '2018-02-02 04:00')),
-                   leaks(('pA', '2018-02-01 00:00', '2018-02-10 00:00', 'abrupt'),
-                         ('pB', '2018-02-15 00:00', '2018-02-20 00:00', 'incipient')), RULES)
-    assert result['abrupt'] == {'eligible_leaks': 1, 'matched': 1, 'missed': 0,
-                                'ambiguous_matches': 0, 'median_delay_hours': 24.0,
-                                'max_delay_hours': 24.0}, result['abrupt']
-    assert result['incipient']['matched'] == 0 and result['incipient']['missed'] == 1
+    r = score(above(), ONE, leaks(('pA', '2018-02-01 00:00', '2019-06-01 00:00', 'incipient')), OPEN)
+    assert r['leaks'][0]['censored_end'] is True
+    assert r['leaks'][0]['eligibility'] == 'eligible'
 
 
-@check('13. a leak running past the window end is flagged as censored')
+@check('15. eligibility reports the reason, it does not guess')
 def _():
-    result = score(warnings(), leaks(('pA', '2018-02-01 00:00', '2019-06-01 00:00', 'incipient')),
-                   RULES)
-    assert result['leaks'][0]['censored_end'] is True
-    assert result['leaks'][0]['eligibility'] == 'eligible', 'onset is in window, so it is scorable'
+    frame = mark_eligibility(leaks(('pA', '2018-05-05 00:00', '2018-06-10 00:00', 'abrupt')),
+                             '2018-01-01', '2018-03-01', Rules())
+    assert 'begins after' in frame.eligibility.iloc[0]
 
 
 if __name__ == '__main__':
-    failures = 0
+    failed = 0
     for name, fn in checks:
         try:
-            fn()
-            print(f'  PASS  {name}')
+            fn(); print(f'  PASS  {name}')
         except AssertionError as problem:
-            failures += 1
-            print(f'  FAIL  {name}\n        {problem}')
-    print(f'\n{len(checks) - failures}/{len(checks)} checks passed')
-    sys.exit(1 if failures else 0)
+            failed += 1; print(f'  FAIL  {name}\n        {problem}')
+    print(f'\n{len(checks) - failed}/{len(checks)} checks passed')
+    sys.exit(1 if failed else 0)

@@ -1,0 +1,4723 @@
+{
+  "note": "Detailed tables at the arithmetic midpoint of the declared grid (threshold 10 m3/h, persistence 6). Chosen mechanically, NOT because it scores well.",
+  "eligible_leaks": 13,
+  "methods": {
+    "frozen_week": {
+      "window": [
+        "2018-01-15 00:00:00",
+        "2018-12-31 23:00:00"
+      ],
+      "rules": {
+        "gap_tolerance_hours": 0,
+        "min_history_days": 0,
+        "attribute_to": "most_recent",
+        "max_delay_hours": null
+      },
+      "alert_events_total": 244,
+      "unmatched_alerts": 0,
+      "unmatched_alerts_per_week": 0.0,
+      "alerts_coinciding_with_excluded_leak": 231,
+      "repeat_alerts_scored_zero": 0,
+      "overall": {
+        "eligible_leaks": 13,
+        "matched": 13,
+        "missed": 0,
+        "ambiguous_matches": 13,
+        "median_delay_hours": 15.42,
+        "max_delay_hours": 168.92
+      },
+      "abrupt": {
+        "eligible_leaks": 6,
+        "matched": 6,
+        "missed": 0,
+        "ambiguous_matches": 6,
+        "median_delay_hours": 47.84,
+        "max_delay_hours": 168.92
+      },
+      "incipient": {
+        "eligible_leaks": 7,
+        "matched": 7,
+        "missed": 0,
+        "ambiguous_matches": 7,
+        "median_delay_hours": 14.33,
+        "max_delay_hours": 25.92
+      },
+      "leaks": [
+        {
+          "link": "p257",
+          "type": "incipient",
+          "start": "2018-01-08 13:30:00",
+          "end": "2019-12-31 23:55:00",
+          "eligibility": "excluded: began before the evaluation window",
+          "censored_end": true,
+          "outcome": "not_scored",
+          "matched_alert_index": null,
+          "match_confidence": null,
+          "delay_hours": null
+        },
+        {
+          "link": "p461",
+          "type": "incipient",
+          "start": "2018-01-23 04:25:00",
+          "end": "2018-04-02 11:40:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 6,
+          "match_confidence": "ambiguous",
+          "delay_hours": 13.58
+        },
+        {
+          "link": "p232",
+          "type": "incipient",
+          "start": "2018-01-31 02:35:00",
+          "end": "2018-02-10 09:20:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 12,
+          "match_confidence": "ambiguous",
+          "delay_hours": 15.42
+        },
+        {
+          "link": "p427",
+          "type": "incipient",
+          "start": "2018-02-13 08:25:00",
+          "end": "2019-12-31 23:55:00",
+          "eligibility": "eligible",
+          "censored_end": true,
+          "outcome": "matched",
+          "matched_alert_index": 24,
+          "match_confidence": "ambiguous",
+          "delay_hours": 9.58
+        },
+        {
+          "link": "p673",
+          "type": "abrupt",
+          "start": "2018-03-05 15:45:00",
+          "end": "2018-03-23 10:25:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 41,
+          "match_confidence": "ambiguous",
+          "delay_hours": 18.25
+        },
+        {
+          "link": "p628",
+          "type": "incipient",
+          "start": "2018-05-02 14:55:00",
+          "end": "2018-05-29 21:20:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 88,
+          "match_confidence": "ambiguous",
+          "delay_hours": 19.08
+        },
+        {
+          "link": "p538",
+          "type": "abrupt",
+          "start": "2018-05-18 08:35:00",
+          "end": "2018-06-02 06:05:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 99,
+          "match_confidence": "ambiguous",
+          "delay_hours": 1.42
+        },
+        {
+          "link": "p866",
+          "type": "abrupt",
+          "start": "2018-06-01 09:05:00",
+          "end": "2018-06-12 03:00:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 104,
+          "match_confidence": "ambiguous",
+          "delay_hours": 168.92
+        },
+        {
+          "link": "p31",
+          "type": "incipient",
+          "start": "2018-06-28 10:35:00",
+          "end": "2018-08-12 17:30:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 121,
+          "match_confidence": "ambiguous",
+          "delay_hours": 2.42
+        },
+        {
+          "link": "p654",
+          "type": "incipient",
+          "start": "2018-07-05 03:40:00",
+          "end": "2019-12-31 23:55:00",
+          "eligibility": "eligible",
+          "censored_end": true,
+          "outcome": "matched",
+          "matched_alert_index": 128,
+          "match_confidence": "ambiguous",
+          "delay_hours": 14.33
+        },
+        {
+          "link": "p810",
+          "type": "incipient",
+          "start": "2018-07-28 03:05:00",
+          "end": "2019-12-31 23:55:00",
+          "eligibility": "eligible",
+          "censored_end": true,
+          "outcome": "matched",
+          "matched_alert_index": 149,
+          "match_confidence": "ambiguous",
+          "delay_hours": 25.92
+        },
+        {
+          "link": "p183",
+          "type": "abrupt",
+          "start": "2018-08-07 02:35:00",
+          "end": "2018-09-01 17:10:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 152,
+          "match_confidence": "ambiguous",
+          "delay_hours": 77.42
+        },
+        {
+          "link": "p158",
+          "type": "abrupt",
+          "start": "2018-10-06 02:35:00",
+          "end": "2018-10-23 13:35:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 191,
+          "match_confidence": "ambiguous",
+          "delay_hours": 150.42
+        },
+        {
+          "link": "p369",
+          "type": "abrupt",
+          "start": "2018-10-26 02:05:00",
+          "end": "2018-11-08 20:25:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 195,
+          "match_confidence": "ambiguous",
+          "delay_hours": 10.92
+        }
+      ],
+      "events": [
+        {
+          "index": 0,
+          "start": "2018-01-15 18:00:00",
+          "end": "2018-01-16 00:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 1,
+          "start": "2018-01-16 18:00:00",
+          "end": "2018-01-17 03:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 2,
+          "start": "2018-01-17 18:00:00",
+          "end": "2018-01-18 03:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 3,
+          "start": "2018-01-18 18:00:00",
+          "end": "2018-01-19 02:00:00",
+          "hours": 9,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 4,
+          "start": "2018-01-19 18:00:00",
+          "end": "2018-01-19 23:00:00",
+          "hours": 6,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 5,
+          "start": "2018-01-22 18:00:00",
+          "end": "2018-01-23 02:00:00",
+          "hours": 9,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 6,
+          "start": "2018-01-23 18:00:00",
+          "end": "2018-01-24 03:00:00",
+          "hours": 10,
+          "matched_leak": "p461",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p461"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 7,
+          "start": "2018-01-24 18:00:00",
+          "end": "2018-01-25 02:00:00",
+          "hours": 9,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 8,
+          "start": "2018-01-25 18:00:00",
+          "end": "2018-01-26 01:00:00",
+          "hours": 8,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 9,
+          "start": "2018-01-26 18:00:00",
+          "end": "2018-01-26 23:00:00",
+          "hours": 6,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 10,
+          "start": "2018-01-29 18:00:00",
+          "end": "2018-01-30 02:00:00",
+          "hours": 9,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 11,
+          "start": "2018-01-30 18:00:00",
+          "end": "2018-01-31 03:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 12,
+          "start": "2018-01-31 18:00:00",
+          "end": "2018-02-01 03:00:00",
+          "hours": 10,
+          "matched_leak": "p232",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 13,
+          "start": "2018-02-01 18:00:00",
+          "end": "2018-02-02 02:00:00",
+          "hours": 9,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 14,
+          "start": "2018-02-02 15:00:00",
+          "end": "2018-02-03 04:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 15,
+          "start": "2018-02-03 14:00:00",
+          "end": "2018-02-03 19:00:00",
+          "hours": 6,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 16,
+          "start": "2018-02-04 02:00:00",
+          "end": "2018-02-05 03:00:00",
+          "hours": 26,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 17,
+          "start": "2018-02-05 17:00:00",
+          "end": "2018-02-06 02:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 18,
+          "start": "2018-02-06 14:00:00",
+          "end": "2018-02-07 02:00:00",
+          "hours": 13,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 19,
+          "start": "2018-02-07 13:00:00",
+          "end": "2018-02-08 02:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 20,
+          "start": "2018-02-08 13:00:00",
+          "end": "2018-02-09 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 21,
+          "start": "2018-02-09 14:00:00",
+          "end": "2018-02-10 05:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 22,
+          "start": "2018-02-11 13:00:00",
+          "end": "2018-02-11 19:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 23,
+          "start": "2018-02-12 18:00:00",
+          "end": "2018-02-13 02:00:00",
+          "hours": 9,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 24,
+          "start": "2018-02-13 18:00:00",
+          "end": "2018-02-14 03:00:00",
+          "hours": 10,
+          "matched_leak": "p427",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 25,
+          "start": "2018-02-14 18:00:00",
+          "end": "2018-02-15 03:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 26,
+          "start": "2018-02-15 18:00:00",
+          "end": "2018-02-16 03:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 27,
+          "start": "2018-02-16 18:00:00",
+          "end": "2018-02-16 23:00:00",
+          "hours": 6,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 28,
+          "start": "2018-02-19 18:00:00",
+          "end": "2018-02-20 02:00:00",
+          "hours": 9,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 29,
+          "start": "2018-02-20 18:00:00",
+          "end": "2018-02-21 02:00:00",
+          "hours": 9,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 30,
+          "start": "2018-02-21 18:00:00",
+          "end": "2018-02-22 02:00:00",
+          "hours": 9,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 31,
+          "start": "2018-02-22 18:00:00",
+          "end": "2018-02-23 04:00:00",
+          "hours": 11,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 32,
+          "start": "2018-02-23 18:00:00",
+          "end": "2018-02-23 23:00:00",
+          "hours": 6,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 33,
+          "start": "2018-02-25 04:00:00",
+          "end": "2018-02-25 09:00:00",
+          "hours": 6,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 34,
+          "start": "2018-02-26 18:00:00",
+          "end": "2018-02-27 03:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 35,
+          "start": "2018-02-27 18:00:00",
+          "end": "2018-02-28 02:00:00",
+          "hours": 9,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 36,
+          "start": "2018-02-28 18:00:00",
+          "end": "2018-03-01 02:00:00",
+          "hours": 9,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 37,
+          "start": "2018-03-01 18:00:00",
+          "end": "2018-03-02 03:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 38,
+          "start": "2018-03-02 18:00:00",
+          "end": "2018-03-02 23:00:00",
+          "hours": 6,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 39,
+          "start": "2018-03-04 06:00:00",
+          "end": "2018-03-04 12:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 40,
+          "start": "2018-03-05 11:00:00",
+          "end": "2018-03-06 06:00:00",
+          "hours": 20,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 41,
+          "start": "2018-03-06 10:00:00",
+          "end": "2018-03-07 06:00:00",
+          "hours": 21,
+          "matched_leak": "p673",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 42,
+          "start": "2018-03-07 13:00:00",
+          "end": "2018-03-08 06:00:00",
+          "hours": 18,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 43,
+          "start": "2018-03-08 13:00:00",
+          "end": "2018-03-09 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 44,
+          "start": "2018-03-09 13:00:00",
+          "end": "2018-03-10 06:00:00",
+          "hours": 18,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 45,
+          "start": "2018-03-10 08:00:00",
+          "end": "2018-03-12 06:00:00",
+          "hours": 47,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 46,
+          "start": "2018-03-12 13:00:00",
+          "end": "2018-03-13 07:00:00",
+          "hours": 19,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 47,
+          "start": "2018-03-13 10:00:00",
+          "end": "2018-03-16 05:00:00",
+          "hours": 68,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 48,
+          "start": "2018-03-16 13:00:00",
+          "end": "2018-03-17 06:00:00",
+          "hours": 18,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 49,
+          "start": "2018-03-17 08:00:00",
+          "end": "2018-03-23 05:00:00",
+          "hours": 142,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 50,
+          "start": "2018-03-23 14:00:00",
+          "end": "2018-03-24 05:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 51,
+          "start": "2018-03-24 11:00:00",
+          "end": "2018-03-24 23:00:00",
+          "hours": 13,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 52,
+          "start": "2018-03-25 03:00:00",
+          "end": "2018-03-26 03:00:00",
+          "hours": 25,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 53,
+          "start": "2018-03-26 13:00:00",
+          "end": "2018-03-27 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 54,
+          "start": "2018-03-27 10:00:00",
+          "end": "2018-03-28 04:00:00",
+          "hours": 19,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 55,
+          "start": "2018-03-28 13:00:00",
+          "end": "2018-03-29 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 56,
+          "start": "2018-03-29 13:00:00",
+          "end": "2018-03-30 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 57,
+          "start": "2018-03-30 14:00:00",
+          "end": "2018-03-31 05:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 58,
+          "start": "2018-03-31 10:00:00",
+          "end": "2018-03-31 23:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 59,
+          "start": "2018-04-01 02:00:00",
+          "end": "2018-04-02 03:00:00",
+          "hours": 26,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 60,
+          "start": "2018-04-02 18:00:00",
+          "end": "2018-04-03 02:00:00",
+          "hours": 9,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 61,
+          "start": "2018-04-03 14:00:00",
+          "end": "2018-04-04 04:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 62,
+          "start": "2018-04-04 17:00:00",
+          "end": "2018-04-05 03:00:00",
+          "hours": 11,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 63,
+          "start": "2018-04-05 13:00:00",
+          "end": "2018-04-06 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 64,
+          "start": "2018-04-06 14:00:00",
+          "end": "2018-04-06 23:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 65,
+          "start": "2018-04-07 13:00:00",
+          "end": "2018-04-07 19:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 66,
+          "start": "2018-04-08 06:00:00",
+          "end": "2018-04-08 19:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 67,
+          "start": "2018-04-09 18:00:00",
+          "end": "2018-04-10 03:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 68,
+          "start": "2018-04-10 18:00:00",
+          "end": "2018-04-11 03:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 69,
+          "start": "2018-04-11 17:00:00",
+          "end": "2018-04-12 04:00:00",
+          "hours": 12,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 70,
+          "start": "2018-04-12 14:00:00",
+          "end": "2018-04-13 03:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 71,
+          "start": "2018-04-13 13:00:00",
+          "end": "2018-04-13 23:00:00",
+          "hours": 11,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 72,
+          "start": "2018-04-15 06:00:00",
+          "end": "2018-04-15 22:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 73,
+          "start": "2018-04-16 18:00:00",
+          "end": "2018-04-17 03:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 74,
+          "start": "2018-04-17 17:00:00",
+          "end": "2018-04-18 03:00:00",
+          "hours": 11,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 75,
+          "start": "2018-04-18 18:00:00",
+          "end": "2018-04-19 04:00:00",
+          "hours": 11,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 76,
+          "start": "2018-04-19 13:00:00",
+          "end": "2018-04-20 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 77,
+          "start": "2018-04-20 14:00:00",
+          "end": "2018-04-21 04:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 78,
+          "start": "2018-04-22 06:00:00",
+          "end": "2018-04-22 22:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 79,
+          "start": "2018-04-23 17:00:00",
+          "end": "2018-04-24 02:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 80,
+          "start": "2018-04-24 17:00:00",
+          "end": "2018-04-25 02:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 81,
+          "start": "2018-04-25 17:00:00",
+          "end": "2018-04-26 03:00:00",
+          "hours": 11,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 82,
+          "start": "2018-04-26 13:00:00",
+          "end": "2018-04-27 02:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 83,
+          "start": "2018-04-27 14:00:00",
+          "end": "2018-04-28 03:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 84,
+          "start": "2018-04-29 06:00:00",
+          "end": "2018-04-30 04:00:00",
+          "hours": 23,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 85,
+          "start": "2018-04-30 17:00:00",
+          "end": "2018-05-01 03:00:00",
+          "hours": 11,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 86,
+          "start": "2018-05-01 13:00:00",
+          "end": "2018-05-02 04:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 87,
+          "start": "2018-05-02 14:00:00",
+          "end": "2018-05-03 03:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 88,
+          "start": "2018-05-03 10:00:00",
+          "end": "2018-05-04 04:00:00",
+          "hours": 19,
+          "matched_leak": "p628",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 89,
+          "start": "2018-05-04 14:00:00",
+          "end": "2018-05-05 04:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 90,
+          "start": "2018-05-05 14:00:00",
+          "end": "2018-05-05 23:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 91,
+          "start": "2018-05-06 05:00:00",
+          "end": "2018-05-07 03:00:00",
+          "hours": 23,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 92,
+          "start": "2018-05-07 13:00:00",
+          "end": "2018-05-08 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 93,
+          "start": "2018-05-08 13:00:00",
+          "end": "2018-05-09 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 94,
+          "start": "2018-05-09 13:00:00",
+          "end": "2018-05-10 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 95,
+          "start": "2018-05-10 10:00:00",
+          "end": "2018-05-11 05:00:00",
+          "hours": 20,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 96,
+          "start": "2018-05-11 14:00:00",
+          "end": "2018-05-12 05:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 97,
+          "start": "2018-05-12 09:00:00",
+          "end": "2018-05-14 06:00:00",
+          "hours": 46,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 98,
+          "start": "2018-05-14 10:00:00",
+          "end": "2018-05-18 05:00:00",
+          "hours": 92,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 99,
+          "start": "2018-05-18 10:00:00",
+          "end": "2018-05-25 06:00:00",
+          "hours": 165,
+          "matched_leak": "p538",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628",
+            "p538"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 100,
+          "start": "2018-05-25 09:00:00",
+          "end": "2018-05-30 07:00:00",
+          "hours": 119,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628",
+            "p538"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 101,
+          "start": "2018-05-30 09:00:00",
+          "end": "2018-05-31 06:00:00",
+          "hours": 22,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p538"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 102,
+          "start": "2018-05-31 08:00:00",
+          "end": "2018-06-01 05:00:00",
+          "hours": 22,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p538"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 103,
+          "start": "2018-06-01 09:00:00",
+          "end": "2018-06-08 05:00:00",
+          "hours": 165,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p538"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 104,
+          "start": "2018-06-08 10:00:00",
+          "end": "2018-06-12 04:00:00",
+          "hours": 91,
+          "matched_leak": "p866",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p866"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 105,
+          "start": "2018-06-12 10:00:00",
+          "end": "2018-06-13 06:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 106,
+          "start": "2018-06-13 13:00:00",
+          "end": "2018-06-14 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 107,
+          "start": "2018-06-14 10:00:00",
+          "end": "2018-06-15 05:00:00",
+          "hours": 20,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 108,
+          "start": "2018-06-15 14:00:00",
+          "end": "2018-06-16 05:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 109,
+          "start": "2018-06-16 10:00:00",
+          "end": "2018-06-16 23:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 110,
+          "start": "2018-06-17 02:00:00",
+          "end": "2018-06-18 03:00:00",
+          "hours": 26,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 111,
+          "start": "2018-06-18 10:00:00",
+          "end": "2018-06-19 03:00:00",
+          "hours": 18,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 112,
+          "start": "2018-06-19 13:00:00",
+          "end": "2018-06-20 06:00:00",
+          "hours": 18,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 113,
+          "start": "2018-06-20 13:00:00",
+          "end": "2018-06-21 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 114,
+          "start": "2018-06-21 13:00:00",
+          "end": "2018-06-22 04:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 115,
+          "start": "2018-06-22 13:00:00",
+          "end": "2018-06-23 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 116,
+          "start": "2018-06-23 10:00:00",
+          "end": "2018-06-24 00:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 117,
+          "start": "2018-06-24 02:00:00",
+          "end": "2018-06-25 03:00:00",
+          "hours": 26,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 118,
+          "start": "2018-06-25 10:00:00",
+          "end": "2018-06-26 06:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 119,
+          "start": "2018-06-26 13:00:00",
+          "end": "2018-06-27 06:00:00",
+          "hours": 18,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 120,
+          "start": "2018-06-27 10:00:00",
+          "end": "2018-06-28 06:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 121,
+          "start": "2018-06-28 13:00:00",
+          "end": "2018-06-29 04:00:00",
+          "hours": 16,
+          "matched_leak": "p31",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 122,
+          "start": "2018-06-29 13:00:00",
+          "end": "2018-06-30 04:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 123,
+          "start": "2018-06-30 09:00:00",
+          "end": "2018-07-01 00:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 124,
+          "start": "2018-07-01 02:00:00",
+          "end": "2018-07-02 03:00:00",
+          "hours": 26,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 125,
+          "start": "2018-07-02 10:00:00",
+          "end": "2018-07-03 06:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 126,
+          "start": "2018-07-03 13:00:00",
+          "end": "2018-07-04 06:00:00",
+          "hours": 18,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 127,
+          "start": "2018-07-04 10:00:00",
+          "end": "2018-07-05 15:00:00",
+          "hours": 30,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 128,
+          "start": "2018-07-05 18:00:00",
+          "end": "2018-07-06 06:00:00",
+          "hours": 13,
+          "matched_leak": "p654",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 129,
+          "start": "2018-07-06 13:00:00",
+          "end": "2018-07-07 07:00:00",
+          "hours": 19,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 130,
+          "start": "2018-07-07 09:00:00",
+          "end": "2018-07-08 00:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 131,
+          "start": "2018-07-08 02:00:00",
+          "end": "2018-07-08 19:00:00",
+          "hours": 18,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 132,
+          "start": "2018-07-09 03:00:00",
+          "end": "2018-07-10 01:00:00",
+          "hours": 23,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 133,
+          "start": "2018-07-10 10:00:00",
+          "end": "2018-07-11 04:00:00",
+          "hours": 19,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 134,
+          "start": "2018-07-11 10:00:00",
+          "end": "2018-07-12 08:00:00",
+          "hours": 23,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 135,
+          "start": "2018-07-12 10:00:00",
+          "end": "2018-07-13 06:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 136,
+          "start": "2018-07-13 13:00:00",
+          "end": "2018-07-14 07:00:00",
+          "hours": 19,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 137,
+          "start": "2018-07-14 09:00:00",
+          "end": "2018-07-15 00:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 138,
+          "start": "2018-07-15 02:00:00",
+          "end": "2018-07-15 20:00:00",
+          "hours": 19,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 139,
+          "start": "2018-07-16 05:00:00",
+          "end": "2018-07-17 06:00:00",
+          "hours": 26,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 140,
+          "start": "2018-07-17 09:00:00",
+          "end": "2018-07-19 00:00:00",
+          "hours": 40,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 141,
+          "start": "2018-07-19 06:00:00",
+          "end": "2018-07-20 06:00:00",
+          "hours": 25,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 142,
+          "start": "2018-07-20 09:00:00",
+          "end": "2018-07-21 02:00:00",
+          "hours": 18,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 143,
+          "start": "2018-07-21 09:00:00",
+          "end": "2018-07-22 00:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 144,
+          "start": "2018-07-22 02:00:00",
+          "end": "2018-07-22 19:00:00",
+          "hours": 18,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 145,
+          "start": "2018-07-22 22:00:00",
+          "end": "2018-07-24 04:00:00",
+          "hours": 31,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 146,
+          "start": "2018-07-24 09:00:00",
+          "end": "2018-07-26 03:00:00",
+          "hours": 43,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 147,
+          "start": "2018-07-26 09:00:00",
+          "end": "2018-07-27 06:00:00",
+          "hours": 22,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 148,
+          "start": "2018-07-27 08:00:00",
+          "end": "2018-07-29 00:00:00",
+          "hours": 41,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 149,
+          "start": "2018-07-29 05:00:00",
+          "end": "2018-08-03 06:00:00",
+          "hours": 122,
+          "matched_leak": "p810",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 150,
+          "start": "2018-08-03 09:00:00",
+          "end": "2018-08-05 00:00:00",
+          "hours": 40,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 151,
+          "start": "2018-08-05 02:00:00",
+          "end": "2018-08-10 06:00:00",
+          "hours": 125,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 152,
+          "start": "2018-08-10 08:00:00",
+          "end": "2018-08-17 05:00:00",
+          "hours": 166,
+          "matched_leak": "p183",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654",
+            "p810",
+            "p183"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 153,
+          "start": "2018-08-17 10:00:00",
+          "end": "2018-08-18 06:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p183"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 154,
+          "start": "2018-08-18 08:00:00",
+          "end": "2018-08-24 05:00:00",
+          "hours": 142,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p183"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 155,
+          "start": "2018-08-24 10:00:00",
+          "end": "2018-08-31 05:00:00",
+          "hours": 164,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p183"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 156,
+          "start": "2018-08-31 10:00:00",
+          "end": "2018-09-02 00:00:00",
+          "hours": 39,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p183"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 157,
+          "start": "2018-09-02 02:00:00",
+          "end": "2018-09-03 03:00:00",
+          "hours": 26,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 158,
+          "start": "2018-09-03 10:00:00",
+          "end": "2018-09-04 03:00:00",
+          "hours": 18,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 159,
+          "start": "2018-09-04 13:00:00",
+          "end": "2018-09-05 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 160,
+          "start": "2018-09-05 10:00:00",
+          "end": "2018-09-06 03:00:00",
+          "hours": 18,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 161,
+          "start": "2018-09-06 10:00:00",
+          "end": "2018-09-07 05:00:00",
+          "hours": 20,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 162,
+          "start": "2018-09-07 13:00:00",
+          "end": "2018-09-08 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 163,
+          "start": "2018-09-08 10:00:00",
+          "end": "2018-09-09 00:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 164,
+          "start": "2018-09-09 02:00:00",
+          "end": "2018-09-10 03:00:00",
+          "hours": 26,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 165,
+          "start": "2018-09-10 13:00:00",
+          "end": "2018-09-11 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 166,
+          "start": "2018-09-11 10:00:00",
+          "end": "2018-09-12 06:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 167,
+          "start": "2018-09-12 10:00:00",
+          "end": "2018-09-13 06:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 168,
+          "start": "2018-09-13 10:00:00",
+          "end": "2018-09-14 05:00:00",
+          "hours": 20,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 169,
+          "start": "2018-09-14 13:00:00",
+          "end": "2018-09-15 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 170,
+          "start": "2018-09-15 09:00:00",
+          "end": "2018-09-16 00:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 171,
+          "start": "2018-09-16 02:00:00",
+          "end": "2018-09-17 03:00:00",
+          "hours": 26,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 172,
+          "start": "2018-09-17 13:00:00",
+          "end": "2018-09-18 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 173,
+          "start": "2018-09-18 10:00:00",
+          "end": "2018-09-19 06:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 174,
+          "start": "2018-09-19 10:00:00",
+          "end": "2018-09-20 06:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 175,
+          "start": "2018-09-20 09:00:00",
+          "end": "2018-09-21 05:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 176,
+          "start": "2018-09-21 13:00:00",
+          "end": "2018-09-22 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 177,
+          "start": "2018-09-22 09:00:00",
+          "end": "2018-09-23 00:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 178,
+          "start": "2018-09-23 02:00:00",
+          "end": "2018-09-24 06:00:00",
+          "hours": 29,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 179,
+          "start": "2018-09-24 13:00:00",
+          "end": "2018-09-25 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 180,
+          "start": "2018-09-25 13:00:00",
+          "end": "2018-09-26 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 181,
+          "start": "2018-09-26 08:00:00",
+          "end": "2018-09-27 03:00:00",
+          "hours": 20,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 182,
+          "start": "2018-09-27 09:00:00",
+          "end": "2018-09-28 05:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 183,
+          "start": "2018-09-28 13:00:00",
+          "end": "2018-09-29 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 184,
+          "start": "2018-09-29 09:00:00",
+          "end": "2018-09-30 00:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 185,
+          "start": "2018-09-30 02:00:00",
+          "end": "2018-10-01 06:00:00",
+          "hours": 29,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 186,
+          "start": "2018-10-01 13:00:00",
+          "end": "2018-10-02 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 187,
+          "start": "2018-10-02 10:00:00",
+          "end": "2018-10-03 06:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 188,
+          "start": "2018-10-03 10:00:00",
+          "end": "2018-10-04 06:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 189,
+          "start": "2018-10-04 10:00:00",
+          "end": "2018-10-05 05:00:00",
+          "hours": 20,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 190,
+          "start": "2018-10-05 13:00:00",
+          "end": "2018-10-12 05:00:00",
+          "hours": 161,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 191,
+          "start": "2018-10-12 09:00:00",
+          "end": "2018-10-19 05:00:00",
+          "hours": 165,
+          "matched_leak": "p158",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p158"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 192,
+          "start": "2018-10-19 10:00:00",
+          "end": "2018-10-24 03:00:00",
+          "hours": 114,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p158"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 193,
+          "start": "2018-10-24 13:00:00",
+          "end": "2018-10-25 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 194,
+          "start": "2018-10-25 10:00:00",
+          "end": "2018-10-26 05:00:00",
+          "hours": 20,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 195,
+          "start": "2018-10-26 13:00:00",
+          "end": "2018-11-02 05:00:00",
+          "hours": 161,
+          "matched_leak": "p369",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p369"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 196,
+          "start": "2018-11-02 13:00:00",
+          "end": "2018-11-09 05:00:00",
+          "hours": 161,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p369"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 197,
+          "start": "2018-11-09 13:00:00",
+          "end": "2018-11-10 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 198,
+          "start": "2018-11-10 09:00:00",
+          "end": "2018-11-12 06:00:00",
+          "hours": 46,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 199,
+          "start": "2018-11-12 13:00:00",
+          "end": "2018-11-13 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 200,
+          "start": "2018-11-13 10:00:00",
+          "end": "2018-11-14 06:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 201,
+          "start": "2018-11-14 13:00:00",
+          "end": "2018-11-15 06:00:00",
+          "hours": 18,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 202,
+          "start": "2018-11-15 10:00:00",
+          "end": "2018-11-16 05:00:00",
+          "hours": 20,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 203,
+          "start": "2018-11-16 13:00:00",
+          "end": "2018-11-17 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 204,
+          "start": "2018-11-17 09:00:00",
+          "end": "2018-11-19 02:00:00",
+          "hours": 42,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 205,
+          "start": "2018-11-19 13:00:00",
+          "end": "2018-11-20 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 206,
+          "start": "2018-11-20 10:00:00",
+          "end": "2018-11-21 03:00:00",
+          "hours": 18,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 207,
+          "start": "2018-11-21 13:00:00",
+          "end": "2018-11-22 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 208,
+          "start": "2018-11-22 10:00:00",
+          "end": "2018-11-23 05:00:00",
+          "hours": 20,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 209,
+          "start": "2018-11-23 14:00:00",
+          "end": "2018-11-24 05:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 210,
+          "start": "2018-11-24 09:00:00",
+          "end": "2018-11-26 03:00:00",
+          "hours": 43,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 211,
+          "start": "2018-11-26 13:00:00",
+          "end": "2018-11-27 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 212,
+          "start": "2018-11-27 13:00:00",
+          "end": "2018-11-28 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 213,
+          "start": "2018-11-28 10:00:00",
+          "end": "2018-11-29 06:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 214,
+          "start": "2018-11-29 13:00:00",
+          "end": "2018-11-30 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 215,
+          "start": "2018-11-30 13:00:00",
+          "end": "2018-12-01 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 216,
+          "start": "2018-12-01 10:00:00",
+          "end": "2018-12-03 03:00:00",
+          "hours": 42,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 217,
+          "start": "2018-12-03 13:00:00",
+          "end": "2018-12-04 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 218,
+          "start": "2018-12-04 13:00:00",
+          "end": "2018-12-05 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 219,
+          "start": "2018-12-05 10:00:00",
+          "end": "2018-12-06 06:00:00",
+          "hours": 21,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 220,
+          "start": "2018-12-06 13:00:00",
+          "end": "2018-12-07 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 221,
+          "start": "2018-12-07 14:00:00",
+          "end": "2018-12-08 05:00:00",
+          "hours": 16,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 222,
+          "start": "2018-12-08 10:00:00",
+          "end": "2018-12-09 00:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 223,
+          "start": "2018-12-09 02:00:00",
+          "end": "2018-12-10 02:00:00",
+          "hours": 25,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 224,
+          "start": "2018-12-10 13:00:00",
+          "end": "2018-12-11 02:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 225,
+          "start": "2018-12-11 13:00:00",
+          "end": "2018-12-12 02:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 226,
+          "start": "2018-12-12 13:00:00",
+          "end": "2018-12-13 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 227,
+          "start": "2018-12-13 13:00:00",
+          "end": "2018-12-14 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 228,
+          "start": "2018-12-14 15:00:00",
+          "end": "2018-12-15 05:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 229,
+          "start": "2018-12-15 11:00:00",
+          "end": "2018-12-16 00:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 230,
+          "start": "2018-12-16 02:00:00",
+          "end": "2018-12-17 02:00:00",
+          "hours": 25,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 231,
+          "start": "2018-12-17 13:00:00",
+          "end": "2018-12-18 02:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 232,
+          "start": "2018-12-18 14:00:00",
+          "end": "2018-12-19 03:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 233,
+          "start": "2018-12-19 13:00:00",
+          "end": "2018-12-20 03:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 234,
+          "start": "2018-12-20 13:00:00",
+          "end": "2018-12-21 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 235,
+          "start": "2018-12-21 14:00:00",
+          "end": "2018-12-22 02:00:00",
+          "hours": 13,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 236,
+          "start": "2018-12-23 05:00:00",
+          "end": "2018-12-24 03:00:00",
+          "hours": 23,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 237,
+          "start": "2018-12-24 13:00:00",
+          "end": "2018-12-25 02:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 238,
+          "start": "2018-12-25 14:00:00",
+          "end": "2018-12-26 02:00:00",
+          "hours": 13,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 239,
+          "start": "2018-12-26 14:00:00",
+          "end": "2018-12-27 02:00:00",
+          "hours": 13,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 240,
+          "start": "2018-12-27 13:00:00",
+          "end": "2018-12-28 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 241,
+          "start": "2018-12-28 15:00:00",
+          "end": "2018-12-29 05:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 242,
+          "start": "2018-12-30 05:00:00",
+          "end": "2018-12-31 02:00:00",
+          "hours": 22,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 243,
+          "start": "2018-12-31 17:00:00",
+          "end": "2018-12-31 23:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810"
+          ],
+          "outcome": "matched_excluded_leak"
+        }
+      ]
+    },
+    "rolling_14d": {
+      "window": [
+        "2018-01-15 00:00:00",
+        "2018-12-31 23:00:00"
+      ],
+      "rules": {
+        "gap_tolerance_hours": 0,
+        "min_history_days": 0,
+        "attribute_to": "most_recent",
+        "max_delay_hours": null
+      },
+      "alert_events_total": 53,
+      "unmatched_alerts": 0,
+      "unmatched_alerts_per_week": 0.0,
+      "alerts_coinciding_with_excluded_leak": 42,
+      "repeat_alerts_scored_zero": 0,
+      "overall": {
+        "eligible_leaks": 13,
+        "matched": 11,
+        "missed": 2,
+        "ambiguous_matches": 11,
+        "median_delay_hours": 96.42,
+        "max_delay_hours": 309.58
+      },
+      "abrupt": {
+        "eligible_leaks": 6,
+        "matched": 4,
+        "missed": 2,
+        "ambiguous_matches": 4,
+        "median_delay_hours": 9.92,
+        "max_delay_hours": 16.42
+      },
+      "incipient": {
+        "eligible_leaks": 7,
+        "matched": 7,
+        "missed": 0,
+        "ambiguous_matches": 7,
+        "median_delay_hours": 234.42,
+        "max_delay_hours": 309.58
+      },
+      "leaks": [
+        {
+          "link": "p257",
+          "type": "incipient",
+          "start": "2018-01-08 13:30:00",
+          "end": "2019-12-31 23:55:00",
+          "eligibility": "excluded: began before the evaluation window",
+          "censored_end": true,
+          "outcome": "not_scored",
+          "matched_alert_index": null,
+          "match_confidence": null,
+          "delay_hours": null
+        },
+        {
+          "link": "p461",
+          "type": "incipient",
+          "start": "2018-01-23 04:25:00",
+          "end": "2018-04-02 11:40:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 1,
+          "match_confidence": "ambiguous",
+          "delay_hours": 309.58
+        },
+        {
+          "link": "p232",
+          "type": "incipient",
+          "start": "2018-01-31 02:35:00",
+          "end": "2018-02-10 09:20:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 0,
+          "match_confidence": "ambiguous",
+          "delay_hours": 96.42
+        },
+        {
+          "link": "p427",
+          "type": "incipient",
+          "start": "2018-02-13 08:25:00",
+          "end": "2019-12-31 23:55:00",
+          "eligibility": "eligible",
+          "censored_end": true,
+          "outcome": "matched",
+          "matched_alert_index": 6,
+          "match_confidence": "ambiguous",
+          "delay_hours": 283.58
+        },
+        {
+          "link": "p673",
+          "type": "abrupt",
+          "start": "2018-03-05 15:45:00",
+          "end": "2018-03-23 10:25:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 7,
+          "match_confidence": "ambiguous",
+          "delay_hours": 0.25
+        },
+        {
+          "link": "p628",
+          "type": "incipient",
+          "start": "2018-05-02 14:55:00",
+          "end": "2018-05-29 21:20:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 16,
+          "match_confidence": "ambiguous",
+          "delay_hours": 201.08
+        },
+        {
+          "link": "p538",
+          "type": "abrupt",
+          "start": "2018-05-18 08:35:00",
+          "end": "2018-06-02 06:05:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 24,
+          "match_confidence": "ambiguous",
+          "delay_hours": 6.42
+        },
+        {
+          "link": "p866",
+          "type": "abrupt",
+          "start": "2018-06-01 09:05:00",
+          "end": "2018-06-12 03:00:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "missed",
+          "matched_alert_index": null,
+          "match_confidence": null,
+          "delay_hours": null
+        },
+        {
+          "link": "p31",
+          "type": "incipient",
+          "start": "2018-06-28 10:35:00",
+          "end": "2018-08-12 17:30:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 33,
+          "match_confidence": "ambiguous",
+          "delay_hours": 234.42
+        },
+        {
+          "link": "p654",
+          "type": "incipient",
+          "start": "2018-07-05 03:40:00",
+          "end": "2019-12-31 23:55:00",
+          "eligibility": "eligible",
+          "censored_end": true,
+          "outcome": "matched",
+          "matched_alert_index": 32,
+          "match_confidence": "ambiguous",
+          "delay_hours": 1.33
+        },
+        {
+          "link": "p810",
+          "type": "incipient",
+          "start": "2018-07-28 03:05:00",
+          "end": "2019-12-31 23:55:00",
+          "eligibility": "eligible",
+          "censored_end": true,
+          "outcome": "matched",
+          "matched_alert_index": 40,
+          "match_confidence": "ambiguous",
+          "delay_hours": 282.92
+        },
+        {
+          "link": "p183",
+          "type": "abrupt",
+          "start": "2018-08-07 02:35:00",
+          "end": "2018-09-01 17:10:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 39,
+          "match_confidence": "ambiguous",
+          "delay_hours": 16.42
+        },
+        {
+          "link": "p158",
+          "type": "abrupt",
+          "start": "2018-10-06 02:35:00",
+          "end": "2018-10-23 13:35:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "matched",
+          "matched_alert_index": 44,
+          "match_confidence": "ambiguous",
+          "delay_hours": 13.42
+        },
+        {
+          "link": "p369",
+          "type": "abrupt",
+          "start": "2018-10-26 02:05:00",
+          "end": "2018-11-08 20:25:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "missed",
+          "matched_alert_index": null,
+          "match_confidence": null,
+          "delay_hours": null
+        }
+      ],
+      "events": [
+        {
+          "index": 0,
+          "start": "2018-02-04 03:00:00",
+          "end": "2018-02-04 20:00:00",
+          "hours": 18,
+          "matched_leak": "p232",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 1,
+          "start": "2018-02-05 02:00:00",
+          "end": "2018-02-05 15:00:00",
+          "hours": 14,
+          "matched_leak": "p461",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 2,
+          "start": "2018-02-06 05:00:00",
+          "end": "2018-02-06 16:00:00",
+          "hours": 12,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 3,
+          "start": "2018-02-06 18:00:00",
+          "end": "2018-02-06 23:00:00",
+          "hours": 6,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 4,
+          "start": "2018-02-07 05:00:00",
+          "end": "2018-02-07 11:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 5,
+          "start": "2018-02-08 08:00:00",
+          "end": "2018-02-08 15:00:00",
+          "hours": 8,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p232"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 6,
+          "start": "2018-02-25 04:00:00",
+          "end": "2018-02-25 09:00:00",
+          "hours": 6,
+          "matched_leak": "p427",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 7,
+          "start": "2018-03-05 16:00:00",
+          "end": "2018-03-06 12:00:00",
+          "hours": 21,
+          "matched_leak": "p673",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 8,
+          "start": "2018-03-06 14:00:00",
+          "end": "2018-03-07 02:00:00",
+          "hours": 13,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 9,
+          "start": "2018-03-07 05:00:00",
+          "end": "2018-03-09 05:00:00",
+          "hours": 49,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 10,
+          "start": "2018-03-09 13:00:00",
+          "end": "2018-03-10 05:00:00",
+          "hours": 17,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 11,
+          "start": "2018-03-10 10:00:00",
+          "end": "2018-03-10 16:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 12,
+          "start": "2018-03-10 18:00:00",
+          "end": "2018-03-12 02:00:00",
+          "hours": 33,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 13,
+          "start": "2018-03-12 05:00:00",
+          "end": "2018-03-12 11:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 14,
+          "start": "2018-03-13 06:00:00",
+          "end": "2018-03-13 11:00:00",
+          "hours": 6,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 15,
+          "start": "2018-03-18 06:00:00",
+          "end": "2018-03-18 12:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p461",
+            "p427",
+            "p673"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 16,
+          "start": "2018-05-11 00:00:00",
+          "end": "2018-05-11 05:00:00",
+          "hours": 6,
+          "matched_leak": "p628",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 17,
+          "start": "2018-05-13 04:00:00",
+          "end": "2018-05-13 13:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 18,
+          "start": "2018-05-13 16:00:00",
+          "end": "2018-05-13 22:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 19,
+          "start": "2018-05-14 04:00:00",
+          "end": "2018-05-14 14:00:00",
+          "hours": 11,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 20,
+          "start": "2018-05-15 03:00:00",
+          "end": "2018-05-15 13:00:00",
+          "hours": 11,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 21,
+          "start": "2018-05-15 15:00:00",
+          "end": "2018-05-16 03:00:00",
+          "hours": 13,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 22,
+          "start": "2018-05-16 05:00:00",
+          "end": "2018-05-16 23:00:00",
+          "hours": 19,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 23,
+          "start": "2018-05-17 05:00:00",
+          "end": "2018-05-18 04:00:00",
+          "hours": 24,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 24,
+          "start": "2018-05-18 15:00:00",
+          "end": "2018-05-19 05:00:00",
+          "hours": 15,
+          "matched_leak": "p538",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628",
+            "p538"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 25,
+          "start": "2018-05-19 10:00:00",
+          "end": "2018-05-20 00:00:00",
+          "hours": 15,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628",
+            "p538"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 26,
+          "start": "2018-05-20 06:00:00",
+          "end": "2018-05-21 00:00:00",
+          "hours": 19,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628",
+            "p538"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 27,
+          "start": "2018-05-21 06:00:00",
+          "end": "2018-05-22 00:00:00",
+          "hours": 19,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628",
+            "p538"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 28,
+          "start": "2018-05-22 03:00:00",
+          "end": "2018-05-22 11:00:00",
+          "hours": 9,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628",
+            "p538"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 29,
+          "start": "2018-05-23 06:00:00",
+          "end": "2018-05-23 11:00:00",
+          "hours": 6,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628",
+            "p538"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 30,
+          "start": "2018-05-26 00:00:00",
+          "end": "2018-05-26 05:00:00",
+          "hours": 6,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628",
+            "p538"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 31,
+          "start": "2018-05-27 06:00:00",
+          "end": "2018-05-27 12:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p628",
+            "p538"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 32,
+          "start": "2018-07-05 05:00:00",
+          "end": "2018-07-05 10:00:00",
+          "hours": 6,
+          "matched_leak": "p654",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 33,
+          "start": "2018-07-08 05:00:00",
+          "end": "2018-07-08 14:00:00",
+          "hours": 10,
+          "matched_leak": "p31",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 34,
+          "start": "2018-07-09 05:00:00",
+          "end": "2018-07-09 13:00:00",
+          "hours": 9,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 35,
+          "start": "2018-07-15 06:00:00",
+          "end": "2018-07-15 15:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 36,
+          "start": "2018-07-16 06:00:00",
+          "end": "2018-07-16 12:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 37,
+          "start": "2018-07-18 06:00:00",
+          "end": "2018-07-18 12:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 38,
+          "start": "2018-07-22 06:00:00",
+          "end": "2018-07-22 11:00:00",
+          "hours": 6,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 39,
+          "start": "2018-08-07 19:00:00",
+          "end": "2018-08-08 09:00:00",
+          "hours": 15,
+          "matched_leak": "p183",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654",
+            "p810",
+            "p183"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 40,
+          "start": "2018-08-08 22:00:00",
+          "end": "2018-08-09 12:00:00",
+          "hours": 15,
+          "matched_leak": "p810",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654",
+            "p810",
+            "p183"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 41,
+          "start": "2018-08-09 23:00:00",
+          "end": "2018-08-10 05:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654",
+            "p810",
+            "p183"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 42,
+          "start": "2018-08-10 23:00:00",
+          "end": "2018-08-11 05:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654",
+            "p810",
+            "p183"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 43,
+          "start": "2018-08-12 05:00:00",
+          "end": "2018-08-12 11:00:00",
+          "hours": 7,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p31",
+            "p654",
+            "p810",
+            "p183"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 44,
+          "start": "2018-10-06 16:00:00",
+          "end": "2018-10-07 00:00:00",
+          "hours": 9,
+          "matched_leak": "p158",
+          "match_confidence": "ambiguous",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p158"
+          ],
+          "outcome": "matched"
+        },
+        {
+          "index": 45,
+          "start": "2018-10-07 05:00:00",
+          "end": "2018-10-07 12:00:00",
+          "hours": 8,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p158"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 46,
+          "start": "2018-10-07 15:00:00",
+          "end": "2018-10-08 03:00:00",
+          "hours": 13,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p158"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 47,
+          "start": "2018-10-08 05:00:00",
+          "end": "2018-10-09 02:00:00",
+          "hours": 22,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p158"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 48,
+          "start": "2018-10-09 14:00:00",
+          "end": "2018-10-10 03:00:00",
+          "hours": 14,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p158"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 49,
+          "start": "2018-10-10 05:00:00",
+          "end": "2018-10-10 12:00:00",
+          "hours": 8,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p158"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 50,
+          "start": "2018-10-10 18:00:00",
+          "end": "2018-10-11 03:00:00",
+          "hours": 10,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p158"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 51,
+          "start": "2018-10-11 05:00:00",
+          "end": "2018-10-12 05:00:00",
+          "hours": 25,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p158"
+          ],
+          "outcome": "matched_excluded_leak"
+        },
+        {
+          "index": 52,
+          "start": "2018-10-12 22:00:00",
+          "end": "2018-10-13 03:00:00",
+          "hours": 6,
+          "matched_leak": "p257",
+          "match_confidence": "excluded_leak",
+          "candidates": [
+            "p257",
+            "p427",
+            "p654",
+            "p810",
+            "p158"
+          ],
+          "outcome": "matched_excluded_leak"
+        }
+      ]
+    }
+  }
+}

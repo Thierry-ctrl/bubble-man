@@ -1,37 +1,32 @@
-"""Event-level scorer: did a warning arrive while a known leak was running?
+"""Event-level scorer, version 2.
 
-WHAT THIS TOOL CLAIMS, AND WHAT IT DOES NOT
--------------------------------------------
-Our detectors watch total flow at one meter. They can say "flow is higher than
-expected"; they cannot say "the leak is on pipe p673". So a warning that arrives
-while a leak is running is a COINCIDENCE IN TIME, not proof that the method found
-that particular leak. Every match this tool reports is labelled with how confident
-the association is, and the word used throughout is "match", never "detection".
+WHAT CHANGED FROM v1 (kept in v1-superseded/)
+---------------------------------------------
+1. TWO TIMESTAMPS, NOT ONE. v1 timed an alert at the first unusual hour, which is
+   before anyone could have known. v2 records three moments:
+       run_start          the first hour whose difference exceeds the threshold
+       rule_satisfied_at  the hour at which the persistence requirement is met
+       issuable_at        when the alert could actually be raised = one hour after
+                          that, because an hourly average is only complete at the
+                          end of its hour
+   Detection delay is measured from `issuable_at`. v1 delays were too short.
 
-This is deliberately NOT the BattLeDIM competition score. That score additionally
-requires the reported location to be within 300 m of the leak, and converts the
-result into euros of water saved minus crew cost. We cannot compute it, because we
-report no location. See analysis/scorer/RULES.md.
+2. NEUTRAL WORDS FOR UNMATCHED WARNINGS. v1 called them "late detections of genuine
+   leakage". Nothing linked them to a leak; a leak merely happened to be running.
+   v2 separates `false_alert` (no leak running in this zone at all) from
+   `unattributable` (a leak was running, but no evidence ties this warning to it).
 
-THE RULES, IN ORDER
--------------------
-1. Group    consecutive warning hours become ONE alert event. A lull shorter than
-            `gap_tolerance_hours` does not split an event.
-2. Eligible a leak counts in the denominator only if its onset falls inside the
-            evaluation window with `min_history_days` of readings before it.
-            Leaks starting earlier are excluded and reported as excluded.
-3. Match    an alert event matches a leak if the event's START time lies inside
-            [leak start, leak end], and — when `max_delay_hours` is set — within that
-            many hours of onset. An event already running before a leak begins
-            therefore CANNOT be credited to that leak.
-4. One-to-one  each event is credited to at most one leak; each leak is credited to
-            at most one event. A later event about an already-credited leak scores
-            zero: it is neither a hit nor a false alarm, matching BattLeDIM's
-            "repeated detections of the same leakage are ignored".
-5. Ambiguity   when several leaks are active at an event's start, the event is
-            attributed to the most recently started one, and the match is labelled
-            `ambiguous` with every candidate recorded.
-6. Delay    hours from leak onset to the start of its matching event.
+3. ZONES COME FROM THE NETWORK MAP, not from before/after flow steps. See
+   `zone` on each leak. Parsing L-TOWN.inp shows p227 and p235 are two reservoir
+   inlets feeding ONE connected 690-node network through PRV-1 and PRV-2; only
+   PUMP_1 gates a genuinely separate 93-node area. So p227 and p235 are parallel
+   inlets to the same zone, and their sum is that zone's inflow.
+
+WHAT THIS TOOL STILL CANNOT DO
+------------------------------
+Our detectors name no pipe. A warning arriving while a leak runs is a coincidence in
+time, not proof. Every match is labelled with its confidence, and no result here is
+the BattLeDIM score, which also requires a location within 300 m.
 """
 from __future__ import annotations
 
@@ -46,60 +41,78 @@ ABRUPT, INCIPIENT = 'abrupt', 'incipient'
 
 @dataclass
 class Rules:
-    """Every knob that changes a number. Change these, not the code below."""
-    gap_tolerance_hours: int = 0      # lull allowed inside one alert event
-    min_history_days: int = 14        # readings a leak needs before its onset
-    attribute_to: str = 'most_recent'  # or 'earliest', when several leaks are active
-    max_delay_hours: float | None = None
-    """How soon after onset a warning must arrive to be credited.
+    """Every knob that changes a number. Change these, not the code."""
+    gap_tolerance_hours: int = 0
+    """Lull allowed inside one unusual run before it counts as two."""
 
-    None reproduces the BattLeDIM paper, where any time inside the leak's life counts.
-    That is far too generous here: in L-Town 2018 a leak is running 100% of the time,
-    so almost any warning lands inside some leak and the score measures alert density
-    rather than detection. Setting this to e.g. 168 (one week, the window the
-    competition website originally described) gives chance a much smaller target."""
+    reporting_lag_hours: float = 1.0
+    """Delay between the last hour used and the moment an alert can be raised.
+    One hour because an hourly average is only complete at the end of its hour."""
+
+    max_delay_hours: float | None = 168.0
+    """How soon after onset an alert must be ISSUABLE to be credited.
+
+    None reproduces the BattLeDIM paper, where any moment inside a leak's life
+    counts. That is too generous here: in the main network a leak runs continuously
+    from late January 2018 onward, so almost any warning lands inside one."""
+
+    attribute_to: str = 'most_recent'
 
 
 @dataclass
 class AlertEvent:
     index: int
-    start: pd.Timestamp
-    end: pd.Timestamp
+    run_start: pd.Timestamp        # first unusual hour
+    rule_satisfied_at: pd.Timestamp  # persistence requirement met
+    issuable_at: pd.Timestamp      # when it could actually be raised
+    end: pd.Timestamp              # last unusual hour
     hours: int
+    zone: str | None = None
     matched_leak: str | None = None
-    match_confidence: str | None = None   # single_candidate | ambiguous | None
+    match_confidence: str | None = None
     candidates: list = field(default_factory=list)
-    outcome: str = 'unmatched'            # matched | unmatched | matched_excluded_leak
+    leaks_running: list = field(default_factory=list)
+    outcome: str = 'unclassified'
 
 
-def group_alerts(flagged: pd.Series, rules: Rules) -> list[AlertEvent]:
-    """Turn a boolean hourly series into alert events (rule 1)."""
-    assert flagged.index.is_monotonic_increasing, 'timestamps must be sorted'
-    assert flagged.dtype == bool, 'expected a boolean series'
-    events, start, previous = [], None, None
-    for stamp, flag in flagged.items():
+def find_alerts(above: pd.Series, persistence: int, rules: Rules) -> list[AlertEvent]:
+    """Rule 1. `above` is True in each hour whose difference exceeds the threshold.
+
+    A run of `persistence` consecutive such hours raises ONE alert. Runs shorter than
+    that raise nothing. Both the start of the run and the moment the rule is met are
+    recorded, because they are different questions.
+    """
+    assert above.index.is_monotonic_increasing, 'timestamps must be sorted'
+    assert above.dtype == bool, 'expected a boolean series'
+    step = pd.Timedelta(hours=1)
+    runs, start, previous = [], None, None
+    for stamp, flag in above.items():
         if flag:
             if start is None:
-                start, previous = stamp, stamp
-            else:
-                lull = (stamp - previous) / pd.Timedelta(hours=1) - 1
-                if lull > rules.gap_tolerance_hours:
-                    events.append((start, previous))
-                    start = stamp
-                previous = stamp
+                start = stamp
+            elif (stamp - previous) / step - 1 > rules.gap_tolerance_hours:
+                runs.append((start, previous))
+                start = stamp
+            previous = stamp
     if start is not None:
-        events.append((start, previous))
-    return [AlertEvent(index=i, start=s, end=e,
-                       hours=int((e - s) / pd.Timedelta(hours=1)) + 1)
-            for i, (s, e) in enumerate(events)]
+        runs.append((start, previous))
+
+    events, index = [], 0
+    for run_start, run_end in runs:
+        length = int((run_end - run_start) / step) + 1
+        if length < persistence:
+            continue                      # never became an alert
+        satisfied = run_start + (persistence - 1) * step
+        events.append(AlertEvent(
+            index=index, run_start=run_start, rule_satisfied_at=satisfied,
+            issuable_at=satisfied + pd.Timedelta(hours=rules.reporting_lag_hours),
+            end=run_end, hours=length))
+        index += 1
+    return events
 
 
-def load_leaks(config_path: Path) -> pd.DataFrame:
-    """Read leak truth from the BattLeDIM scenario configuration.
-
-    This file is the simulator's generation input, so it lists every leak that was
-    actually simulated. Read it only for evaluation, never as a detector input.
-    """
+def load_leaks(config_path: Path, zones: dict | None = None) -> pd.DataFrame:
+    """Leak truth from the BattLeDIM generation configuration. Evaluation only."""
     pattern = re.compile(
         r'^-\s*(p\d+),\s*([\d-]+\s[\d:]+),\s*([\d-]+\s[\d:]+),\s*([\d.]+),\s*(\w+),\s*([\d-]+\s[\d:]+)')
     rows = []
@@ -108,23 +121,23 @@ def load_leaks(config_path: Path) -> pd.DataFrame:
         if found:
             link, start, end, diameter, kind, peak = found.groups()
             rows.append({'link': link, 'start': pd.Timestamp(start), 'end': pd.Timestamp(end),
-                         'diameter_m': float(diameter), 'type': kind, 'peak': pd.Timestamp(peak)})
+                         'diameter_m': float(diameter), 'type': kind, 'peak': pd.Timestamp(peak),
+                         'zone': (zones or {}).get(link, 'unknown')})
     leaks = pd.DataFrame(rows).sort_values('start').reset_index(drop=True)
-    assert set(leaks.type) <= {ABRUPT, INCIPIENT}, f'unexpected leak types: {set(leaks.type)}'
+    assert set(leaks.type) <= {ABRUPT, INCIPIENT}, f'unexpected types: {set(leaks.type)}'
     return leaks
 
 
-def mark_eligibility(leaks: pd.DataFrame, window_start, window_end, rules: Rules) -> pd.DataFrame:
-    """Rule 2. Say out loud which leaks can and cannot be scored, and why."""
+def mark_eligibility(leaks, window_start, window_end, rules: Rules) -> pd.DataFrame:
+    """Rule 2. Say out loud which leaks can be scored, and why not."""
     window_start, window_end = pd.Timestamp(window_start), pd.Timestamp(window_end)
-    earliest = window_start + pd.Timedelta(days=rules.min_history_days)
     leaks = leaks.copy()
+    if 'zone' not in leaks.columns:
+        leaks['zone'] = 'unspecified'
     reasons = []
-    for _, leak in leaks.iterrows():
+    for leak in leaks.itertuples():
         if leak.start < window_start:
             reasons.append('excluded: began before the evaluation window')
-        elif leak.start < earliest:
-            reasons.append(f'excluded: fewer than {rules.min_history_days} days of history before onset')
         elif leak.start > window_end:
             reasons.append('excluded: begins after the evaluation window')
         else:
@@ -134,93 +147,88 @@ def mark_eligibility(leaks: pd.DataFrame, window_start, window_end, rules: Rules
     return leaks
 
 
-def match_events(events: list[AlertEvent], leaks: pd.DataFrame, rules: Rules) -> list[AlertEvent]:
-    """Rules 3-5. Greedy over events in time order, one-to-one both ways."""
+def match_events(events, leaks: pd.DataFrame, rules: Rules):
+    """Rules 3-5, with the corrected timing and the neutral categories."""
     claimed: set[str] = set()
-    for event in sorted(events, key=lambda e: e.start):
-        deadline = leaks.end if rules.max_delay_hours is None else pd.concat([
-            leaks.end, leaks.start + pd.Timedelta(hours=rules.max_delay_hours)], axis=1).min(axis=1)
-        active = leaks[(leaks.start <= event.start) & (event.start <= deadline)]
-        event.candidates = list(active.link)
-        available = active[~active.link.isin(claimed)]
-        if active.empty:
-            # Nothing was running. This is an unnecessary warning.
-            event.outcome = 'unmatched'
+    for event in sorted(events, key=lambda e: e.run_start):
+        running = leaks[(leaks.start <= event.run_start) & (event.run_start <= leaks.end)]
+        event.leaks_running = list(running.link)
+
+        # Credited only if the unusual run BEGAN during the leak AND the alert could
+        # have been issued within the deadline.
+        if rules.max_delay_hours is None:
+            in_time = running
+        else:
+            deadline = running.start + pd.Timedelta(hours=rules.max_delay_hours)
+            in_time = running[event.issuable_at <= deadline.values]
+        event.candidates = list(in_time.link)
+
+        if running.empty:
+            event.outcome = 'false_alert'          # no leak in this zone at all
             continue
+        available = in_time[~in_time.link.isin(claimed)]
         if available.empty:
-            # Every leak running now is already credited to an earlier event.
-            # BattLeDIM scores these zero, so they are neither a hit nor a false alarm.
-            event.outcome = 'repeat_of_matched_leak'
-            event.matched_leak = list(active.link)[0]
-            event.match_confidence = 'repeat'
+            event.outcome = ('repeat_of_credited_leak'
+                             if set(running.link) & claimed else 'unattributable')
             continue
         order = available.sort_values('start', ascending=(rules.attribute_to == 'earliest'))
         chosen = order.iloc[0]
         if chosen.eligibility != 'eligible':
-            # Coincides with a leak we agreed not to score. Neither a hit nor a false alarm.
-            event.outcome = 'matched_excluded_leak'
-            event.matched_leak = chosen.link
-            event.match_confidence = 'excluded_leak'
+            event.outcome = 'coincides_with_excluded_leak'
+            event.matched_leak, event.match_confidence = chosen.link, 'excluded_leak'
             continue
         claimed.add(chosen.link)
         event.matched_leak = chosen.link
-        event.outcome = 'matched'
+        event.outcome = 'credited'
         event.match_confidence = 'ambiguous' if len(available) > 1 else 'single_candidate'
     return events
 
 
-def score(flagged: pd.Series, leaks: pd.DataFrame, rules: Rules | None = None) -> dict:
-    """Run the whole pipeline and return a fully traceable result."""
+def score(above: pd.Series, persistence: int, leaks: pd.DataFrame,
+          rules: Rules | None = None) -> dict:
     rules = rules or Rules()
-    window_start, window_end = flagged.index[0], flagged.index[-1]
+    window_start, window_end = above.index[0], above.index[-1]
     leaks = mark_eligibility(leaks, window_start, window_end, rules)
-    events = match_events(group_alerts(flagged, rules), leaks, rules)
+    events = match_events(find_alerts(above, persistence, rules), leaks, rules)
 
-    matched = {e.matched_leak: e for e in events if e.outcome == 'matched'}
+    credited = {e.matched_leak: e for e in events if e.outcome == 'credited'}
     eligible = leaks[leaks.eligibility == 'eligible']
     per_leak = []
-    for _, leak in leaks.iterrows():
-        event = matched.get(leak.link)
-        delay = ((event.start - leak.start) / pd.Timedelta(hours=1)) if event else None
+    for leak in leaks.itertuples():
+        event = credited.get(leak.link)
         per_leak.append({
-            'link': leak.link, 'type': leak.type,
+            'link': leak.link, 'type': leak.type, 'zone': leak.zone,
             'start': str(leak.start), 'end': str(leak.end),
             'eligibility': leak.eligibility, 'censored_end': bool(leak.censored_end),
-            'outcome': ('matched' if event else
+            'outcome': ('credited' if event else
                         'not_scored' if leak.eligibility != 'eligible' else 'missed'),
-            'matched_alert_index': (event.index if event else None),
+            'alert_index': (event.index if event else None),
             'match_confidence': (event.match_confidence if event else None),
-            'delay_hours': (round(delay, 2) if delay is not None else None),
+            'delay_hours': (round((event.issuable_at - leak.start) / pd.Timedelta(hours=1), 2)
+                            if event else None),
         })
 
     def summarise(kind=None):
         chosen = eligible if kind is None else eligible[eligible.type == kind]
-        hits = [r for r in per_leak if r['outcome'] == 'matched' and r['link'] in set(chosen.link)]
+        hits = [r for r in per_leak if r['outcome'] == 'credited' and r['link'] in set(chosen.link)]
         delays = [r['delay_hours'] for r in hits]
-        return {
-            'eligible_leaks': int(len(chosen)),
-            'matched': len(hits),
-            'missed': int(len(chosen)) - len(hits),
-            'ambiguous_matches': sum(1 for r in hits if r['match_confidence'] == 'ambiguous'),
-            'median_delay_hours': (round(float(pd.Series(delays).median()), 2) if delays else None),
-            'max_delay_hours': (max(delays) if delays else None),
-        }
+        return {'eligible_leaks': int(len(chosen)), 'credited': len(hits),
+                'missed': int(len(chosen)) - len(hits),
+                'ambiguous': sum(1 for r in hits if r['match_confidence'] == 'ambiguous'),
+                'median_delay_hours': (round(float(pd.Series(delays).median()), 2) if delays else None)}
 
     weeks = (window_end - window_start) / pd.Timedelta(weeks=1)
-    unmatched = [e for e in events if e.outcome == 'unmatched']
+    tally = {name: sum(1 for e in events if e.outcome == name) for name in
+             ('credited', 'false_alert', 'unattributable', 'repeat_of_credited_leak',
+              'coincides_with_excluded_leak')}
     return {
         'window': [str(window_start), str(window_end)],
-        'rules': asdict(rules),
-        'alert_events_total': len(events),
-        'unmatched_alerts': len(unmatched),
-        'unmatched_alerts_per_week': round(len(unmatched) / weeks, 2) if weeks else None,
-        'alerts_coinciding_with_excluded_leak': sum(1 for e in events
-                                                    if e.outcome == 'matched_excluded_leak'),
-        'repeat_alerts_scored_zero': sum(1 for e in events
-                                         if e.outcome == 'repeat_of_matched_leak'),
-        'overall': summarise(),
-        'abrupt': summarise(ABRUPT),
-        'incipient': summarise(INCIPIENT),
+        'rules': asdict(rules), 'persistence': persistence,
+        'alert_events_total': len(events), 'outcomes': tally,
+        'false_alerts_per_week': round(tally['false_alert'] / weeks, 3) if weeks else None,
+        'overall': summarise(), 'abrupt': summarise(ABRUPT), 'incipient': summarise(INCIPIENT),
         'leaks': per_leak,
-        'events': [asdict(e) | {'start': str(e.start), 'end': str(e.end)} for e in events],
+        'events': [asdict(e) | {k: str(getattr(e, k)) for k in
+                                ('run_start', 'rule_satisfied_at', 'issuable_at', 'end')}
+                   for e in events],
     }

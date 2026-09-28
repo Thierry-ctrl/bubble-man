@@ -1,0 +1,15 @@
+link,type,start,end,eligibility,censored_end,outcome,matched_alert_index,match_confidence,delay_hours
+p257,incipient,2018-01-08 13:30:00,2019-12-31 23:55:00,excluded: began before the evaluation window,True,not_scored,,,
+p461,incipient,2018-01-23 04:25:00,2018-04-02 11:40:00,eligible,False,matched,6.0,single_candidate,13.58
+p232,incipient,2018-01-31 02:35:00,2018-02-10 09:20:00,eligible,False,matched,12.0,single_candidate,15.42
+p427,incipient,2018-02-13 08:25:00,2019-12-31 23:55:00,eligible,True,matched,24.0,single_candidate,9.58
+p673,abrupt,2018-03-05 15:45:00,2018-03-23 10:25:00,eligible,False,matched,41.0,single_candidate,18.25
+p628,incipient,2018-05-02 14:55:00,2018-05-29 21:20:00,eligible,False,matched,88.0,single_candidate,19.08
+p538,abrupt,2018-05-18 08:35:00,2018-06-02 06:05:00,eligible,False,matched,99.0,single_candidate,1.42
+p866,abrupt,2018-06-01 09:05:00,2018-06-12 03:00:00,eligible,False,missed,,,
+p31,incipient,2018-06-28 10:35:00,2018-08-12 17:30:00,eligible,False,matched,121.0,single_candidate,2.42
+p654,incipient,2018-07-05 03:40:00,2019-12-31 23:55:00,eligible,True,matched,128.0,single_candidate,14.33
+p810,incipient,2018-07-28 03:05:00,2019-12-31 23:55:00,eligible,True,matched,149.0,single_candidate,25.92
+p183,abrupt,2018-08-07 02:35:00,2018-09-01 17:10:00,eligible,False,matched,152.0,single_candidate,77.42
+p158,abrupt,2018-10-06 02:35:00,2018-10-23 13:35:00,eligible,False,matched,191.0,single_candidate,150.42
+p369,abrupt,2018-10-26 02:05:00,2018-11-08 20:25:00,eligible,False,matched,195.0,single_candidate,10.92

@@ -1,0 +1,245 @@
+index,start,end,hours,matched_leak,match_confidence,candidates,outcome
+0,2018-01-15 18:00:00,2018-01-16 00:00:00,7,p257,excluded_leak,['p257'],matched_excluded_leak
+1,2018-01-16 18:00:00,2018-01-17 03:00:00,10,p257,excluded_leak,['p257'],matched_excluded_leak
+2,2018-01-17 18:00:00,2018-01-18 03:00:00,10,p257,excluded_leak,['p257'],matched_excluded_leak
+3,2018-01-18 18:00:00,2018-01-19 02:00:00,9,p257,excluded_leak,['p257'],matched_excluded_leak
+4,2018-01-19 18:00:00,2018-01-19 23:00:00,6,p257,excluded_leak,['p257'],matched_excluded_leak
+5,2018-01-22 18:00:00,2018-01-23 02:00:00,9,p257,excluded_leak,['p257'],matched_excluded_leak
+6,2018-01-23 18:00:00,2018-01-24 03:00:00,10,p461,ambiguous,"['p257', 'p461']",matched
+7,2018-01-24 18:00:00,2018-01-25 02:00:00,9,p257,excluded_leak,"['p257', 'p461']",matched_excluded_leak
+8,2018-01-25 18:00:00,2018-01-26 01:00:00,8,p257,excluded_leak,"['p257', 'p461']",matched_excluded_leak
+9,2018-01-26 18:00:00,2018-01-26 23:00:00,6,p257,excluded_leak,"['p257', 'p461']",matched_excluded_leak
+10,2018-01-29 18:00:00,2018-01-30 02:00:00,9,p257,excluded_leak,"['p257', 'p461']",matched_excluded_leak
+11,2018-01-30 18:00:00,2018-01-31 03:00:00,10,p257,excluded_leak,"['p257', 'p461']",matched_excluded_leak
+12,2018-01-31 18:00:00,2018-02-01 03:00:00,10,p232,ambiguous,"['p257', 'p461', 'p232']",matched
+13,2018-02-01 18:00:00,2018-02-02 02:00:00,9,p257,excluded_leak,"['p257', 'p461', 'p232']",matched_excluded_leak
+14,2018-02-02 15:00:00,2018-02-03 04:00:00,14,p257,excluded_leak,"['p257', 'p461', 'p232']",matched_excluded_leak
+15,2018-02-03 14:00:00,2018-02-03 19:00:00,6,p257,excluded_leak,"['p257', 'p461', 'p232']",matched_excluded_leak
+16,2018-02-04 02:00:00,2018-02-05 03:00:00,26,p257,excluded_leak,"['p257', 'p461', 'p232']",matched_excluded_leak
+17,2018-02-05 17:00:00,2018-02-06 02:00:00,10,p257,excluded_leak,"['p257', 'p461', 'p232']",matched_excluded_leak
+18,2018-02-06 14:00:00,2018-02-07 02:00:00,13,p257,excluded_leak,"['p257', 'p461', 'p232']",matched_excluded_leak
+19,2018-02-07 13:00:00,2018-02-08 02:00:00,14,p257,excluded_leak,"['p257', 'p461', 'p232']",matched_excluded_leak
+20,2018-02-08 13:00:00,2018-02-09 05:00:00,17,p257,excluded_leak,"['p257', 'p461', 'p232']",matched_excluded_leak
+21,2018-02-09 14:00:00,2018-02-10 05:00:00,16,p257,excluded_leak,"['p257', 'p461', 'p232']",matched_excluded_leak
+22,2018-02-11 13:00:00,2018-02-11 19:00:00,7,p257,excluded_leak,"['p257', 'p461']",matched_excluded_leak
+23,2018-02-12 18:00:00,2018-02-13 02:00:00,9,p257,excluded_leak,"['p257', 'p461']",matched_excluded_leak
+24,2018-02-13 18:00:00,2018-02-14 03:00:00,10,p427,ambiguous,"['p257', 'p461', 'p427']",matched
+25,2018-02-14 18:00:00,2018-02-15 03:00:00,10,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+26,2018-02-15 18:00:00,2018-02-16 03:00:00,10,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+27,2018-02-16 18:00:00,2018-02-16 23:00:00,6,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+28,2018-02-19 18:00:00,2018-02-20 02:00:00,9,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+29,2018-02-20 18:00:00,2018-02-21 02:00:00,9,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+30,2018-02-21 18:00:00,2018-02-22 02:00:00,9,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+31,2018-02-22 18:00:00,2018-02-23 04:00:00,11,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+32,2018-02-23 18:00:00,2018-02-23 23:00:00,6,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+33,2018-02-25 04:00:00,2018-02-25 09:00:00,6,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+34,2018-02-26 18:00:00,2018-02-27 03:00:00,10,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+35,2018-02-27 18:00:00,2018-02-28 02:00:00,9,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+36,2018-02-28 18:00:00,2018-03-01 02:00:00,9,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+37,2018-03-01 18:00:00,2018-03-02 03:00:00,10,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+38,2018-03-02 18:00:00,2018-03-02 23:00:00,6,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+39,2018-03-04 06:00:00,2018-03-04 12:00:00,7,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+40,2018-03-05 11:00:00,2018-03-06 06:00:00,20,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+41,2018-03-06 10:00:00,2018-03-07 06:00:00,21,p673,ambiguous,"['p257', 'p461', 'p427', 'p673']",matched
+42,2018-03-07 13:00:00,2018-03-08 06:00:00,18,p257,excluded_leak,"['p257', 'p461', 'p427', 'p673']",matched_excluded_leak
+43,2018-03-08 13:00:00,2018-03-09 05:00:00,17,p257,excluded_leak,"['p257', 'p461', 'p427', 'p673']",matched_excluded_leak
+44,2018-03-09 13:00:00,2018-03-10 06:00:00,18,p257,excluded_leak,"['p257', 'p461', 'p427', 'p673']",matched_excluded_leak
+45,2018-03-10 08:00:00,2018-03-12 06:00:00,47,p257,excluded_leak,"['p257', 'p461', 'p427', 'p673']",matched_excluded_leak
+46,2018-03-12 13:00:00,2018-03-13 07:00:00,19,p257,excluded_leak,"['p257', 'p461', 'p427', 'p673']",matched_excluded_leak
+47,2018-03-13 10:00:00,2018-03-16 05:00:00,68,p257,excluded_leak,"['p257', 'p461', 'p427', 'p673']",matched_excluded_leak
+48,2018-03-16 13:00:00,2018-03-17 06:00:00,18,p257,excluded_leak,"['p257', 'p461', 'p427', 'p673']",matched_excluded_leak
+49,2018-03-17 08:00:00,2018-03-23 05:00:00,142,p257,excluded_leak,"['p257', 'p461', 'p427', 'p673']",matched_excluded_leak
+50,2018-03-23 14:00:00,2018-03-24 05:00:00,16,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+51,2018-03-24 11:00:00,2018-03-24 23:00:00,13,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+52,2018-03-25 03:00:00,2018-03-26 03:00:00,25,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+53,2018-03-26 13:00:00,2018-03-27 03:00:00,15,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+54,2018-03-27 10:00:00,2018-03-28 04:00:00,19,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+55,2018-03-28 13:00:00,2018-03-29 03:00:00,15,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+56,2018-03-29 13:00:00,2018-03-30 05:00:00,17,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+57,2018-03-30 14:00:00,2018-03-31 05:00:00,16,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+58,2018-03-31 10:00:00,2018-03-31 23:00:00,14,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+59,2018-04-01 02:00:00,2018-04-02 03:00:00,26,p257,excluded_leak,"['p257', 'p461', 'p427']",matched_excluded_leak
+60,2018-04-02 18:00:00,2018-04-03 02:00:00,9,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+61,2018-04-03 14:00:00,2018-04-04 04:00:00,15,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+62,2018-04-04 17:00:00,2018-04-05 03:00:00,11,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+63,2018-04-05 13:00:00,2018-04-06 03:00:00,15,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+64,2018-04-06 14:00:00,2018-04-06 23:00:00,10,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+65,2018-04-07 13:00:00,2018-04-07 19:00:00,7,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+66,2018-04-08 06:00:00,2018-04-08 19:00:00,14,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+67,2018-04-09 18:00:00,2018-04-10 03:00:00,10,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+68,2018-04-10 18:00:00,2018-04-11 03:00:00,10,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+69,2018-04-11 17:00:00,2018-04-12 04:00:00,12,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+70,2018-04-12 14:00:00,2018-04-13 03:00:00,14,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+71,2018-04-13 13:00:00,2018-04-13 23:00:00,11,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+72,2018-04-15 06:00:00,2018-04-15 22:00:00,17,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+73,2018-04-16 18:00:00,2018-04-17 03:00:00,10,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+74,2018-04-17 17:00:00,2018-04-18 03:00:00,11,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+75,2018-04-18 18:00:00,2018-04-19 04:00:00,11,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+76,2018-04-19 13:00:00,2018-04-20 03:00:00,15,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+77,2018-04-20 14:00:00,2018-04-21 04:00:00,15,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+78,2018-04-22 06:00:00,2018-04-22 22:00:00,17,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+79,2018-04-23 17:00:00,2018-04-24 02:00:00,10,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+80,2018-04-24 17:00:00,2018-04-25 02:00:00,10,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+81,2018-04-25 17:00:00,2018-04-26 03:00:00,11,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+82,2018-04-26 13:00:00,2018-04-27 02:00:00,14,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+83,2018-04-27 14:00:00,2018-04-28 03:00:00,14,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+84,2018-04-29 06:00:00,2018-04-30 04:00:00,23,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+85,2018-04-30 17:00:00,2018-05-01 03:00:00,11,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+86,2018-05-01 13:00:00,2018-05-02 04:00:00,16,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+87,2018-05-02 14:00:00,2018-05-03 03:00:00,14,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+88,2018-05-03 10:00:00,2018-05-04 04:00:00,19,p628,ambiguous,"['p257', 'p427', 'p628']",matched
+89,2018-05-04 14:00:00,2018-05-05 04:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p628']",matched_excluded_leak
+90,2018-05-05 14:00:00,2018-05-05 23:00:00,10,p257,excluded_leak,"['p257', 'p427', 'p628']",matched_excluded_leak
+91,2018-05-06 05:00:00,2018-05-07 03:00:00,23,p257,excluded_leak,"['p257', 'p427', 'p628']",matched_excluded_leak
+92,2018-05-07 13:00:00,2018-05-08 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p628']",matched_excluded_leak
+93,2018-05-08 13:00:00,2018-05-09 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p628']",matched_excluded_leak
+94,2018-05-09 13:00:00,2018-05-10 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p628']",matched_excluded_leak
+95,2018-05-10 10:00:00,2018-05-11 05:00:00,20,p257,excluded_leak,"['p257', 'p427', 'p628']",matched_excluded_leak
+96,2018-05-11 14:00:00,2018-05-12 05:00:00,16,p257,excluded_leak,"['p257', 'p427', 'p628']",matched_excluded_leak
+97,2018-05-12 09:00:00,2018-05-14 06:00:00,46,p257,excluded_leak,"['p257', 'p427', 'p628']",matched_excluded_leak
+98,2018-05-14 10:00:00,2018-05-18 05:00:00,92,p257,excluded_leak,"['p257', 'p427', 'p628']",matched_excluded_leak
+99,2018-05-18 10:00:00,2018-05-25 06:00:00,165,p538,ambiguous,"['p257', 'p427', 'p628', 'p538']",matched
+100,2018-05-25 09:00:00,2018-05-30 07:00:00,119,p257,excluded_leak,"['p257', 'p427', 'p628', 'p538']",matched_excluded_leak
+101,2018-05-30 09:00:00,2018-05-31 06:00:00,22,p257,excluded_leak,"['p257', 'p427', 'p538']",matched_excluded_leak
+102,2018-05-31 08:00:00,2018-06-01 05:00:00,22,p257,excluded_leak,"['p257', 'p427', 'p538']",matched_excluded_leak
+103,2018-06-01 09:00:00,2018-06-08 05:00:00,165,p257,excluded_leak,"['p257', 'p427', 'p538']",matched_excluded_leak
+104,2018-06-08 10:00:00,2018-06-12 04:00:00,91,p866,ambiguous,"['p257', 'p427', 'p866']",matched
+105,2018-06-12 10:00:00,2018-06-13 06:00:00,21,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+106,2018-06-13 13:00:00,2018-06-14 03:00:00,15,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+107,2018-06-14 10:00:00,2018-06-15 05:00:00,20,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+108,2018-06-15 14:00:00,2018-06-16 05:00:00,16,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+109,2018-06-16 10:00:00,2018-06-16 23:00:00,14,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+110,2018-06-17 02:00:00,2018-06-18 03:00:00,26,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+111,2018-06-18 10:00:00,2018-06-19 03:00:00,18,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+112,2018-06-19 13:00:00,2018-06-20 06:00:00,18,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+113,2018-06-20 13:00:00,2018-06-21 03:00:00,15,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+114,2018-06-21 13:00:00,2018-06-22 04:00:00,16,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+115,2018-06-22 13:00:00,2018-06-23 05:00:00,17,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+116,2018-06-23 10:00:00,2018-06-24 00:00:00,15,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+117,2018-06-24 02:00:00,2018-06-25 03:00:00,26,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+118,2018-06-25 10:00:00,2018-06-26 06:00:00,21,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+119,2018-06-26 13:00:00,2018-06-27 06:00:00,18,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+120,2018-06-27 10:00:00,2018-06-28 06:00:00,21,p257,excluded_leak,"['p257', 'p427']",matched_excluded_leak
+121,2018-06-28 13:00:00,2018-06-29 04:00:00,16,p31,ambiguous,"['p257', 'p427', 'p31']",matched
+122,2018-06-29 13:00:00,2018-06-30 04:00:00,16,p257,excluded_leak,"['p257', 'p427', 'p31']",matched_excluded_leak
+123,2018-06-30 09:00:00,2018-07-01 00:00:00,16,p257,excluded_leak,"['p257', 'p427', 'p31']",matched_excluded_leak
+124,2018-07-01 02:00:00,2018-07-02 03:00:00,26,p257,excluded_leak,"['p257', 'p427', 'p31']",matched_excluded_leak
+125,2018-07-02 10:00:00,2018-07-03 06:00:00,21,p257,excluded_leak,"['p257', 'p427', 'p31']",matched_excluded_leak
+126,2018-07-03 13:00:00,2018-07-04 06:00:00,18,p257,excluded_leak,"['p257', 'p427', 'p31']",matched_excluded_leak
+127,2018-07-04 10:00:00,2018-07-05 15:00:00,30,p257,excluded_leak,"['p257', 'p427', 'p31']",matched_excluded_leak
+128,2018-07-05 18:00:00,2018-07-06 06:00:00,13,p654,ambiguous,"['p257', 'p427', 'p31', 'p654']",matched
+129,2018-07-06 13:00:00,2018-07-07 07:00:00,19,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+130,2018-07-07 09:00:00,2018-07-08 00:00:00,16,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+131,2018-07-08 02:00:00,2018-07-08 19:00:00,18,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+132,2018-07-09 03:00:00,2018-07-10 01:00:00,23,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+133,2018-07-10 10:00:00,2018-07-11 04:00:00,19,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+134,2018-07-11 10:00:00,2018-07-12 08:00:00,23,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+135,2018-07-12 10:00:00,2018-07-13 06:00:00,21,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+136,2018-07-13 13:00:00,2018-07-14 07:00:00,19,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+137,2018-07-14 09:00:00,2018-07-15 00:00:00,16,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+138,2018-07-15 02:00:00,2018-07-15 20:00:00,19,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+139,2018-07-16 05:00:00,2018-07-17 06:00:00,26,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+140,2018-07-17 09:00:00,2018-07-19 00:00:00,40,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+141,2018-07-19 06:00:00,2018-07-20 06:00:00,25,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+142,2018-07-20 09:00:00,2018-07-21 02:00:00,18,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+143,2018-07-21 09:00:00,2018-07-22 00:00:00,16,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+144,2018-07-22 02:00:00,2018-07-22 19:00:00,18,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+145,2018-07-22 22:00:00,2018-07-24 04:00:00,31,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+146,2018-07-24 09:00:00,2018-07-26 03:00:00,43,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+147,2018-07-26 09:00:00,2018-07-27 06:00:00,22,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+148,2018-07-27 08:00:00,2018-07-29 00:00:00,41,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654']",matched_excluded_leak
+149,2018-07-29 05:00:00,2018-08-03 06:00:00,122,p810,ambiguous,"['p257', 'p427', 'p31', 'p654', 'p810']",matched
+150,2018-08-03 09:00:00,2018-08-05 00:00:00,40,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654', 'p810']",matched_excluded_leak
+151,2018-08-05 02:00:00,2018-08-10 06:00:00,125,p257,excluded_leak,"['p257', 'p427', 'p31', 'p654', 'p810']",matched_excluded_leak
+152,2018-08-10 08:00:00,2018-08-17 05:00:00,166,p183,ambiguous,"['p257', 'p427', 'p31', 'p654', 'p810', 'p183']",matched
+153,2018-08-17 10:00:00,2018-08-18 06:00:00,21,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810', 'p183']",matched_excluded_leak
+154,2018-08-18 08:00:00,2018-08-24 05:00:00,142,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810', 'p183']",matched_excluded_leak
+155,2018-08-24 10:00:00,2018-08-31 05:00:00,164,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810', 'p183']",matched_excluded_leak
+156,2018-08-31 10:00:00,2018-09-02 00:00:00,39,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810', 'p183']",matched_excluded_leak
+157,2018-09-02 02:00:00,2018-09-03 03:00:00,26,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+158,2018-09-03 10:00:00,2018-09-04 03:00:00,18,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+159,2018-09-04 13:00:00,2018-09-05 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+160,2018-09-05 10:00:00,2018-09-06 03:00:00,18,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+161,2018-09-06 10:00:00,2018-09-07 05:00:00,20,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+162,2018-09-07 13:00:00,2018-09-08 05:00:00,17,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+163,2018-09-08 10:00:00,2018-09-09 00:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+164,2018-09-09 02:00:00,2018-09-10 03:00:00,26,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+165,2018-09-10 13:00:00,2018-09-11 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+166,2018-09-11 10:00:00,2018-09-12 06:00:00,21,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+167,2018-09-12 10:00:00,2018-09-13 06:00:00,21,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+168,2018-09-13 10:00:00,2018-09-14 05:00:00,20,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+169,2018-09-14 13:00:00,2018-09-15 05:00:00,17,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+170,2018-09-15 09:00:00,2018-09-16 00:00:00,16,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+171,2018-09-16 02:00:00,2018-09-17 03:00:00,26,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+172,2018-09-17 13:00:00,2018-09-18 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+173,2018-09-18 10:00:00,2018-09-19 06:00:00,21,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+174,2018-09-19 10:00:00,2018-09-20 06:00:00,21,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+175,2018-09-20 09:00:00,2018-09-21 05:00:00,21,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+176,2018-09-21 13:00:00,2018-09-22 05:00:00,17,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+177,2018-09-22 09:00:00,2018-09-23 00:00:00,16,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+178,2018-09-23 02:00:00,2018-09-24 06:00:00,29,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+179,2018-09-24 13:00:00,2018-09-25 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+180,2018-09-25 13:00:00,2018-09-26 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+181,2018-09-26 08:00:00,2018-09-27 03:00:00,20,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+182,2018-09-27 09:00:00,2018-09-28 05:00:00,21,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+183,2018-09-28 13:00:00,2018-09-29 05:00:00,17,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+184,2018-09-29 09:00:00,2018-09-30 00:00:00,16,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+185,2018-09-30 02:00:00,2018-10-01 06:00:00,29,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+186,2018-10-01 13:00:00,2018-10-02 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+187,2018-10-02 10:00:00,2018-10-03 06:00:00,21,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+188,2018-10-03 10:00:00,2018-10-04 06:00:00,21,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+189,2018-10-04 10:00:00,2018-10-05 05:00:00,20,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+190,2018-10-05 13:00:00,2018-10-12 05:00:00,161,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+191,2018-10-12 09:00:00,2018-10-19 05:00:00,165,p158,ambiguous,"['p257', 'p427', 'p654', 'p810', 'p158']",matched
+192,2018-10-19 10:00:00,2018-10-24 03:00:00,114,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810', 'p158']",matched_excluded_leak
+193,2018-10-24 13:00:00,2018-10-25 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+194,2018-10-25 10:00:00,2018-10-26 05:00:00,20,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+195,2018-10-26 13:00:00,2018-11-02 05:00:00,161,p369,ambiguous,"['p257', 'p427', 'p654', 'p810', 'p369']",matched
+196,2018-11-02 13:00:00,2018-11-09 05:00:00,161,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810', 'p369']",matched_excluded_leak
+197,2018-11-09 13:00:00,2018-11-10 05:00:00,17,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+198,2018-11-10 09:00:00,2018-11-12 06:00:00,46,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+199,2018-11-12 13:00:00,2018-11-13 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+200,2018-11-13 10:00:00,2018-11-14 06:00:00,21,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+201,2018-11-14 13:00:00,2018-11-15 06:00:00,18,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+202,2018-11-15 10:00:00,2018-11-16 05:00:00,20,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+203,2018-11-16 13:00:00,2018-11-17 05:00:00,17,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+204,2018-11-17 09:00:00,2018-11-19 02:00:00,42,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+205,2018-11-19 13:00:00,2018-11-20 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+206,2018-11-20 10:00:00,2018-11-21 03:00:00,18,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+207,2018-11-21 13:00:00,2018-11-22 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+208,2018-11-22 10:00:00,2018-11-23 05:00:00,20,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+209,2018-11-23 14:00:00,2018-11-24 05:00:00,16,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+210,2018-11-24 09:00:00,2018-11-26 03:00:00,43,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+211,2018-11-26 13:00:00,2018-11-27 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+212,2018-11-27 13:00:00,2018-11-28 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+213,2018-11-28 10:00:00,2018-11-29 06:00:00,21,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+214,2018-11-29 13:00:00,2018-11-30 05:00:00,17,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+215,2018-11-30 13:00:00,2018-12-01 05:00:00,17,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+216,2018-12-01 10:00:00,2018-12-03 03:00:00,42,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+217,2018-12-03 13:00:00,2018-12-04 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+218,2018-12-04 13:00:00,2018-12-05 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+219,2018-12-05 10:00:00,2018-12-06 06:00:00,21,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+220,2018-12-06 13:00:00,2018-12-07 05:00:00,17,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+221,2018-12-07 14:00:00,2018-12-08 05:00:00,16,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+222,2018-12-08 10:00:00,2018-12-09 00:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+223,2018-12-09 02:00:00,2018-12-10 02:00:00,25,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+224,2018-12-10 13:00:00,2018-12-11 02:00:00,14,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+225,2018-12-11 13:00:00,2018-12-12 02:00:00,14,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+226,2018-12-12 13:00:00,2018-12-13 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+227,2018-12-13 13:00:00,2018-12-14 05:00:00,17,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+228,2018-12-14 15:00:00,2018-12-15 05:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+229,2018-12-15 11:00:00,2018-12-16 00:00:00,14,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+230,2018-12-16 02:00:00,2018-12-17 02:00:00,25,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+231,2018-12-17 13:00:00,2018-12-18 02:00:00,14,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+232,2018-12-18 14:00:00,2018-12-19 03:00:00,14,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+233,2018-12-19 13:00:00,2018-12-20 03:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+234,2018-12-20 13:00:00,2018-12-21 05:00:00,17,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+235,2018-12-21 14:00:00,2018-12-22 02:00:00,13,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+236,2018-12-23 05:00:00,2018-12-24 03:00:00,23,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+237,2018-12-24 13:00:00,2018-12-25 02:00:00,14,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+238,2018-12-25 14:00:00,2018-12-26 02:00:00,13,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+239,2018-12-26 14:00:00,2018-12-27 02:00:00,13,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+240,2018-12-27 13:00:00,2018-12-28 05:00:00,17,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+241,2018-12-28 15:00:00,2018-12-29 05:00:00,15,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+242,2018-12-30 05:00:00,2018-12-31 02:00:00,22,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak
+243,2018-12-31 17:00:00,2018-12-31 23:00:00,7,p257,excluded_leak,"['p257', 'p427', 'p654', 'p810']",matched_excluded_leak

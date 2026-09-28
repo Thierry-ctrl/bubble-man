@@ -1,0 +1,2 @@
+index,start,end,hours,matched_leak,match_confidence,candidates,outcome
+0,2018-03-06 04:00:00,2018-03-11 04:00:00,121,p673,single_candidate,['p673'],matched
