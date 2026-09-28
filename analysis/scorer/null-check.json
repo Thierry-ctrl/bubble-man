@@ -1,0 +1,78 @@
+{
+  "leak_coverage": {
+    "hours_in_window": 8424,
+    "share_of_hours_with_at_least_one_leak_running": 1.0,
+    "share_of_hours_with_an_ELIGIBLE_leak_running": 0.9766,
+    "median_leaks_running_at_once": 4,
+    "max_leaks_running_at_once": 6
+  },
+  "null_comparison": [
+    {
+      "method": "frozen_week",
+      "threshold": 10,
+      "persistence": 6,
+      "alert_events": 244,
+      "real_matched": 13,
+      "random_matched_median": 13.0,
+      "random_matched_p5": 13.0,
+      "random_matched_p95": 13.0,
+      "eligible_leaks": 13
+    },
+    {
+      "method": "frozen_week",
+      "threshold": 10,
+      "persistence": 24,
+      "alert_events": 45,
+      "real_matched": 13,
+      "random_matched_median": 12.0,
+      "random_matched_p5": 10.0,
+      "random_matched_p95": 13.0,
+      "eligible_leaks": 13
+    },
+    {
+      "method": "frozen_week",
+      "threshold": 20,
+      "persistence": 24,
+      "alert_events": 26,
+      "real_matched": 11,
+      "random_matched_median": 9.0,
+      "random_matched_p5": 7.0,
+      "random_matched_p95": 10.0,
+      "eligible_leaks": 13
+    },
+    {
+      "method": "rolling_14d",
+      "threshold": 10,
+      "persistence": 6,
+      "alert_events": 53,
+      "real_matched": 11,
+      "random_matched_median": 8.0,
+      "random_matched_p5": 7.0,
+      "random_matched_p95": 11.0,
+      "eligible_leaks": 13
+    },
+    {
+      "method": "rolling_14d",
+      "threshold": 10,
+      "persistence": 24,
+      "alert_events": 4,
+      "real_matched": 4,
+      "random_matched_median": 4.0,
+      "random_matched_p5": 3.0,
+      "random_matched_p95": 4.0,
+      "eligible_leaks": 13
+    },
+    {
+      "method": "rolling_14d",
+      "threshold": 20,
+      "persistence": 24,
+      "alert_events": 0,
+      "real_matched": 0,
+      "random_matched_median": 0.0,
+      "random_matched_p5": 0.0,
+      "random_matched_p95": 0.0,
+      "eligible_leaks": 13
+    }
+  ],
+  "repeats": 200
+}

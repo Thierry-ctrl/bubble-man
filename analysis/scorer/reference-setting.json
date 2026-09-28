@@ -1,0 +1,103 @@
+{
+  "setting": {
+    "threshold_m3_per_hour": 10,
+    "persistence_observations": 6,
+    "max_delay_hours": 168
+  },
+  "why_this_setting": "Arithmetic midpoint of the declared grid. Not selected for score.",
+  "results": {
+    "frozen_week": {
+      "alert_events_total": 244,
+      "unmatched_alerts": 194,
+      "unmatched_alerts_per_week": 3.87,
+      "repeat_alerts_scored_zero": 38,
+      "alerts_coinciding_with_excluded_leak": 0,
+      "overall": {
+        "eligible_leaks": 13,
+        "matched": 12,
+        "missed": 1,
+        "ambiguous_matches": 0,
+        "median_delay_hours": 14.88,
+        "max_delay_hours": 150.42
+      },
+      "abrupt": {
+        "eligible_leaks": 6,
+        "matched": 5,
+        "missed": 1,
+        "ambiguous_matches": 0,
+        "median_delay_hours": 18.25,
+        "max_delay_hours": 150.42
+      },
+      "incipient": {
+        "eligible_leaks": 7,
+        "matched": 7,
+        "missed": 0,
+        "ambiguous_matches": 0,
+        "median_delay_hours": 14.33,
+        "max_delay_hours": 25.92
+      }
+    },
+    "rolling_14d": {
+      "alert_events_total": 53,
+      "unmatched_alerts": 19,
+      "unmatched_alerts_per_week": 0.38,
+      "repeat_alerts_scored_zero": 28,
+      "alerts_coinciding_with_excluded_leak": 0,
+      "overall": {
+        "eligible_leaks": 13,
+        "matched": 6,
+        "missed": 7,
+        "ambiguous_matches": 1,
+        "median_delay_hours": 9.92,
+        "max_delay_hours": 96.42
+      },
+      "abrupt": {
+        "eligible_leaks": 6,
+        "matched": 4,
+        "missed": 2,
+        "ambiguous_matches": 0,
+        "median_delay_hours": 9.92,
+        "max_delay_hours": 16.42
+      },
+      "incipient": {
+        "eligible_leaks": 7,
+        "matched": 2,
+        "missed": 5,
+        "ambiguous_matches": 1,
+        "median_delay_hours": 48.88,
+        "max_delay_hours": 96.42
+      }
+    },
+    "night_rolling_14d": {
+      "alert_events_total": 1,
+      "unmatched_alerts": 0,
+      "unmatched_alerts_per_week": 0.0,
+      "repeat_alerts_scored_zero": 0,
+      "alerts_coinciding_with_excluded_leak": 0,
+      "overall": {
+        "eligible_leaks": 13,
+        "matched": 1,
+        "missed": 12,
+        "ambiguous_matches": 0,
+        "median_delay_hours": 12.25,
+        "max_delay_hours": 12.25
+      },
+      "abrupt": {
+        "eligible_leaks": 6,
+        "matched": 1,
+        "missed": 5,
+        "ambiguous_matches": 0,
+        "median_delay_hours": 12.25,
+        "max_delay_hours": 12.25
+      },
+      "incipient": {
+        "eligible_leaks": 7,
+        "matched": 0,
+        "missed": 7,
+        "ambiguous_matches": 0,
+        "median_delay_hours": null,
+        "max_delay_hours": null
+      }
+    }
+  }
+}
