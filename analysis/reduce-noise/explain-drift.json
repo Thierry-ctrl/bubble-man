@@ -1,0 +1,40 @@
+{
+  "purpose": "Check how much of the measured drift is explained by known leaks. Development period only.",
+  "window": [
+    "2018-01-15",
+    "2018-02-28"
+  ],
+  "answer_sheet_used": true,
+  "answer_sheet_scope": "development period only; 2019 remains unopened",
+  "leaks_running_in_window_m3_per_hour": {
+    "p232": 4.537,
+    "p257": 5.985,
+    "p427": 0.017,
+    "p461": 2.785
+  },
+  "known_total_leak_flow_mean_m3_per_hour": 13.326,
+  "our_difference_mean_m3_per_hour": {
+    "frozen_week": 7.054,
+    "rolling_14d": 1.555
+  },
+  "correlation_with_known_leak_flow": {
+    "frozen_week": 0.31,
+    "rolling_14d": 0.388
+  },
+  "monthly_means_m3_per_hour": {
+    "2018-01": {
+      "known_total_leak_flow": 4.867,
+      "difference_frozen_week": 3.014,
+      "difference_rolling_14d": 1.479
+    },
+    "2018-02": {
+      "known_total_leak_flow": 18.461,
+      "difference_frozen_week": 9.506,
+      "difference_rolling_14d": 1.601
+    }
+  },
+  "known_leak_growth_m3_per_hour": {
+    "first_week_of_window": 2.468,
+    "last_week_of_window": 15.224
+  }
+}
