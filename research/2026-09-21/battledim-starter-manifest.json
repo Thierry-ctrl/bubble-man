@@ -1,0 +1,93 @@
+{
+  "checked_on": "2026-09-21",
+  "source": "https://zenodo.org/records/4017659",
+  "license": "cc-by-4.0",
+  "status": "planned downloads; only metadata, README and configuration downloaded",
+  "total_bytes": 75866814,
+  "files": [
+    {
+      "name": "2018_Leakages.csv",
+      "bytes": 6234468,
+      "checksum": "md5:c2c5fab90420da44f02e29775050abfe",
+      "url": "https://zenodo.org/api/records/4017659/files/2018_Leakages.csv/content",
+      "role": "evaluation_only"
+    },
+    {
+      "name": "L-TOWN.inp",
+      "bytes": 412200,
+      "checksum": "md5:bfbb16b8b463e0576200ba6ad360f68e",
+      "url": "https://zenodo.org/api/records/4017659/files/L-TOWN.inp/content",
+      "role": "input_or_documentation"
+    },
+    {
+      "name": "2019_Leakages.csv",
+      "bytes": 10414660,
+      "checksum": "md5:e1f0a43683813a90a9fec8562dde599b",
+      "url": "https://zenodo.org/api/records/4017659/files/2019_Leakages.csv/content",
+      "role": "evaluation_only"
+    },
+    {
+      "name": "2018_SCADA_Levels.csv",
+      "bytes": 2721000,
+      "checksum": "md5:92a512d6749ddf66fd6d99f2bdde6cc4",
+      "url": "https://zenodo.org/api/records/4017659/files/2018_SCADA_Levels.csv/content",
+      "role": "input_or_documentation"
+    },
+    {
+      "name": "2018_SCADA_Pressures.csv",
+      "bytes": 22593812,
+      "checksum": "md5:d389d8541350c19ff0bfc6b80f246d35",
+      "url": "https://zenodo.org/api/records/4017659/files/2018_SCADA_Pressures.csv/content",
+      "role": "input_or_documentation"
+    },
+    {
+      "name": "2019_SCADA_Levels.csv",
+      "bytes": 2720780,
+      "checksum": "md5:e5a8050bd38729e4b7648b9d52abd5b1",
+      "url": "https://zenodo.org/api/records/4017659/files/2019_SCADA_Levels.csv/content",
+      "role": "input_or_documentation"
+    },
+    {
+      "name": "2019_SCADA_Flows.csv",
+      "bytes": 4130511,
+      "checksum": "md5:28fc99fdcbf80fcd26079e7fe602d6dc",
+      "url": "https://zenodo.org/api/records/4017659/files/2019_SCADA_Flows.csv/content",
+      "role": "input_or_documentation"
+    },
+    {
+      "name": "2019_SCADA_Pressures.csv",
+      "bytes": 22606417,
+      "checksum": "md5:5ea1e46d3f2f0a89a3f98d6fd39a851d",
+      "url": "https://zenodo.org/api/records/4017659/files/2019_SCADA_Pressures.csv/content",
+      "role": "input_or_documentation"
+    },
+    {
+      "name": "README.txt",
+      "bytes": 5303,
+      "checksum": "md5:7ad5cdc2eebfe78197a3412e80d07ddc",
+      "url": "https://zenodo.org/api/records/4017659/files/README.txt/content",
+      "role": "input_or_documentation"
+    },
+    {
+      "name": "2018_Fixed_Leakages_Report.txt",
+      "bytes": 317,
+      "checksum": "md5:50b1f8b7ba0db5a19cedbb060c63d912",
+      "url": "https://zenodo.org/api/records/4017659/files/2018_Fixed_Leakages_Report.txt/content",
+      "role": "input_or_documentation"
+    },
+    {
+      "name": "dataset_configuration.yaml",
+      "bytes": 3926,
+      "checksum": "md5:48486401f5b4d0447023f5ce5d242c52",
+      "url": "https://zenodo.org/api/records/4017659/files/dataset_configuration.yaml/content",
+      "role": "evaluation_only"
+    },
+    {
+      "name": "2018_SCADA_Flows.csv",
+      "bytes": 4023420,
+      "checksum": "md5:d0602c06946b46287e956f007e4264ee",
+      "url": "https://zenodo.org/api/records/4017659/files/2018_SCADA_Flows.csv/content",
+      "role": "input_or_documentation"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "source": "https://zenodo.org/records/4017659",
+  "meter": "p227",
+  "data_type": "synthetic",
+  "training_dates": [
+    "2018-02-19",
+    "2018-02-25"
+  ],
+  "holdout_dates": [
+    "2018-02-26",
+    "2018-03-04"
+  ],
+  "method": "Hourly mean flow; median by hour and weekday/weekend from training week only.",
+  "holdout_mean_difference_m3_per_hour": 1.764647817460317,
+  "holdout_mean_absolute_difference_m3_per_hour": 4.436001984126983,
+  "after_dates": [
+    "2018-03-06",
+    "2018-03-08"
+  ],
+  "after_mean_difference_m3_per_hour": 21.228113425925926,
+  "known_leak_onset": "2018-03-05 15:45:00",
+  "limitations": [
+    "Existing leaks are included in the baseline.",
+    "One training week and one holdout week only.",
+    "Differences are not estimates of leak volume or validated alerts.",
+    "Other growing leaks, customer demand and operations can change flow."
+  ],
+  "daily_mean_difference_m3_per_hour": {
+    "2018-03-02": -0.5800000000000024,
+    "2018-03-03": -2.0506250000000006,
+    "2018-03-04": 4.632499999999998,
+    "2018-03-05": 11.824756944444445,
+    "2018-03-06": 20.885555555555555,
+    "2018-03-07": 20.4375,
+    "2018-03-08": 22.361284722222223
+  }
+}

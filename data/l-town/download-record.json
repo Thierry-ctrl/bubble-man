@@ -1,0 +1,16 @@
+{
+  "source": "https://zenodo.org/records/4017659",
+  "downloaded_on": "2026-09-22",
+  "files": [
+    {
+      "file": "/Users/uwonkundathierryrugira/.codex/.chatgpt-projects/g-p-6ab12f5a6aa08191abb93b512f2beb69/data/l-town/reference/2018_Leakages.csv",
+      "bytes": 6234468,
+      "verified": true
+    },
+    {
+      "file": "/Users/uwonkundathierryrugira/.codex/.chatgpt-projects/g-p-6ab12f5a6aa08191abb93b512f2beb69/data/l-town/readings/2018_SCADA_Flows.csv",
+      "bytes": 4023420,
+      "verified": true
+    }
+  ]
+}

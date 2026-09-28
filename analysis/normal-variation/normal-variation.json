@@ -1,0 +1,216 @@
+{
+  "purpose": "Describe ordinary variation before choosing an alert rule. No answer sheet used.",
+  "source": "https://zenodo.org/records/4017659",
+  "meter": "p227",
+  "data_type": "synthetic",
+  "answer_sheet_used": false,
+  "training_dates": [
+    "2018-01-08",
+    "2018-01-14"
+  ],
+  "scoring_dates": [
+    "2018-01-15",
+    "2018-02-28"
+  ],
+  "scoring_hours": 1080,
+  "method": "Hourly mean flow; median by hour and weekday/weekend from training week only.",
+  "difference_m3_per_hour": {
+    "mean": 7.054,
+    "mean_absolute": 12.789,
+    "standard_deviation": 13.981,
+    "min": -43.01,
+    "max": 38.507
+  },
+  "percentiles_m3_per_hour": {
+    "p1": -28.998,
+    "p5": -17.893,
+    "p25": -1.498,
+    "p50": 8.086,
+    "p75": 18.711,
+    "p90": 23.524,
+    "p95": 26.769,
+    "p99": 32.861
+  },
+  "longest_run_above_zero_hours": 45,
+  "monthly_mean_difference_m3_per_hour": {
+    "2018-01": 3.014,
+    "2018-02": 9.506
+  },
+  "weekly_mean_difference_m3_per_hour": {
+    "2018-01-21": 1.687,
+    "2018-01-28": 3.496,
+    "2018-02-04": 8.507,
+    "2018-02-11": 13.345,
+    "2018-02-18": 6.031,
+    "2018-02-25": 7.779,
+    "2018-03-04": 10.499
+  },
+  "alert_grid": {
+    "above_2_for_1h": {
+      "alerts": 82,
+      "alerts_per_month": 55.47
+    },
+    "above_2_for_3h": {
+      "alerts": 53,
+      "alerts_per_month": 35.85
+    },
+    "above_2_for_6h": {
+      "alerts": 40,
+      "alerts_per_month": 27.06
+    },
+    "above_2_for_12h": {
+      "alerts": 21,
+      "alerts_per_month": 14.21
+    },
+    "above_2_for_24h": {
+      "alerts": 3,
+      "alerts_per_month": 2.03
+    },
+    "above_4_for_1h": {
+      "alerts": 84,
+      "alerts_per_month": 56.82
+    },
+    "above_4_for_3h": {
+      "alerts": 60,
+      "alerts_per_month": 40.59
+    },
+    "above_4_for_6h": {
+      "alerts": 39,
+      "alerts_per_month": 26.38
+    },
+    "above_4_for_12h": {
+      "alerts": 17,
+      "alerts_per_month": 11.5
+    },
+    "above_4_for_24h": {
+      "alerts": 2,
+      "alerts_per_month": 1.35
+    },
+    "above_6_for_1h": {
+      "alerts": 94,
+      "alerts_per_month": 63.59
+    },
+    "above_6_for_3h": {
+      "alerts": 64,
+      "alerts_per_month": 43.29
+    },
+    "above_6_for_6h": {
+      "alerts": 41,
+      "alerts_per_month": 27.73
+    },
+    "above_6_for_12h": {
+      "alerts": 10,
+      "alerts_per_month": 6.76
+    },
+    "above_6_for_24h": {
+      "alerts": 1,
+      "alerts_per_month": 0.68
+    },
+    "above_8_for_1h": {
+      "alerts": 93,
+      "alerts_per_month": 62.91
+    },
+    "above_8_for_3h": {
+      "alerts": 64,
+      "alerts_per_month": 43.29
+    },
+    "above_8_for_6h": {
+      "alerts": 39,
+      "alerts_per_month": 26.38
+    },
+    "above_8_for_12h": {
+      "alerts": 8,
+      "alerts_per_month": 5.41
+    },
+    "above_8_for_24h": {
+      "alerts": 1,
+      "alerts_per_month": 0.68
+    },
+    "above_10_for_1h": {
+      "alerts": 99,
+      "alerts_per_month": 66.97
+    },
+    "above_10_for_3h": {
+      "alerts": 58,
+      "alerts_per_month": 39.23
+    },
+    "above_10_for_6h": {
+      "alerts": 37,
+      "alerts_per_month": 25.03
+    },
+    "above_10_for_12h": {
+      "alerts": 6,
+      "alerts_per_month": 4.06
+    },
+    "above_10_for_24h": {
+      "alerts": 1,
+      "alerts_per_month": 0.68
+    },
+    "above_12_for_1h": {
+      "alerts": 103,
+      "alerts_per_month": 69.67
+    },
+    "above_12_for_3h": {
+      "alerts": 54,
+      "alerts_per_month": 36.53
+    },
+    "above_12_for_6h": {
+      "alerts": 36,
+      "alerts_per_month": 24.35
+    },
+    "above_12_for_12h": {
+      "alerts": 3,
+      "alerts_per_month": 2.03
+    },
+    "above_12_for_24h": {
+      "alerts": 0,
+      "alerts_per_month": 0.0
+    },
+    "above_15_for_1h": {
+      "alerts": 90,
+      "alerts_per_month": 60.88
+    },
+    "above_15_for_3h": {
+      "alerts": 49,
+      "alerts_per_month": 33.15
+    },
+    "above_15_for_6h": {
+      "alerts": 32,
+      "alerts_per_month": 21.65
+    },
+    "above_15_for_12h": {
+      "alerts": 1,
+      "alerts_per_month": 0.68
+    },
+    "above_15_for_24h": {
+      "alerts": 0,
+      "alerts_per_month": 0.0
+    },
+    "above_20_for_1h": {
+      "alerts": 74,
+      "alerts_per_month": 50.06
+    },
+    "above_20_for_3h": {
+      "alerts": 31,
+      "alerts_per_month": 20.97
+    },
+    "above_20_for_6h": {
+      "alerts": 20,
+      "alerts_per_month": 13.53
+    },
+    "above_20_for_12h": {
+      "alerts": 0,
+      "alerts_per_month": 0.0
+    },
+    "above_20_for_24h": {
+      "alerts": 0,
+      "alerts_per_month": 0.0
+    }
+  },
+  "limitations": [
+    "This window may itself contain leaks; we deliberately did not check.",
+    "A threshold calibrated on a window containing leaks will be too high, not too low.",
+    "One meter (p227) and one training week only.",
+    "No rule has been chosen and no detection performance has been established."
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "purpose": "Test whether night-only flow and a rolling baseline reduce noise. No answer sheet used.",
+  "source": "https://zenodo.org/records/4017659",
+  "meter": "p227",
+  "data_type": "synthetic",
+  "answer_sheet_used": false,
+  "scoring_dates": [
+    "2018-01-15",
+    "2018-02-28"
+  ],
+  "night_window": "02:00-04:00",
+  "rolling_history_days": 14,
+  "units": "m3_per_hour",
+  "variants": {
+    "hourly_fixed_week": {
+      "observations": 1080,
+      "mean": 7.054,
+      "mean_absolute": 12.789,
+      "standard_deviation": 13.981,
+      "interquartile_range": 20.21,
+      "p5": -17.893,
+      "p95": 26.769,
+      "span_p5_to_p95": 44.661,
+      "spread_vs_step_a": 1.0
+    },
+    "hourly_rolling_14d": {
+      "observations": 1080,
+      "mean": 1.555,
+      "mean_absolute": 5.817,
+      "standard_deviation": 7.714,
+      "interquartile_range": 8.106,
+      "p5": -10.445,
+      "p95": 13.803,
+      "span_p5_to_p95": 24.248,
+      "spread_vs_step_a": 0.552
+    },
+    "night_fixed_week": {
+      "observations": 45,
+      "mean": 8.139,
+      "mean_absolute": 8.495,
+      "standard_deviation": 6.688,
+      "interquartile_range": 4.936,
+      "p5": -0.938,
+      "p95": 19.848,
+      "span_p5_to_p95": 20.786,
+      "spread_vs_step_a": 0.478
+    },
+    "night_rolling_14d": {
+      "observations": 45,
+      "mean": 1.994,
+      "mean_absolute": 4.828,
+      "standard_deviation": 6.449,
+      "interquartile_range": 5.962,
+      "p5": -7.398,
+      "p95": 13.578,
+      "span_p5_to_p95": 20.976,
+      "spread_vs_step_a": 0.461
+    }
+  },
+  "limitations": [
+    "Spread is measured on a window that may itself contain leaks.",
+    "A rolling baseline slowly absorbs a leak: after about 14 days a steady leak looks normal again.",
+    "Night-only means one number per day, so detection is slower.",
+    "One meter (p227). No rule chosen and no detection performance established."
+  ]
+}
