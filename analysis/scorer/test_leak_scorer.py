@@ -46,7 +46,7 @@ def _():
     assert event['run_start'].endswith('02:00:00'), event
     assert event['rule_satisfied_at'].endswith('07:00:00'), event
     assert event['issuable_at'].endswith('08:00:00'), event
-    assert r['leaks'][0]['delay_hours'] == 8.0, r['leaks'][0]
+    assert r['leaks'][0]['delay_hours_from_first_flow'] == 8.0, r['leaks'][0]
 
 
 @check('2. a run shorter than the persistence requirement raises no alert at all')
@@ -61,7 +61,7 @@ def _():
 def _():
     r = score(above(), ONE, leaks(('pA', '2018-02-01 00:00', '2018-02-10 00:00', 'abrupt')), OPEN)
     assert r['overall']['credited'] == 0 and r['overall']['missed'] == 1
-    assert r['leaks'][0]['delay_hours'] is None
+    assert r['leaks'][0]['delay_hours_from_first_flow'] is None
 
 
 @check('4. a warning with NO leak running is a confirmed false alert')
@@ -172,6 +172,37 @@ def _():
     frame = mark_eligibility(leaks(('pA', '2018-05-05 00:00', '2018-06-10 00:00', 'abrupt')),
                              '2018-01-01', '2018-03-01', Rules())
     assert 'begins after' in frame.eligibility.iloc[0]
+
+
+@check('16. an alert issuable only AFTER the leak ended is retrospective, not credited')
+def _():
+    # leak 09:00-12:00; unusual run starts 10:00; persistence 6 -> issuable 16:00
+    flagged = pd.Series(False, index=HOURS)
+    flagged.loc['2018-02-02 10:00':'2018-02-02 20:00'] = True
+    r = score(flagged, 6, leaks(('pA', '2018-02-02 09:00', '2018-02-02 12:00', 'abrupt')), OPEN)
+    assert r['overall']['credited'] == 0, 'the leak was over before the alert could be raised'
+    assert r['outcomes']['retrospective_association'] == 1, r['outcomes']
+    assert r['outcomes']['false_alert'] == 0, 'a leak WAS running when the run began'
+    assert r['events'][0]['match_confidence'] == 'retrospective'
+
+
+@check('17. an alert issuable past the last reading is flagged, not scored')
+def _():
+    flagged = pd.Series(False, index=HOURS)
+    flagged.loc['2018-03-01 19:00':'2018-03-01 23:00'] = True   # window ends 23:00
+    r = score(flagged, 5, leaks(('pA', '2018-02-01 00:00', '2018-03-01 23:00', 'abrupt')), OPEN)
+    assert r['outcomes']['issuable_after_window'] == 1, r['outcomes']
+    assert r['overall']['credited'] == 0
+
+
+@check('18. a still-running leak is still credited when the alert lands inside its life')
+def _():
+    flagged = pd.Series(False, index=HOURS)
+    flagged.loc['2018-02-02 10:00':'2018-02-02 20:00'] = True
+    r = score(flagged, 6, leaks(('pA', '2018-02-02 09:00', '2018-02-05 00:00', 'abrupt')), OPEN)
+    assert r['overall']['credited'] == 1, 'same alert, leak still running -> timely'
+    assert r['outcomes']['retrospective_association'] == 0
+    assert r['leaks'][0]['delay_hours_from_first_flow'] == 7.0
 
 
 if __name__ == '__main__':

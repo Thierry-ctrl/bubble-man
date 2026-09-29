@@ -128,6 +128,39 @@ def load_leaks(config_path: Path, zones: dict | None = None) -> pd.DataFrame:
     return leaks
 
 
+def add_observed_activity(leaks: pd.DataFrame, leakages_csv: Path) -> pd.DataFrame:
+    """Add the interval over which each leak actually produces flow.
+
+    The configuration's `start` is when the simulator BEGINS a leak, but a gradual
+    ("incipient") leak ramps from zero, so it can produce no measurable flow for hours
+    or days afterwards. Using the configured window to decide whether "a leak was
+    running" would count those silent hours as leaky and shrink the quiet period.
+
+    Matching and quiet-period exposure therefore both use `active_from`/`active_to`
+    (positive flow). The configured onset is kept so detection delay can be reported
+    against both.
+    """
+    truth = pd.read_csv(leakages_csv, sep=';', decimal=',',
+                        parse_dates=['Timestamp']).set_index('Timestamp')
+    leaks = leaks.copy()
+    leaks['configured_start'], leaks['configured_end'] = leaks.start, leaks.end
+    first, last = [], []
+    for leak in leaks.itertuples():
+        if leak.link not in truth.columns:
+            first.append(leak.start); last.append(leak.end); continue
+        positive = truth[leak.link]
+        positive = positive[(positive.index >= leak.start) & (positive.index <= leak.end) & (positive > 0)]
+        first.append(positive.index.min() if len(positive) else pd.NaT)
+        last.append(positive.index.max() if len(positive) else pd.NaT)
+    leaks['active_from'], leaks['active_to'] = first, last
+    leaks['silent_hours_after_onset'] = (
+        (leaks.active_from - leaks.configured_start) / pd.Timedelta(hours=1)).round(2)
+    # matching and exposure run on the observed activity interval
+    leaks['start'], leaks['end'] = leaks.active_from, leaks.active_to
+    assert leaks.start.notna().all(), 'a leak produced no positive flow at all'
+    return leaks
+
+
 def mark_eligibility(leaks, window_start, window_end, rules: Rules) -> pd.DataFrame:
     """Rule 2. Say out loud which leaks can be scored, and why not."""
     window_start, window_end = pd.Timestamp(window_start), pd.Timestamp(window_end)
@@ -164,8 +197,17 @@ def match_events(events, leaks: pd.DataFrame, rules: Rules):
         event.candidates = list(in_time.link)
 
         if running.empty:
-            event.outcome = 'false_alert'          # no leak in this zone at all
+            event.outcome = 'false_alert'          # no leak active in this zone at all
             continue
+        # A warning that could only be RAISED after every candidate leak had already
+        # stopped is a retrospective association, not a timely actionable warning.
+        still_running = running[event.issuable_at <= running.end.values]
+        if still_running.empty:
+            event.outcome = 'retrospective_association'
+            event.matched_leak = list(running.link)[0]
+            event.match_confidence = 'retrospective'
+            continue
+        running = still_running
         available = in_time[~in_time.link.isin(claimed)]
         if available.empty:
             event.outcome = ('repeat_of_credited_leak'
@@ -189,7 +231,17 @@ def score(above: pd.Series, persistence: int, leaks: pd.DataFrame,
     rules = rules or Rules()
     window_start, window_end = above.index[0], above.index[-1]
     leaks = mark_eligibility(leaks, window_start, window_end, rules)
-    events = match_events(find_alerts(above, persistence, rules), leaks, rules)
+    events = find_alerts(above, persistence, rules)
+    # An alert whose issue time falls past the last reading cannot be confirmed here.
+    inside = []
+    for event in events:
+        if event.issuable_at > window_end:
+            event.outcome = 'issuable_after_window'
+        else:
+            inside.append(event)
+    events = match_events(inside, leaks, rules) + [e for e in events
+                                                   if e.outcome == 'issuable_after_window']
+    events.sort(key=lambda e: e.run_start)
 
     credited = {e.matched_leak: e for e in events if e.outcome == 'credited'}
     eligible = leaks[leaks.eligibility == 'eligible']
@@ -204,14 +256,18 @@ def score(above: pd.Series, persistence: int, leaks: pd.DataFrame,
                         'not_scored' if leak.eligibility != 'eligible' else 'missed'),
             'alert_index': (event.index if event else None),
             'match_confidence': (event.match_confidence if event else None),
-            'delay_hours': (round((event.issuable_at - leak.start) / pd.Timedelta(hours=1), 2)
-                            if event else None),
+            'delay_hours_from_first_flow': (
+                round((event.issuable_at - leak.start) / pd.Timedelta(hours=1), 2) if event else None),
+            'delay_hours_from_configured_onset': (
+                round((event.issuable_at - getattr(leak, 'configured_start', leak.start))
+                      / pd.Timedelta(hours=1), 2) if event else None),
+            'silent_hours_after_onset': getattr(leak, 'silent_hours_after_onset', None),
         })
 
     def summarise(kind=None):
         chosen = eligible if kind is None else eligible[eligible.type == kind]
         hits = [r for r in per_leak if r['outcome'] == 'credited' and r['link'] in set(chosen.link)]
-        delays = [r['delay_hours'] for r in hits]
+        delays = [r['delay_hours_from_first_flow'] for r in hits]
         return {'eligible_leaks': int(len(chosen)), 'credited': len(hits),
                 'missed': int(len(chosen)) - len(hits),
                 'ambiguous': sum(1 for r in hits if r['match_confidence'] == 'ambiguous'),
@@ -220,7 +276,8 @@ def score(above: pd.Series, persistence: int, leaks: pd.DataFrame,
     weeks = (window_end - window_start) / pd.Timedelta(weeks=1)
     tally = {name: sum(1 for e in events if e.outcome == name) for name in
              ('credited', 'false_alert', 'unattributable', 'repeat_of_credited_leak',
-              'coincides_with_excluded_leak')}
+              'coincides_with_excluded_leak', 'retrospective_association',
+              'issuable_after_window')}
     return {
         'window': [str(window_start), str(window_end)],
         'rules': asdict(rules), 'persistence': persistence,

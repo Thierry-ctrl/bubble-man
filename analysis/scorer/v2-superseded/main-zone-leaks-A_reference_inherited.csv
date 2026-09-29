@@ -1,0 +1,13 @@
+link,type,zone,start,end,eligibility,censored_end,outcome,alert_index,match_confidence,delay_hours
+p461,incipient,main,2018-01-23 04:25:00,2018-04-02 11:40:00,eligible,False,credited,1.0,single_candidate,127.58
+p232,incipient,main,2018-01-31 02:35:00,2018-02-10 09:20:00,eligible,False,credited,2.0,single_candidate,50.42
+p427,incipient,main,2018-02-13 08:25:00,2019-12-31 23:55:00,eligible,True,credited,8.0,single_candidate,68.58
+p673,abrupt,main,2018-03-05 15:45:00,2018-03-23 10:25:00,eligible,False,credited,27.0,single_candidate,94.25
+p628,incipient,main,2018-05-02 14:55:00,2018-05-29 21:20:00,eligible,False,credited,62.0,single_candidate,19.08
+p538,abrupt,main,2018-05-18 08:35:00,2018-06-02 06:05:00,eligible,False,missed,,,
+p866,abrupt,main,2018-06-01 09:05:00,2018-06-12 03:00:00,eligible,False,missed,,,
+p654,incipient,main,2018-07-05 03:40:00,2019-12-31 23:55:00,eligible,True,credited,78.0,single_candidate,34.33
+p810,incipient,main,2018-07-28 03:05:00,2019-12-31 23:55:00,eligible,True,credited,88.0,single_candidate,10.92
+p183,abrupt,main,2018-08-07 02:35:00,2018-09-01 17:10:00,eligible,False,credited,93.0,single_candidate,83.42
+p158,abrupt,main,2018-10-06 02:35:00,2018-10-23 13:35:00,eligible,False,missed,,,
+p369,abrupt,main,2018-10-26 02:05:00,2018-11-08 20:25:00,eligible,False,credited,107.0,single_candidate,11.92

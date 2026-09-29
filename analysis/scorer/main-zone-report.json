@@ -10,14 +10,16 @@
       "false_alert": 1,
       "unattributable": 0,
       "repeat_of_credited_leak": 119,
-      "coincides_with_excluded_leak": 0
+      "coincides_with_excluded_leak": 0,
+      "retrospective_association": 0,
+      "issuable_after_window": 0
     },
     "overall": {
       "eligible_leaks": 12,
       "credited": 9,
       "missed": 3,
       "ambiguous": 0,
-      "median_delay_hours": 50.42
+      "median_delay_hours": 55.75
     },
     "abrupt": {
       "eligible_leaks": 6,
@@ -31,11 +33,13 @@
       "credited": 6,
       "missed": 0,
       "ambiguous": 0,
-      "median_delay_hours": 42.38
+      "median_delay_hours": 52.5
     },
+    "retrospective_associations": 0,
+    "issuable_after_window": 0,
     "quiet_window": [
-      "2018-01-15",
-      "2018-01-23 22:00"
+      "2018-01-15 00:00:00",
+      "2018-01-23 22:00:00"
     ],
     "quiet_exposure_hours": 215,
     "quiet_exposure_days": 8.96,
@@ -48,40 +52,46 @@
         "link": "p461",
         "type": "incipient",
         "zone": "main",
-        "start": "2018-01-23 04:25:00",
+        "start": "2018-01-23 23:55:00",
         "end": "2018-04-02 11:40:00",
         "eligibility": "eligible",
         "censored_end": false,
         "outcome": "credited",
         "alert_index": 1,
         "match_confidence": "single_candidate",
-        "delay_hours": 127.58
+        "delay_hours_from_first_flow": 108.08,
+        "delay_hours_from_configured_onset": 127.58,
+        "silent_hours_after_onset": 19.5
       },
       {
         "link": "p232",
         "type": "incipient",
         "zone": "main",
-        "start": "2018-01-31 02:35:00",
+        "start": "2018-01-31 03:45:00",
         "end": "2018-02-10 09:20:00",
         "eligibility": "eligible",
         "censored_end": false,
         "outcome": "credited",
         "alert_index": 2,
         "match_confidence": "single_candidate",
-        "delay_hours": 50.42
+        "delay_hours_from_first_flow": 49.25,
+        "delay_hours_from_configured_onset": 50.42,
+        "silent_hours_after_onset": 1.17
       },
       {
         "link": "p427",
         "type": "incipient",
         "zone": "main",
-        "start": "2018-02-13 08:25:00",
-        "end": "2019-12-31 23:55:00",
+        "start": "2018-02-16 04:15:00",
+        "end": "2018-12-31 23:55:00",
         "eligibility": "eligible",
         "censored_end": true,
         "outcome": "credited",
-        "alert_index": 8,
+        "alert_index": 9,
         "match_confidence": "single_candidate",
-        "delay_hours": 68.58
+        "delay_hours_from_first_flow": 55.75,
+        "delay_hours_from_configured_onset": 123.58,
+        "silent_hours_after_onset": 67.83
       },
       {
         "link": "p673",
@@ -94,20 +104,24 @@
         "outcome": "credited",
         "alert_index": 27,
         "match_confidence": "single_candidate",
-        "delay_hours": 94.25
+        "delay_hours_from_first_flow": 94.25,
+        "delay_hours_from_configured_onset": 94.25,
+        "silent_hours_after_onset": 0.0
       },
       {
         "link": "p628",
         "type": "incipient",
         "zone": "main",
-        "start": "2018-05-02 14:55:00",
+        "start": "2018-05-02 18:50:00",
         "end": "2018-05-29 21:20:00",
         "eligibility": "eligible",
         "censored_end": false,
         "outcome": "credited",
         "alert_index": 62,
         "match_confidence": "single_candidate",
-        "delay_hours": 19.08
+        "delay_hours_from_first_flow": 15.17,
+        "delay_hours_from_configured_onset": 19.08,
+        "silent_hours_after_onset": 3.92
       },
       {
         "link": "p538",
@@ -120,7 +134,9 @@
         "outcome": "missed",
         "alert_index": null,
         "match_confidence": null,
-        "delay_hours": null
+        "delay_hours_from_first_flow": null,
+        "delay_hours_from_configured_onset": null,
+        "silent_hours_after_onset": 0.0
       },
       {
         "link": "p866",
@@ -133,33 +149,39 @@
         "outcome": "missed",
         "alert_index": null,
         "match_confidence": null,
-        "delay_hours": null
+        "delay_hours_from_first_flow": null,
+        "delay_hours_from_configured_onset": null,
+        "silent_hours_after_onset": 0.0
       },
       {
         "link": "p654",
         "type": "incipient",
         "zone": "main",
-        "start": "2018-07-05 03:40:00",
-        "end": "2019-12-31 23:55:00",
+        "start": "2018-07-07 09:10:00",
+        "end": "2018-12-31 23:55:00",
         "eligibility": "eligible",
         "censored_end": true,
         "outcome": "credited",
-        "alert_index": 78,
+        "alert_index": 80,
         "match_confidence": "single_candidate",
-        "delay_hours": 34.33
+        "delay_hours_from_first_flow": 25.83,
+        "delay_hours_from_configured_onset": 79.33,
+        "silent_hours_after_onset": 53.5
       },
       {
         "link": "p810",
         "type": "incipient",
         "zone": "main",
-        "start": "2018-07-28 03:05:00",
-        "end": "2019-12-31 23:55:00",
+        "start": "2018-07-30 18:40:00",
+        "end": "2018-12-31 23:55:00",
         "eligibility": "eligible",
         "censored_end": true,
         "outcome": "credited",
-        "alert_index": 88,
+        "alert_index": 90,
         "match_confidence": "single_candidate",
-        "delay_hours": 10.92
+        "delay_hours_from_first_flow": 91.33,
+        "delay_hours_from_configured_onset": 154.92,
+        "silent_hours_after_onset": 63.58
       },
       {
         "link": "p183",
@@ -172,7 +194,9 @@
         "outcome": "credited",
         "alert_index": 93,
         "match_confidence": "single_candidate",
-        "delay_hours": 83.42
+        "delay_hours_from_first_flow": 83.42,
+        "delay_hours_from_configured_onset": 83.42,
+        "silent_hours_after_onset": 0.0
       },
       {
         "link": "p158",
@@ -185,7 +209,9 @@
         "outcome": "missed",
         "alert_index": null,
         "match_confidence": null,
-        "delay_hours": null
+        "delay_hours_from_first_flow": null,
+        "delay_hours_from_configured_onset": null,
+        "silent_hours_after_onset": 0.0
       },
       {
         "link": "p369",
@@ -198,7 +224,9 @@
         "outcome": "credited",
         "alert_index": 107,
         "match_confidence": "single_candidate",
-        "delay_hours": 11.92
+        "delay_hours_from_first_flow": 11.92,
+        "delay_hours_from_configured_onset": 11.92,
+        "silent_hours_after_onset": 0.0
       }
     ]
   },
@@ -211,9 +239,11 @@
     "outcomes": {
       "credited": 9,
       "false_alert": 0,
-      "unattributable": 43,
-      "repeat_of_credited_leak": 147,
-      "coincides_with_excluded_leak": 0
+      "unattributable": 47,
+      "repeat_of_credited_leak": 143,
+      "coincides_with_excluded_leak": 0,
+      "retrospective_association": 0,
+      "issuable_after_window": 0
     },
     "overall": {
       "eligible_leaks": 12,
@@ -234,11 +264,13 @@
       "credited": 4,
       "missed": 2,
       "ambiguous": 0,
-      "median_delay_hours": 10.62
+      "median_delay_hours": 18.25
     },
+    "retrospective_associations": 0,
+    "issuable_after_window": 0,
     "quiet_window": [
-      "2018-01-15",
-      "2018-01-23 22:00"
+      "2018-01-15 00:00:00",
+      "2018-01-23 22:00:00"
     ],
     "quiet_exposure_hours": 215,
     "quiet_exposure_days": 8.96,
@@ -251,40 +283,46 @@
         "link": "p461",
         "type": "incipient",
         "zone": "main",
-        "start": "2018-01-23 04:25:00",
+        "start": "2018-01-23 23:55:00",
         "end": "2018-04-02 11:40:00",
         "eligibility": "eligible",
         "censored_end": false,
         "outcome": "missed",
         "alert_index": null,
         "match_confidence": null,
-        "delay_hours": null
+        "delay_hours_from_first_flow": null,
+        "delay_hours_from_configured_onset": null,
+        "silent_hours_after_onset": 19.5
       },
       {
         "link": "p232",
         "type": "incipient",
         "zone": "main",
-        "start": "2018-01-31 02:35:00",
+        "start": "2018-01-31 03:45:00",
         "end": "2018-02-10 09:20:00",
         "eligibility": "eligible",
         "censored_end": false,
         "outcome": "credited",
         "alert_index": 0,
         "match_confidence": "single_candidate",
-        "delay_hours": 90.42
+        "delay_hours_from_first_flow": 89.25,
+        "delay_hours_from_configured_onset": 90.42,
+        "silent_hours_after_onset": 1.17
       },
       {
         "link": "p427",
         "type": "incipient",
         "zone": "main",
-        "start": "2018-02-13 08:25:00",
-        "end": "2019-12-31 23:55:00",
+        "start": "2018-02-16 04:15:00",
+        "end": "2018-12-31 23:55:00",
         "eligibility": "eligible",
         "censored_end": true,
         "outcome": "missed",
         "alert_index": null,
         "match_confidence": null,
-        "delay_hours": null
+        "delay_hours_from_first_flow": null,
+        "delay_hours_from_configured_onset": null,
+        "silent_hours_after_onset": 67.83
       },
       {
         "link": "p673",
@@ -297,20 +335,24 @@
         "outcome": "credited",
         "alert_index": 9,
         "match_confidence": "single_candidate",
-        "delay_hours": 95.25
+        "delay_hours_from_first_flow": 95.25,
+        "delay_hours_from_configured_onset": 95.25,
+        "silent_hours_after_onset": 0.0
       },
       {
         "link": "p628",
         "type": "incipient",
         "zone": "main",
-        "start": "2018-05-02 14:55:00",
+        "start": "2018-05-02 18:50:00",
         "end": "2018-05-29 21:20:00",
         "eligibility": "eligible",
         "censored_end": false,
         "outcome": "credited",
-        "alert_index": 29,
+        "alert_index": 30,
         "match_confidence": "single_candidate",
-        "delay_hours": 7.08
+        "delay_hours_from_first_flow": 19.17,
+        "delay_hours_from_configured_onset": 23.08,
+        "silent_hours_after_onset": 3.92
       },
       {
         "link": "p538",
@@ -323,7 +365,9 @@
         "outcome": "missed",
         "alert_index": null,
         "match_confidence": null,
-        "delay_hours": null
+        "delay_hours_from_first_flow": null,
+        "delay_hours_from_configured_onset": null,
+        "silent_hours_after_onset": 0.0
       },
       {
         "link": "p866",
@@ -336,33 +380,39 @@
         "outcome": "credited",
         "alert_index": 41,
         "match_confidence": "single_candidate",
-        "delay_hours": 28.92
+        "delay_hours_from_first_flow": 28.92,
+        "delay_hours_from_configured_onset": 28.92,
+        "silent_hours_after_onset": 0.0
       },
       {
         "link": "p654",
         "type": "incipient",
         "zone": "main",
-        "start": "2018-07-05 03:40:00",
-        "end": "2019-12-31 23:55:00",
+        "start": "2018-07-07 09:10:00",
+        "end": "2018-12-31 23:55:00",
         "eligibility": "eligible",
         "censored_end": true,
         "outcome": "credited",
-        "alert_index": 68,
+        "alert_index": 70,
         "match_confidence": "single_candidate",
-        "delay_hours": 8.33
+        "delay_hours_from_first_flow": 6.83,
+        "delay_hours_from_configured_onset": 60.33,
+        "silent_hours_after_onset": 53.5
       },
       {
         "link": "p810",
         "type": "incipient",
         "zone": "main",
-        "start": "2018-07-28 03:05:00",
-        "end": "2019-12-31 23:55:00",
+        "start": "2018-07-30 18:40:00",
+        "end": "2018-12-31 23:55:00",
         "eligibility": "eligible",
         "censored_end": true,
         "outcome": "credited",
-        "alert_index": 91,
+        "alert_index": 94,
         "match_confidence": "single_candidate",
-        "delay_hours": 12.92
+        "delay_hours_from_first_flow": 17.33,
+        "delay_hours_from_configured_onset": 80.92,
+        "silent_hours_after_onset": 63.58
       },
       {
         "link": "p183",
@@ -375,7 +425,9 @@
         "outcome": "credited",
         "alert_index": 102,
         "match_confidence": "single_candidate",
-        "delay_hours": 84.42
+        "delay_hours_from_first_flow": 84.42,
+        "delay_hours_from_configured_onset": 84.42,
+        "silent_hours_after_onset": 0.0
       },
       {
         "link": "p158",
@@ -388,7 +440,9 @@
         "outcome": "credited",
         "alert_index": 145,
         "match_confidence": "single_candidate",
-        "delay_hours": 155.42
+        "delay_hours_from_first_flow": 155.42,
+        "delay_hours_from_configured_onset": 155.42,
+        "silent_hours_after_onset": 0.0
       },
       {
         "link": "p369",
@@ -401,7 +455,9 @@
         "outcome": "credited",
         "alert_index": 149,
         "match_confidence": "single_candidate",
-        "delay_hours": 11.92
+        "delay_hours_from_first_flow": 11.92,
+        "delay_hours_from_configured_onset": 11.92,
+        "silent_hours_after_onset": 0.0
       }
     ]
   },

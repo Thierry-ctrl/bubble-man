@@ -3,10 +3,22 @@
 SIGNAL (boundary-correct, see WATER-ACCOUNTING.md)
     main-zone outflow = p227 + p235 - PUMP_1, hourly means, m3/h
 
-TIMING
-    An hourly value covering [H, H+1) is complete at H+1:00, and the storage term for
-    that hour needs the level reading at H+1:00. So nothing is known before H+1:00,
-    which is exactly `reporting_lag_hours = 1.0`. No future information is used.
+TIMING  (assumption, supported by a consistency check -- not proven sensor semantics)
+    The organisers document a 5-minute averaging window for PRESSURE sensors only; for
+    flow and level they state just that readings transmit every 5 minutes. We therefore
+    ASSUME the reading at t describes the interval [t, t+5min]. The supporting check is
+    that a tank can only fall while its pump is off: under that assumption the level
+    rises in 0.16% of pump-off intervals, against 0.49% under the alternative. That is
+    consistent with the assumption; it does not prove it.
+
+    Under it, an hourly value covering [H, H+1) needs the level at H+1:00, so nothing is
+    known before H+1:00 -- exactly `reporting_lag_hours = 1.0`.
+
+LEAK ACTIVITY
+    A leak counts as running only while it produces POSITIVE simulated flow. Gradual
+    leaks ramp from zero, so the configured onset can precede any measurable flow by
+    hours or days. Matching and quiet-period exposure both use the positive-flow
+    interval; delay is reported against both that and the configured onset.
 
 EXPERIMENT A - reference, inherited settings, nothing recalibrated
     baseline profile : median by (weekend, hour) over 8-14 January
@@ -32,14 +44,15 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from leak_scorer import Rules, load_leaks, score  # noqa: E402
+from leak_scorer import Rules, add_observed_activity, load_leaks, score  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = Path(__file__).resolve().parent
 TANK_AREA = math.pi * (16.0 / 2) ** 2
 PERSISTENCE = 6
 WINDOW_FROM, WINDOW_TO = '2018-01-15', '2018-12-31 23:00'
-QUIET_FROM, QUIET_TO = '2018-01-15', '2018-01-23 22:00'
+# The quiet window is DERIVED below from the same positive-flow definition,
+# not hard-coded, so exposure and matching can never drift apart.
 
 flows = pd.read_csv(ROOT / 'data/l-town/readings/2018_SCADA_Flows.csv', sep=';', decimal=',',
                     parse_dates=['Timestamp']).set_index('Timestamp')
@@ -57,6 +70,15 @@ zones = dict(pd.read_csv(OUT / 'leak-zones-from-network-map.csv')[['link', 'zone
 leaks = load_leaks(ROOT / 'research/2026-09-21/battledim-config.yaml', zones)
 main_leaks = leaks[(leaks.start.dt.year == 2018) & (leaks.zone == 'main')].reset_index(drop=True)
 assert len(main_leaks) == 12, f'expected 12 main-zone leaks, got {len(main_leaks)}'
+main_leaks = add_observed_activity(main_leaks, ROOT / 'data/l-town/reference/2018_Leakages.csv')
+
+# Quiet hours: no main-zone leak producing positive flow, inside the evaluation window.
+truth = pd.read_csv(ROOT / 'data/l-town/reference/2018_Leakages.csv', sep=';', decimal=',',
+                    parse_dates=['Timestamp']).set_index('Timestamp')
+main_flow = truth[list(main_leaks.link)].sum(axis=1).resample('h').mean().loc[WINDOW_FROM:WINDOW_TO]
+QUIET = main_flow[main_flow <= 0].index
+assert len(QUIET), 'no quiet hours at all'
+QUIET_FROM, QUIET_TO = str(QUIET.min()), str(QUIET.max())
 
 RULES = Rules(gap_tolerance_hours=0, reporting_lag_hours=1.0, max_delay_hours=168)
 
@@ -94,11 +116,10 @@ for name, (diff, threshold, profile_week, how) in EXPERIMENTS.items():
     above = diff > threshold
     result = score(above, PERSISTENCE, main_leaks, RULES)
 
-    quiet = above.loc[QUIET_FROM:QUIET_TO]
-    quiet_hours = len(quiet)
-    quiet_events = [e for e in result['events']
-                    if pd.Timestamp(QUIET_FROM) <= pd.Timestamp(e['run_start']) <= pd.Timestamp(QUIET_TO)]
-    quiet_false = [e for e in quiet_events if e['outcome'] == 'false_alert']
+    quiet_hours = len(QUIET)
+    quiet_set = set(QUIET)
+    quiet_false = [e for e in result['events']
+                   if e['outcome'] == 'false_alert' and pd.Timestamp(e['run_start']) in quiet_set]
 
     values = above.to_numpy()
     random_credits = [score(pd.Series(np.roll(values, int(rng.integers(1, len(values)))),
@@ -110,6 +131,8 @@ for name, (diff, threshold, profile_week, how) in EXPERIMENTS.items():
         'threshold_chosen_by': how, 'persistence_hours': PERSISTENCE,
         'alert_events': result['alert_events_total'], 'outcomes': result['outcomes'],
         'overall': result['overall'], 'abrupt': result['abrupt'], 'incipient': result['incipient'],
+        'retrospective_associations': result['outcomes']['retrospective_association'],
+        'issuable_after_window': result['outcomes']['issuable_after_window'],
         'quiet_window': [QUIET_FROM, QUIET_TO], 'quiet_exposure_hours': quiet_hours,
         'quiet_exposure_days': round(quiet_hours / 24, 2),
         'false_alerts_in_quiet_window': len(quiet_false),
@@ -138,7 +161,9 @@ for name in EXPERIMENTS:
           f"   abrupt {r['abrupt']['credited']}/{r['abrupt']['eligible_leaks']}"
           f"   gradual {r['incipient']['credited']}/{r['incipient']['eligible_leaks']}"
           f"   ambiguous {r['overall']['ambiguous']}")
-    print(f"  median delay {r['overall']['median_delay_hours']} h")
+    print(f"  median delay {r['overall']['median_delay_hours']} h (from first positive leak flow)")
+    print(f"  retrospective associations (leak over before issuable): {r['retrospective_associations']}"
+          f"   issuable past window end: {r['issuable_after_window']}")
     print(f"  outcomes {r['outcomes']}")
     print(f"  false alerts in quiet window: {r['false_alerts_in_quiet_window']} "
           f"over {r['quiet_exposure_days']} days ({r['quiet_exposure_hours']} h exposure)")
