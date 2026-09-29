@@ -8,8 +8,8 @@
     "outcomes": {
       "credited": 9,
       "false_alert": 1,
-      "unattributable": 0,
-      "repeat_of_credited_leak": 119,
+      "unattributable": 105,
+      "repeat_of_credited_leak": 14,
       "coincides_with_excluded_leak": 0,
       "retrospective_association": 0,
       "issuable_after_window": 0
@@ -36,6 +36,7 @@
       "median_delay_hours": 52.5
     },
     "retrospective_associations": 0,
+    "unattributable_while_a_credited_leak_runs": 105,
     "issuable_after_window": 0,
     "quiet_window": [
       "2018-01-15 00:00:00",
@@ -239,8 +240,8 @@
     "outcomes": {
       "credited": 9,
       "false_alert": 0,
-      "unattributable": 47,
-      "repeat_of_credited_leak": 143,
+      "unattributable": 167,
+      "repeat_of_credited_leak": 23,
       "coincides_with_excluded_leak": 0,
       "retrospective_association": 0,
       "issuable_after_window": 0
@@ -267,6 +268,7 @@
       "median_delay_hours": 18.25
     },
     "retrospective_associations": 0,
+    "unattributable_while_a_credited_leak_runs": 121,
     "issuable_after_window": 0,
     "quiet_window": [
       "2018-01-15 00:00:00",

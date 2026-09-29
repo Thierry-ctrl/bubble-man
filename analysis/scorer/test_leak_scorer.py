@@ -205,6 +205,49 @@ def _():
     assert r['leaks'][0]['delay_hours_from_first_flow'] == 7.0
 
 
+@check('19. REGRESSION: an expired leak is not credited just because a live one overlaps')
+def _():
+    # pOLD still leaking at issuance; pNEW stopped at 12:00; run starts 10:00,
+    # persistence 6 -> issuable 16:00. pNEW must NOT be credited.
+    flagged = pd.Series(False, index=HOURS)
+    flagged.loc['2018-02-02 10:00':'2018-02-02 20:00'] = True
+    r = score(flagged, 6,
+              leaks(('pOLD', '2018-02-01 00:00', '2018-02-08 00:00', 'incipient'),
+                    ('pNEW', '2018-02-02 09:00', '2018-02-02 12:00', 'abrupt')),
+              Rules(max_delay_hours=168))
+    event = r['events'][0]
+    assert sorted(event['leaks_running']) == ['pNEW', 'pOLD'], event
+    assert event['candidates'] == ['pOLD'], f"expired leak must be filtered out: {event}"
+    assert event['matched_leak'] == 'pOLD', event
+    new = [x for x in r['leaks'] if x['link'] == 'pNEW'][0]
+    assert new['outcome'] == 'missed', new
+
+
+@check('20. the same overlap DOES credit the newer leak while it is still running')
+def _():
+    flagged = pd.Series(False, index=HOURS)
+    flagged.loc['2018-02-02 10:00':'2018-02-02 20:00'] = True
+    r = score(flagged, 6,
+              leaks(('pOLD', '2018-02-01 00:00', '2018-02-08 00:00', 'incipient'),
+                    ('pNEW', '2018-02-02 09:00', '2018-02-06 00:00', 'abrupt')),
+              Rules(max_delay_hours=168))
+    event = r['events'][0]
+    assert sorted(event['candidates']) == ['pNEW', 'pOLD'], event
+    assert event['matched_leak'] == 'pNEW', 'most recent onset wins among live candidates'
+    assert event['match_confidence'] == 'ambiguous'
+
+
+@check('21. a live leak past its deadline is unattributable, not credited')
+def _():
+    flagged = pd.Series(False, index=HOURS)
+    flagged.loc['2018-02-09 00:00':'2018-02-09 06:00'] = True
+    r = score(flagged, 1, leaks(('pA', '2018-02-01 00:00', '2018-02-10 00:00', 'abrupt')),
+              Rules(max_delay_hours=24))
+    assert r['outcomes']['unattributable'] == 1, r['outcomes']
+    assert r['outcomes']['retrospective_association'] == 0, 'the leak is still running'
+    assert r['overall']['credited'] == 0
+
+
 if __name__ == '__main__':
     failed = 0
     for name, fn in checks:

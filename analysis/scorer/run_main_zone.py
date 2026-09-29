@@ -132,6 +132,10 @@ for name, (diff, threshold, profile_week, how) in EXPERIMENTS.items():
         'alert_events': result['alert_events_total'], 'outcomes': result['outcomes'],
         'overall': result['overall'], 'abrupt': result['abrupt'], 'incipient': result['incipient'],
         'retrospective_associations': result['outcomes']['retrospective_association'],
+        'unattributable_while_a_credited_leak_runs': sum(
+            1 for e in result['events'] if e['outcome'] == 'unattributable'
+            and set(e['leaks_running']) & {r['link'] for r in result['leaks']
+                                           if r['outcome'] == 'credited'}),
         'issuable_after_window': result['outcomes']['issuable_after_window'],
         'quiet_window': [QUIET_FROM, QUIET_TO], 'quiet_exposure_hours': quiet_hours,
         'quiet_exposure_days': round(quiet_hours / 24, 2),
@@ -162,6 +166,8 @@ for name in EXPERIMENTS:
           f"   gradual {r['incipient']['credited']}/{r['incipient']['eligible_leaks']}"
           f"   ambiguous {r['overall']['ambiguous']}")
     print(f"  median delay {r['overall']['median_delay_hours']} h (from first positive leak flow)")
+    print(f"  unattributable: {r['outcomes']['unattributable']} of which "
+          f"{r['unattributable_while_a_credited_leak_runs']} while an already-credited leak runs")
     print(f"  retrospective associations (leak over before issuable): {r['retrospective_associations']}"
           f"   issuable past window end: {r['issuable_after_window']}")
     print(f"  outcomes {r['outcomes']}")

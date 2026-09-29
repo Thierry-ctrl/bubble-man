@@ -7,12 +7,13 @@ Bundled 29 September 2026. Self-contained: raw data included, scripts run offlin
 
 | File | Status |
 |---|---|
-| `analysis/scorer/FINDINGS-v3.md` | **CURRENT.** Headline results, after reviewer corrections. |
+| `analysis/scorer/FINDINGS-v4.md` | **CURRENT.** Headline results, round 3. |
+| `analysis/scorer/FINDINGS-v3.md` | **SUPERSEDED** by v4. |
 | `analysis/scorer/FINDINGS-v2.md` | **SUPERSEDED** by v3. |
 | `analysis/scorer/WATER-ACCOUNTING.md` | **CURRENT.** Zone boundaries and the water balance. |
 | `analysis/scorer/RULES.md` | **STALE.** Written for scorer v1. Its six rules no longer match the code. The module docstring in `leak_scorer.py` is authoritative. |
 | `analysis/scorer/FINDINGS.md` | **SUPERSEDED** by FINDINGS-v2.md. |
-| `analysis/scorer/v1-superseded/`, `v2-superseded/` | Earlier results, kept so changes can be traced. Each has a README saying what was wrong. |
+| `analysis/scorer/v1-superseded/`, `v2-`, `v3-superseded/` | Earlier results, kept so changes can be traced. Each has a README saying what was wrong. |
 | `research/2026-09-28/deep-research-report.md` | Research review. Claims marked `[verified]` vs `[unverified]`. |
 | `research/2026-09-28/evidence-log.md` | Sources, dates, conflicts, open questions. |
 | `research/2026-09-21/project-preparation.md` | Original project plan, written before this work. |
@@ -34,7 +35,7 @@ requires a location within 300 m.
 
 ## Reproducing
 
-    python3 analysis/scorer/test_leak_scorer.py   # 18 worked checks, all should pass
+    python3 analysis/scorer/test_leak_scorer.py   # 21 worked checks, all should pass
     python3 analysis/scorer/run_main_zone.py      # the two frozen experiments
 
 Requires pandas, numpy, matplotlib. No network access needed.
@@ -50,6 +51,16 @@ Requires pandas, numpy, matplotlib. No network access needed.
   count remains unexplained.
 - Sensor timing restated as an assumption supported by a consistency check.
 
+## Round 3 corrections (29 Sep)
+
+- Fixed: with overlapping candidates, an EXPIRED leak could still be credited because
+  prior-credit was applied to an unfiltered set. Candidate selection now narrows one
+  frame (running -> alive -> in_time -> free -> eligible). Regression checks 19-21.
+- Stated explicitly: the 7-day deadline now begins at FIRST POSITIVE FLOW, not the
+  configured onset. That is a rule change, distinct from reporting two delays.
+- No credit, delay, false-alert or chance number changed. Two categories were
+  relabelled; see FINDINGS-v4.md for why the new labels read worse than reality.
+
 ## What a reviewer might most usefully attack
 
 1. The matching rule credits an alert if its unusual run began inside the leak's life
@@ -57,8 +68,8 @@ Requires pandas, numpy, matplotlib. No network access needed.
    that produce no flow for their first 67 hours?
 2. The null baseline rotates warnings circularly. It preserves count and duration but
    destroys seasonal alignment. Is a better null available?
-3. Experiment B's calibration week (1–7 January) contains New Year's Day, which
-   depressed the baseline and inflated every later difference.
+3. Experiment B fires 199 times at 22.80 m3/h while A fires 129 times at 10 m3/h.
+   The New Year's Day hypothesis was tested and refuted. The cause is unknown.
 4. Tank level is quantised to 0.01 m, capping Area C accuracy at about 2 m³/h hourly.
 5. Flow-sensor averaging semantics are assumed, not documented by the organisers.
 

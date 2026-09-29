@@ -181,39 +181,57 @@ def mark_eligibility(leaks, window_start, window_end, rules: Rules) -> pd.DataFr
 
 
 def match_events(events, leaks: pd.DataFrame, rules: Rules):
-    """Rules 3-5, with the corrected timing and the neutral categories."""
+    """Rules 3-5. Candidate selection applies EVERY filter to one shrinking set.
+
+    The order matters, and getting it wrong is how a leak that had already stopped was
+    once credited. Each step narrows the same frame:
+
+      running  leaks active when the unusual run BEGAN
+      alive    of those, still active when the alert could be ISSUED
+      in_time  of those, within `max_delay_hours` of first positive flow
+      free     of those, not already credited to an earlier alert
+      eligible of those, scorable at all
+
+    Eligibility and prior-credit are applied to `in_time`, never to `running`, so an
+    expired leak can no longer be selected just because a live one shares the moment.
+    """
     claimed: set[str] = set()
     for event in sorted(events, key=lambda e: e.run_start):
         running = leaks[(leaks.start <= event.run_start) & (event.run_start <= leaks.end)]
         event.leaks_running = list(running.link)
-
-        # Credited only if the unusual run BEGAN during the leak AND the alert could
-        # have been issued within the deadline.
-        if rules.max_delay_hours is None:
-            in_time = running
-        else:
-            deadline = running.start + pd.Timedelta(hours=rules.max_delay_hours)
-            in_time = running[event.issuable_at <= deadline.values]
-        event.candidates = list(in_time.link)
-
         if running.empty:
             event.outcome = 'false_alert'          # no leak active in this zone at all
             continue
-        # A warning that could only be RAISED after every candidate leak had already
-        # stopped is a retrospective association, not a timely actionable warning.
-        still_running = running[event.issuable_at <= running.end.values]
-        if still_running.empty:
+
+        # Still leaking at the moment the alert could be raised?
+        alive = running[event.issuable_at <= running.end.values]
+        if alive.empty:
             event.outcome = 'retrospective_association'
             event.matched_leak = list(running.link)[0]
             event.match_confidence = 'retrospective'
             continue
-        running = still_running
-        available = in_time[~in_time.link.isin(claimed)]
-        if available.empty:
-            event.outcome = ('repeat_of_credited_leak'
-                             if set(running.link) & claimed else 'unattributable')
+
+        # Within the deadline. NOTE: `leaks.start` is first positive flow, so the
+        # deadline runs from when the leak began producing water, not from its
+        # configured onset. See the note in add_observed_activity.
+        if rules.max_delay_hours is None:
+            in_time = alive
+        else:
+            deadline = alive.start + pd.Timedelta(hours=rules.max_delay_hours)
+            in_time = alive[event.issuable_at <= deadline.values]
+        event.candidates = list(in_time.link)
+        if in_time.empty:
+            event.outcome = 'unattributable'       # still leaking, but too late to credit
             continue
-        order = available.sort_values('start', ascending=(rules.attribute_to == 'earliest'))
+
+        free = in_time[~in_time.link.isin(claimed)]
+        if free.empty:
+            event.outcome = 'repeat_of_credited_leak'
+            event.matched_leak = list(in_time.link)[0]
+            event.match_confidence = 'repeat'
+            continue
+
+        order = free.sort_values('start', ascending=(rules.attribute_to == 'earliest'))
         chosen = order.iloc[0]
         if chosen.eligibility != 'eligible':
             event.outcome = 'coincides_with_excluded_leak'
@@ -222,7 +240,7 @@ def match_events(events, leaks: pd.DataFrame, rules: Rules):
         claimed.add(chosen.link)
         event.matched_leak = chosen.link
         event.outcome = 'credited'
-        event.match_confidence = 'ambiguous' if len(available) > 1 else 'single_candidate'
+        event.match_confidence = 'ambiguous' if len(free) > 1 else 'single_candidate'
     return events
 
 
