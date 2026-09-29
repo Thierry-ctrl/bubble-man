@@ -7,11 +7,12 @@ Bundled 29 September 2026. Self-contained: raw data included, scripts run offlin
 
 | File | Status |
 |---|---|
-| `analysis/scorer/FINDINGS-v2.md` | **CURRENT.** The headline results. |
+| `analysis/scorer/FINDINGS-v3.md` | **CURRENT.** Headline results, after reviewer corrections. |
+| `analysis/scorer/FINDINGS-v2.md` | **SUPERSEDED** by v3. |
 | `analysis/scorer/WATER-ACCOUNTING.md` | **CURRENT.** Zone boundaries and the water balance. |
 | `analysis/scorer/RULES.md` | **STALE.** Written for scorer v1. Its six rules no longer match the code. The module docstring in `leak_scorer.py` is authoritative. |
 | `analysis/scorer/FINDINGS.md` | **SUPERSEDED** by FINDINGS-v2.md. |
-| `analysis/scorer/v1-superseded/` | Earlier results, kept deliberately so changes can be traced. See its README for what was wrong. |
+| `analysis/scorer/v1-superseded/`, `v2-superseded/` | Earlier results, kept so changes can be traced. Each has a README saying what was wrong. |
 | `research/2026-09-28/deep-research-report.md` | Research review. Claims marked `[verified]` vs `[unverified]`. |
 | `research/2026-09-28/evidence-log.md` | Sources, dates, conflicts, open questions. |
 | `research/2026-09-21/project-preparation.md` | Original project plan, written before this work. |
@@ -33,10 +34,21 @@ requires a location within 300 m.
 
 ## Reproducing
 
-    python3 analysis/scorer/test_leak_scorer.py   # 15 worked checks, all should pass
+    python3 analysis/scorer/test_leak_scorer.py   # 18 worked checks, all should pass
     python3 analysis/scorer/run_main_zone.py      # the two frozen experiments
 
 Requires pandas, numpy, matplotlib. No network access needed.
+
+## Round 2 corrections (29 Sep, after review)
+
+- Fixed: an alert issuable after its matched leak ended was credited. Now
+  `retrospective_association`. Latent in our data (0 cases) but reachable.
+- Leak activity redefined as positive simulated flow, not configured onset. Gradual
+  leaks are silent up to 67.8 h after onset. No outcome changed; three delays per
+  experiment lengthened (p810: 10.9 -> 154.9 h in A).
+- New Year's Day explanation for experiment B tested and REFUTED; withdrawn. B's alert
+  count remains unexplained.
+- Sensor timing restated as an assumption supported by a consistency check.
 
 ## What a reviewer might most usefully attack
 
