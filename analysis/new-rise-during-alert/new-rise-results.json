@@ -1,0 +1,139 @@
+{
+  "question": "Can a simple measure of CHANGE flag a new rise while a level alert is open?",
+  "method": {
+    "recent_hours": 6,
+    "before_hours": 24,
+    "case_window_hours": 12,
+    "control_margin_hours": 72,
+    "threshold": 10,
+    "persistence": 6,
+    "labels_used_for": "case selection and control exclusion only"
+  },
+  "counts": {
+    "hours_scored": 8395,
+    "hours_with_an_alert_open": 6589,
+    "share_of_hours_with_alert_open": 0.7849,
+    "control_hours": 5438,
+    "abrupt_leaks_examined": 6,
+    "of_those_with_an_alert_already_open": 6
+  },
+  "control_step_distribution_single_hours": {
+    "p50": 3.01,
+    "p75": 6.43,
+    "p90": 10.44,
+    "p95": 14.26,
+    "p99": 33.01
+  },
+  "control_step_distribution_12h_blocks": {
+    "p50": 7.89,
+    "p75": 11.84,
+    "p90": 18.94,
+    "p95": 34.57,
+    "p99": 39.53
+  },
+  "control_blocks_counted": 4377,
+  "control_max": 43.18,
+  "step_at_gradual_onsets": {
+    "p461": 2.29,
+    "p232": 1.96,
+    "p427": 7.09,
+    "p628": 4.24,
+    "p654": 9.25,
+    "p810": 6.82
+  },
+  "cases": [
+    {
+      "link": "p673",
+      "onset": "2018-03-05 15:45:00",
+      "alert_already_open_at_onset": true,
+      "max_step_m3_per_hour": 31.92,
+      "peak_at": "2018-03-05 21:00:00",
+      "hours_after_onset": 5.25,
+      "percentile_among_control_hours_UNFAIR": 98.64,
+      "percentile_among_control_12h_blocks": 92.92,
+      "scorer_outcome_experiment_A": "credited"
+    },
+    {
+      "link": "p538",
+      "onset": "2018-05-18 08:35:00",
+      "alert_already_open_at_onset": true,
+      "max_step_m3_per_hour": 36.69,
+      "peak_at": "2018-05-18 19:00:00",
+      "hours_after_onset": 10.42,
+      "percentile_among_control_hours_UNFAIR": 99.56,
+      "percentile_among_control_12h_blocks": 97.62,
+      "scorer_outcome_experiment_A": "missed"
+    },
+    {
+      "link": "p866",
+      "onset": "2018-06-01 09:05:00",
+      "alert_already_open_at_onset": true,
+      "max_step_m3_per_hour": 30.28,
+      "peak_at": "2018-06-01 19:00:00",
+      "hours_after_onset": 9.92,
+      "percentile_among_control_hours_UNFAIR": 98.23,
+      "percentile_among_control_12h_blocks": 92.14,
+      "scorer_outcome_experiment_A": "missed"
+    },
+    {
+      "link": "p183",
+      "onset": "2018-08-07 02:35:00",
+      "alert_already_open_at_onset": true,
+      "max_step_m3_per_hour": 23.42,
+      "peak_at": "2018-08-07 12:00:00",
+      "hours_after_onset": 9.42,
+      "percentile_among_control_hours_UNFAIR": 97.08,
+      "percentile_among_control_12h_blocks": 90.86,
+      "scorer_outcome_experiment_A": "credited"
+    },
+    {
+      "link": "p158",
+      "onset": "2018-10-06 02:35:00",
+      "alert_already_open_at_onset": true,
+      "max_step_m3_per_hour": 16.57,
+      "peak_at": "2018-10-06 05:00:00",
+      "hours_after_onset": 2.42,
+      "percentile_among_control_hours_UNFAIR": 95.92,
+      "percentile_among_control_12h_blocks": 89.63,
+      "scorer_outcome_experiment_A": "missed"
+    },
+    {
+      "link": "p369",
+      "onset": "2018-10-26 02:05:00",
+      "alert_already_open_at_onset": true,
+      "max_step_m3_per_hour": 16.4,
+      "peak_at": "2018-10-26 05:00:00",
+      "hours_after_onset": 2.92,
+      "percentile_among_control_hours_UNFAIR": 95.88,
+      "percentile_among_control_12h_blocks": 89.33,
+      "scorer_outcome_experiment_A": "credited"
+    }
+  ],
+  "threshold_sweep_NOT_a_selection": [
+    {
+      "threshold_m3_per_hour": 16.4,
+      "abrupt_leaks_reached": 6,
+      "control_episodes": 41,
+      "control_episodes_per_week_of_open_alert": 1.27
+    },
+    {
+      "threshold_m3_per_hour": 20.0,
+      "abrupt_leaks_reached": 4,
+      "control_episodes": 39,
+      "control_episodes_per_week_of_open_alert": 1.2
+    },
+    {
+      "threshold_m3_per_hour": 25.0,
+      "abrupt_leaks_reached": 3,
+      "control_episodes": 39,
+      "control_episodes_per_week_of_open_alert": 1.2
+    },
+    {
+      "threshold_m3_per_hour": 30.0,
+      "abrupt_leaks_reached": 3,
+      "control_episodes": 36,
+      "control_episodes_per_week_of_open_alert": 1.11
+    }
+  ],
+  "control_weeks_of_open_alert": 32.4
+}
