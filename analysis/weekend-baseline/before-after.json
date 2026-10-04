@@ -1,0 +1,652 @@
+{
+  "old": {
+    "level": {
+      "alert_events": 129,
+      "events_starting_on_sunday": 24,
+      "share_of_hours_alert_open": 0.7822,
+      "credited": 9,
+      "abrupt": 3,
+      "gradual": 6,
+      "median_delay_h": 55.75,
+      "outcomes": {
+        "credited": 9,
+        "false_alert": 1,
+        "unattributable": 105,
+        "repeat_of_credited_leak": 14,
+        "coincides_with_excluded_leak": 0,
+        "retrospective_association": 0,
+        "issuable_after_window": 0
+      },
+      "false_alerts_in_no_labelled_new_leak_hours": 1,
+      "exposure_hours": 215,
+      "random_free_rotation": {
+        "median": 10.0,
+        "p95": 12.0
+      },
+      "random_whole_week_rotation": {
+        "median": 10.0,
+        "p95": 12.0
+      },
+      "credited_links": [
+        "p183",
+        "p232",
+        "p369",
+        "p427",
+        "p461",
+        "p628",
+        "p654",
+        "p673",
+        "p810"
+      ],
+      "leaks": [
+        {
+          "link": "p461",
+          "type": "incipient",
+          "zone": "main",
+          "start": "2018-01-23 23:55:00",
+          "end": "2018-04-02 11:40:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "credited",
+          "alert_index": 1,
+          "match_confidence": "single_candidate",
+          "delay_hours_from_first_flow": 108.08,
+          "delay_hours_from_configured_onset": 127.58,
+          "silent_hours_after_onset": 19.5
+        },
+        {
+          "link": "p232",
+          "type": "incipient",
+          "zone": "main",
+          "start": "2018-01-31 03:45:00",
+          "end": "2018-02-10 09:20:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "credited",
+          "alert_index": 2,
+          "match_confidence": "single_candidate",
+          "delay_hours_from_first_flow": 49.25,
+          "delay_hours_from_configured_onset": 50.42,
+          "silent_hours_after_onset": 1.17
+        },
+        {
+          "link": "p427",
+          "type": "incipient",
+          "zone": "main",
+          "start": "2018-02-16 04:15:00",
+          "end": "2018-12-31 23:55:00",
+          "eligibility": "eligible",
+          "censored_end": true,
+          "outcome": "credited",
+          "alert_index": 9,
+          "match_confidence": "single_candidate",
+          "delay_hours_from_first_flow": 55.75,
+          "delay_hours_from_configured_onset": 123.58,
+          "silent_hours_after_onset": 67.83
+        },
+        {
+          "link": "p673",
+          "type": "abrupt",
+          "zone": "main",
+          "start": "2018-03-05 15:45:00",
+          "end": "2018-03-23 10:25:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "credited",
+          "alert_index": 27,
+          "match_confidence": "single_candidate",
+          "delay_hours_from_first_flow": 94.25,
+          "delay_hours_from_configured_onset": 94.25,
+          "silent_hours_after_onset": 0.0
+        },
+        {
+          "link": "p628",
+          "type": "incipient",
+          "zone": "main",
+          "start": "2018-05-02 18:50:00",
+          "end": "2018-05-29 21:20:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "credited",
+          "alert_index": 62,
+          "match_confidence": "single_candidate",
+          "delay_hours_from_first_flow": 15.17,
+          "delay_hours_from_configured_onset": 19.08,
+          "silent_hours_after_onset": 3.92
+        },
+        {
+          "link": "p538",
+          "type": "abrupt",
+          "zone": "main",
+          "start": "2018-05-18 08:35:00",
+          "end": "2018-06-02 06:05:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "missed",
+          "alert_index": null,
+          "match_confidence": null,
+          "delay_hours_from_first_flow": null,
+          "delay_hours_from_configured_onset": null,
+          "silent_hours_after_onset": 0.0
+        },
+        {
+          "link": "p866",
+          "type": "abrupt",
+          "zone": "main",
+          "start": "2018-06-01 09:05:00",
+          "end": "2018-06-12 03:00:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "missed",
+          "alert_index": null,
+          "match_confidence": null,
+          "delay_hours_from_first_flow": null,
+          "delay_hours_from_configured_onset": null,
+          "silent_hours_after_onset": 0.0
+        },
+        {
+          "link": "p654",
+          "type": "incipient",
+          "zone": "main",
+          "start": "2018-07-07 09:10:00",
+          "end": "2018-12-31 23:55:00",
+          "eligibility": "eligible",
+          "censored_end": true,
+          "outcome": "credited",
+          "alert_index": 80,
+          "match_confidence": "single_candidate",
+          "delay_hours_from_first_flow": 25.83,
+          "delay_hours_from_configured_onset": 79.33,
+          "silent_hours_after_onset": 53.5
+        },
+        {
+          "link": "p810",
+          "type": "incipient",
+          "zone": "main",
+          "start": "2018-07-30 18:40:00",
+          "end": "2018-12-31 23:55:00",
+          "eligibility": "eligible",
+          "censored_end": true,
+          "outcome": "credited",
+          "alert_index": 90,
+          "match_confidence": "single_candidate",
+          "delay_hours_from_first_flow": 91.33,
+          "delay_hours_from_configured_onset": 154.92,
+          "silent_hours_after_onset": 63.58
+        },
+        {
+          "link": "p183",
+          "type": "abrupt",
+          "zone": "main",
+          "start": "2018-08-07 02:35:00",
+          "end": "2018-09-01 17:10:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "credited",
+          "alert_index": 93,
+          "match_confidence": "single_candidate",
+          "delay_hours_from_first_flow": 83.42,
+          "delay_hours_from_configured_onset": 83.42,
+          "silent_hours_after_onset": 0.0
+        },
+        {
+          "link": "p158",
+          "type": "abrupt",
+          "zone": "main",
+          "start": "2018-10-06 02:35:00",
+          "end": "2018-10-23 13:35:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "missed",
+          "alert_index": null,
+          "match_confidence": null,
+          "delay_hours_from_first_flow": null,
+          "delay_hours_from_configured_onset": null,
+          "silent_hours_after_onset": 0.0
+        },
+        {
+          "link": "p369",
+          "type": "abrupt",
+          "zone": "main",
+          "start": "2018-10-26 02:05:00",
+          "end": "2018-11-08 20:25:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "credited",
+          "alert_index": 107,
+          "match_confidence": "single_candidate",
+          "delay_hours_from_first_flow": 11.92,
+          "delay_hours_from_configured_onset": 11.92,
+          "silent_hours_after_onset": 0.0
+        }
+      ]
+    },
+    "new_rise": {
+      "warnings": 184,
+      "sunday_warnings": 39,
+      "warnings_per_week_of_open_alert": 4.69,
+      "credited": 12,
+      "abrupt": 6,
+      "gradual": 6,
+      "median_delay_h": 15.17,
+      "of_the_three_old_A_missed": [
+        "p538",
+        "p866",
+        "p158"
+      ],
+      "random_restricted": {
+        "median_credited": 11.0,
+        "p95_credited": 11.0,
+        "abrupt_values": [
+          6
+        ],
+        "share_abrupt_6": 1.0,
+        "median_delay_h": 26.17,
+        "share_delay_as_fast": 0.043
+      },
+      "sensitivity_formula_threshold": 9.1
+    },
+    "sunday_11_step_share_at_least_9_10": 1.0,
+    "pressure": {
+      "episodes": 213,
+      "labels": {
+        "no labelled new leak": 186,
+        "unclear": 20,
+        "new abrupt leak": 6,
+        "new gradual leak": 1
+      },
+      "abrupt_onsets_with_episode": [
+        "p158",
+        "p183",
+        "p369",
+        "p538",
+        "p673",
+        "p866"
+      ],
+      "cases": [
+        {
+          "leak": "p673",
+          "dQ": 31.92,
+          "S": 0.0153,
+          "C": 0.0344,
+          "dQ_pct": 81.7,
+          "S_pct": 78.5,
+          "C_pct": 100.0
+        },
+        {
+          "leak": "p538",
+          "dQ": 36.69,
+          "S": 0.0169,
+          "C": 0.0034,
+          "dQ_pct": 92.5,
+          "S_pct": 81.2,
+          "C_pct": 33.9
+        },
+        {
+          "leak": "p866",
+          "dQ": 30.28,
+          "S": 0.0165,
+          "C": 0.0048,
+          "dQ_pct": 79.0,
+          "S_pct": 80.6,
+          "C_pct": 37.1
+        },
+        {
+          "leak": "p183",
+          "dQ": 23.42,
+          "S": 0.0071,
+          "C": 0.0135,
+          "dQ_pct": 76.3,
+          "S_pct": 64.5,
+          "C_pct": 67.7
+        },
+        {
+          "leak": "p158",
+          "dQ": 16.57,
+          "S": 0.0012,
+          "C": 0.0092,
+          "dQ_pct": 75.8,
+          "S_pct": 38.2,
+          "C_pct": 52.7
+        },
+        {
+          "leak": "p369",
+          "dQ": 16.4,
+          "S": 0.0002,
+          "C": 0.0128,
+          "dQ_pct": 74.7,
+          "S_pct": 37.6,
+          "C_pct": 66.7
+        }
+      ],
+      "cases_above_90th_on_S": 0,
+      "cases_above_90th_on_C": 1,
+      "criterion_met": false,
+      "large_ordinary_rises": 44,
+      "large_ordinary_rises_on_sunday": 44
+    }
+  },
+  "new": {
+    "level": {
+      "alert_events": 42,
+      "events_starting_on_sunday": 5,
+      "share_of_hours_alert_open": 0.8611,
+      "credited": 3,
+      "abrupt": 0,
+      "gradual": 3,
+      "median_delay_h": 65.25,
+      "outcomes": {
+        "credited": 3,
+        "false_alert": 0,
+        "unattributable": 38,
+        "repeat_of_credited_leak": 1,
+        "coincides_with_excluded_leak": 0,
+        "retrospective_association": 0,
+        "issuable_after_window": 0
+      },
+      "false_alerts_in_no_labelled_new_leak_hours": 0,
+      "exposure_hours": 215,
+      "random_free_rotation": {
+        "median": 2.0,
+        "p95": 4.0
+      },
+      "random_whole_week_rotation": {
+        "median": 2.0,
+        "p95": 4.0
+      },
+      "credited_links": [
+        "p232",
+        "p427",
+        "p628"
+      ],
+      "leaks": [
+        {
+          "link": "p461",
+          "type": "incipient",
+          "zone": "main",
+          "start": "2018-01-23 23:55:00",
+          "end": "2018-04-02 11:40:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "missed",
+          "alert_index": null,
+          "match_confidence": null,
+          "delay_hours_from_first_flow": null,
+          "delay_hours_from_configured_onset": null,
+          "silent_hours_after_onset": 19.5
+        },
+        {
+          "link": "p232",
+          "type": "incipient",
+          "zone": "main",
+          "start": "2018-01-31 03:45:00",
+          "end": "2018-02-10 09:20:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "credited",
+          "alert_index": 0,
+          "match_confidence": "single_candidate",
+          "delay_hours_from_first_flow": 65.25,
+          "delay_hours_from_configured_onset": 66.42,
+          "silent_hours_after_onset": 1.17
+        },
+        {
+          "link": "p427",
+          "type": "incipient",
+          "zone": "main",
+          "start": "2018-02-16 04:15:00",
+          "end": "2018-12-31 23:55:00",
+          "eligibility": "eligible",
+          "censored_end": true,
+          "outcome": "credited",
+          "alert_index": 2,
+          "match_confidence": "single_candidate",
+          "delay_hours_from_first_flow": 130.75,
+          "delay_hours_from_configured_onset": 198.58,
+          "silent_hours_after_onset": 67.83
+        },
+        {
+          "link": "p673",
+          "type": "abrupt",
+          "zone": "main",
+          "start": "2018-03-05 15:45:00",
+          "end": "2018-03-23 10:25:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "missed",
+          "alert_index": null,
+          "match_confidence": null,
+          "delay_hours_from_first_flow": null,
+          "delay_hours_from_configured_onset": null,
+          "silent_hours_after_onset": 0.0
+        },
+        {
+          "link": "p628",
+          "type": "incipient",
+          "zone": "main",
+          "start": "2018-05-02 18:50:00",
+          "end": "2018-05-29 21:20:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "credited",
+          "alert_index": 41,
+          "match_confidence": "single_candidate",
+          "delay_hours_from_first_flow": 17.17,
+          "delay_hours_from_configured_onset": 21.08,
+          "silent_hours_after_onset": 3.92
+        },
+        {
+          "link": "p538",
+          "type": "abrupt",
+          "zone": "main",
+          "start": "2018-05-18 08:35:00",
+          "end": "2018-06-02 06:05:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "missed",
+          "alert_index": null,
+          "match_confidence": null,
+          "delay_hours_from_first_flow": null,
+          "delay_hours_from_configured_onset": null,
+          "silent_hours_after_onset": 0.0
+        },
+        {
+          "link": "p866",
+          "type": "abrupt",
+          "zone": "main",
+          "start": "2018-06-01 09:05:00",
+          "end": "2018-06-12 03:00:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "missed",
+          "alert_index": null,
+          "match_confidence": null,
+          "delay_hours_from_first_flow": null,
+          "delay_hours_from_configured_onset": null,
+          "silent_hours_after_onset": 0.0
+        },
+        {
+          "link": "p654",
+          "type": "incipient",
+          "zone": "main",
+          "start": "2018-07-07 09:10:00",
+          "end": "2018-12-31 23:55:00",
+          "eligibility": "eligible",
+          "censored_end": true,
+          "outcome": "missed",
+          "alert_index": null,
+          "match_confidence": null,
+          "delay_hours_from_first_flow": null,
+          "delay_hours_from_configured_onset": null,
+          "silent_hours_after_onset": 53.5
+        },
+        {
+          "link": "p810",
+          "type": "incipient",
+          "zone": "main",
+          "start": "2018-07-30 18:40:00",
+          "end": "2018-12-31 23:55:00",
+          "eligibility": "eligible",
+          "censored_end": true,
+          "outcome": "missed",
+          "alert_index": null,
+          "match_confidence": null,
+          "delay_hours_from_first_flow": null,
+          "delay_hours_from_configured_onset": null,
+          "silent_hours_after_onset": 63.58
+        },
+        {
+          "link": "p183",
+          "type": "abrupt",
+          "zone": "main",
+          "start": "2018-08-07 02:35:00",
+          "end": "2018-09-01 17:10:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "missed",
+          "alert_index": null,
+          "match_confidence": null,
+          "delay_hours_from_first_flow": null,
+          "delay_hours_from_configured_onset": null,
+          "silent_hours_after_onset": 0.0
+        },
+        {
+          "link": "p158",
+          "type": "abrupt",
+          "zone": "main",
+          "start": "2018-10-06 02:35:00",
+          "end": "2018-10-23 13:35:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "missed",
+          "alert_index": null,
+          "match_confidence": null,
+          "delay_hours_from_first_flow": null,
+          "delay_hours_from_configured_onset": null,
+          "silent_hours_after_onset": 0.0
+        },
+        {
+          "link": "p369",
+          "type": "abrupt",
+          "zone": "main",
+          "start": "2018-10-26 02:05:00",
+          "end": "2018-11-08 20:25:00",
+          "eligibility": "eligible",
+          "censored_end": false,
+          "outcome": "missed",
+          "alert_index": null,
+          "match_confidence": null,
+          "delay_hours_from_first_flow": null,
+          "delay_hours_from_configured_onset": null,
+          "silent_hours_after_onset": 0.0
+        }
+      ]
+    },
+    "new_rise": {
+      "warnings": 129,
+      "sunday_warnings": 10,
+      "warnings_per_week_of_open_alert": 2.99,
+      "credited": 10,
+      "abrupt": 6,
+      "gradual": 4,
+      "median_delay_h": 14.67,
+      "of_the_three_old_A_missed": [
+        "p538",
+        "p866",
+        "p158"
+      ],
+      "random_restricted": {
+        "median_credited": 10.0,
+        "p95_credited": 11.0,
+        "abrupt_values": [
+          5,
+          6
+        ],
+        "share_abrupt_6": 0.983,
+        "median_delay_h": 34.98,
+        "share_delay_as_fast": 0.003
+      },
+      "sensitivity_formula_threshold": 4.43
+    },
+    "sunday_11_step_share_at_least_9_10": 0.1,
+    "pressure": {
+      "episodes": 148,
+      "labels": {
+        "no labelled new leak": 130,
+        "unclear": 11,
+        "new abrupt leak": 6,
+        "new gradual leak": 1
+      },
+      "abrupt_onsets_with_episode": [
+        "p183",
+        "p369",
+        "p369",
+        "p538",
+        "p673",
+        "p866"
+      ],
+      "cases": [
+        {
+          "leak": "p673",
+          "dQ": 34.47,
+          "S": 0.0115,
+          "C": 0.0301,
+          "dQ_pct": 100.0,
+          "S_pct": 52.3,
+          "C_pct": 86.9
+        },
+        {
+          "leak": "p538",
+          "dQ": 35.66,
+          "S": 0.0029,
+          "C": 0.009,
+          "dQ_pct": 100.0,
+          "S_pct": 26.2,
+          "C_pct": 63.1
+        },
+        {
+          "leak": "p866",
+          "dQ": 25.22,
+          "S": 0.0196,
+          "C": 0.0087,
+          "dQ_pct": 100.0,
+          "S_pct": 70.0,
+          "C_pct": 62.3
+        },
+        {
+          "leak": "p183",
+          "dQ": 22.26,
+          "S": 0.0221,
+          "C": 0.0093,
+          "dQ_pct": 100.0,
+          "S_pct": 74.6,
+          "C_pct": 63.8
+        },
+        {
+          "leak": "p369",
+          "dQ": 9.43,
+          "S": -0.0135,
+          "C": 0.0131,
+          "dQ_pct": 10.0,
+          "S_pct": 0.0,
+          "C_pct": 70.0
+        },
+        {
+          "leak": "p369",
+          "dQ": 15.56,
+          "S": 0.0059,
+          "C": 0.0106,
+          "dQ_pct": 93.8,
+          "S_pct": 36.9,
+          "C_pct": 65.4
+        }
+      ],
+      "cases_above_90th_on_S": 0,
+      "cases_above_90th_on_C": 0,
+      "criterion_met": false,
+      "large_ordinary_rises": 0,
+      "large_ordinary_rises_on_sunday": 0
+    }
+  },
+  "reproduction_check": "old baseline reproduces saved results: 129 level alerts, 9/12, 55.75 h; 184 new-rise warnings, 12/12; 213 pressure episodes"
+}
