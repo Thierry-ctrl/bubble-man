@@ -1,0 +1,27 @@
+{
+  "source": "random-distributions.json, written by plot_realtime.py, seed 20261003",
+  "runs": 300,
+  "total_credited": {
+    "median": 11.0,
+    "p95": 11.0,
+    "max": 12,
+    "share_reaching_12": 0.04
+  },
+  "abrupt_credited": {
+    "distinct_values": [
+      6
+    ],
+    "share_reaching_6": 1.0
+  },
+  "median_delay_hours": {
+    "median": 26.17,
+    "p5": 15.81,
+    "p95": 39.62,
+    "share_as_fast_or_faster_than_real": 0.0433
+  },
+  "real": {
+    "credited": 12,
+    "abrupt": 6,
+    "median_delay_hours": 15.17
+  }
+}
