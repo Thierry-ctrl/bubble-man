@@ -1,0 +1,153 @@
+{
+  "definition": "COMPARISON-FROZEN.md (committed before this ran)",
+  "main_zone_sensors": 30,
+  "episodes": 213,
+  "labels": {
+    "no labelled new leak": 186,
+    "unclear": 20,
+    "new abrupt leak": 6,
+    "new gradual leak": 1
+  },
+  "abrupt_onsets_with_an_episode": [
+    "p158",
+    "p183",
+    "p369",
+    "p538",
+    "p673",
+    "p866"
+  ],
+  "ordinary_rises_percentiles": {
+    "dQ": {
+      "p50": 12.3923,
+      "p90": 35.2523
+    },
+    "S": {
+      "p50": 0.0047,
+      "p90": 0.0225
+    },
+    "C": {
+      "p50": 0.0083,
+      "p90": 0.0206
+    }
+  },
+  "cases": [
+    {
+      "leak": "p673",
+      "reference_hour": "2018-03-05 21:00:00",
+      "dQ": 31.9227,
+      "S": 0.0153,
+      "C": 0.0344,
+      "dQ_pct": 81.7,
+      "S_pct": 78.5,
+      "C_pct": 100.0,
+      "pump_step": 12.2736,
+      "tank_level_change_6h": 0.56,
+      "leaks_running": 3,
+      "worst_sensor": "n229"
+    },
+    {
+      "leak": "p538",
+      "reference_hour": "2018-05-18 19:00:00",
+      "dQ": 36.6891,
+      "S": 0.0169,
+      "C": 0.0034,
+      "dQ_pct": 92.5,
+      "S_pct": 81.2,
+      "C_pct": 33.9,
+      "pump_step": 4.4983,
+      "tank_level_change_6h": 0.31,
+      "leaks_running": 3,
+      "worst_sensor": "n54"
+    },
+    {
+      "leak": "p866",
+      "reference_hour": "2018-06-01 19:00:00",
+      "dQ": 30.2802,
+      "S": 0.0165,
+      "C": 0.0048,
+      "dQ_pct": 79.0,
+      "S_pct": 80.6,
+      "C_pct": 37.1,
+      "pump_step": 7.8822,
+      "tank_level_change_6h": 0.45,
+      "leaks_running": 3,
+      "worst_sensor": "n54"
+    },
+    {
+      "leak": "p183",
+      "reference_hour": "2018-08-07 12:00:00",
+      "dQ": 23.4237,
+      "S": 0.0071,
+      "C": 0.0135,
+      "dQ_pct": 76.3,
+      "S_pct": 64.5,
+      "C_pct": 67.7,
+      "pump_step": -16.9113,
+      "tank_level_change_6h": -0.2,
+      "leaks_running": 4,
+      "worst_sensor": "n752"
+    },
+    {
+      "leak": "p158",
+      "reference_hour": "2018-10-06 05:00:00",
+      "dQ": 16.5671,
+      "S": 0.0012,
+      "C": 0.0092,
+      "dQ_pct": 75.8,
+      "S_pct": 38.2,
+      "C_pct": 52.7,
+      "pump_step": -1.5941,
+      "tank_level_change_6h": 0.62,
+      "leaks_running": 4,
+      "worst_sensor": "n644"
+    },
+    {
+      "leak": "p369",
+      "reference_hour": "2018-10-26 05:00:00",
+      "dQ": 16.3985,
+      "S": 0.0002,
+      "C": 0.0128,
+      "dQ_pct": 74.7,
+      "S_pct": 37.6,
+      "C_pct": 66.7,
+      "pump_step": 13.2511,
+      "tank_level_change_6h": 0.36,
+      "leaks_running": 4,
+      "worst_sensor": "n410"
+    }
+  ],
+  "p673_pair": [
+    {
+      "reference_hour": "2018-03-04 11:00:00",
+      "dQ": 31.607,
+      "dP_med": -0.1635,
+      "dP_min": -0.1901,
+      "worst_sensor": "n229",
+      "S": 0.0052,
+      "C": 0.0008,
+      "pump_step": -6.4271,
+      "tank_level_change_6h": -0.84,
+      "label": "no labelled new leak",
+      "leak": null,
+      "leaks_running": 2
+    },
+    {
+      "reference_hour": "2018-03-05 21:00:00",
+      "dQ": 31.9227,
+      "dP_med": -0.4874,
+      "dP_min": -1.584,
+      "worst_sensor": "n229",
+      "S": 0.0153,
+      "C": 0.0344,
+      "pump_step": 12.2736,
+      "tank_level_change_6h": 0.56,
+      "label": "new abrupt leak",
+      "leak": "p673",
+      "leaks_running": 3
+    }
+  ],
+  "operating_check": {
+    "ordinary_rises_with_pump_step_over_5": 169,
+    "abrupt_cases_with_pump_step_over_5": 4
+  }
+}
