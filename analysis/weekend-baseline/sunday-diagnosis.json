@@ -1,0 +1,27 @@
+{
+  "daily_mean_m3_per_hour": {
+    "main_out": {
+      "Mon-Fri": 176.633,
+      "Sat": 165.165,
+      "Sun": 175.639
+    },
+    "inflow": {
+      "Mon-Fri": 204.106,
+      "Sat": 189.165,
+      "Sun": 202.138
+    },
+    "PUMP_1": {
+      "Mon-Fri": 27.472,
+      "Sat": 24.0,
+      "Sun": 26.499
+    }
+  },
+  "max_hourly_pump_difference_sat_vs_sun": 22.579,
+  "sunday_11": {
+    "n": 50,
+    "mean_recent_resid": 65.1,
+    "mean_before_resid": 29.83,
+    "mean_step": 35.28,
+    "share_step_at_least_9_10": 1.0
+  }
+}
