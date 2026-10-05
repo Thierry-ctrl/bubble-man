@@ -1,0 +1,119 @@
+{
+  "D1": {
+    "meters_in_area_c": 82,
+    "meters_in_main_zone": 0,
+    "monthly_m3_per_hour": {
+      "2018-01-01": {
+        "areaC_outflow": 22.13,
+        "metered_amr": 15.73,
+        "unmetered": 6.41,
+        "RETRO_labelled_areaC_leak": 4.74
+      },
+      "2018-02-01": {
+        "areaC_outflow": 24.92,
+        "metered_amr": 16.45,
+        "unmetered": 8.47,
+        "RETRO_labelled_areaC_leak": 6.74
+      },
+      "2018-03-01": {
+        "areaC_outflow": 25.82,
+        "metered_amr": 17.26,
+        "unmetered": 8.56,
+        "RETRO_labelled_areaC_leak": 6.74
+      },
+      "2018-04-01": {
+        "areaC_outflow": 25.95,
+        "metered_amr": 17.34,
+        "unmetered": 8.61,
+        "RETRO_labelled_areaC_leak": 6.74
+      },
+      "2018-05-01": {
+        "areaC_outflow": 26.69,
+        "metered_amr": 17.99,
+        "unmetered": 8.7,
+        "RETRO_labelled_areaC_leak": 6.74
+      },
+      "2018-06-01": {
+        "areaC_outflow": 27.97,
+        "metered_amr": 19.18,
+        "unmetered": 8.78,
+        "RETRO_labelled_areaC_leak": 6.73
+      },
+      "2018-07-01": {
+        "areaC_outflow": 33.92,
+        "metered_amr": 19.95,
+        "unmetered": 13.97,
+        "RETRO_labelled_areaC_leak": 11.84
+      },
+      "2018-08-01": {
+        "areaC_outflow": 33.74,
+        "metered_amr": 19.04,
+        "unmetered": 14.7,
+        "RETRO_labelled_areaC_leak": 12.7
+      },
+      "2018-09-01": {
+        "areaC_outflow": 26.83,
+        "metered_amr": 18.1,
+        "unmetered": 8.73,
+        "RETRO_labelled_areaC_leak": 6.74
+      },
+      "2018-10-01": {
+        "areaC_outflow": 25.81,
+        "metered_amr": 17.17,
+        "unmetered": 8.64,
+        "RETRO_labelled_areaC_leak": 6.74
+      },
+      "2018-11-01": {
+        "areaC_outflow": 25.75,
+        "metered_amr": 17.1,
+        "unmetered": 8.65,
+        "RETRO_labelled_areaC_leak": 6.74
+      },
+      "2018-12-01": {
+        "areaC_outflow": 24.55,
+        "metered_amr": 16.02,
+        "unmetered": 8.52,
+        "RETRO_labelled_areaC_leak": 6.74
+      }
+    },
+    "RETRO_weekly_corr_unmetered_vs_labelled_leak": 0.999,
+    "RETRO_mean_unmetered_minus_labelled_leak": 1.91,
+    "jan_1_14_unmetered_mean": 1.72
+  },
+  "D2": {
+    "amr_index_by_month": {
+      "2018-01-01": 1.083,
+      "2018-02-01": 1.14,
+      "2018-03-01": 1.184,
+      "2018-04-01": 1.204,
+      "2018-05-01": 1.231,
+      "2018-06-01": 1.325,
+      "2018-07-01": 1.38,
+      "2018-08-01": 1.298,
+      "2018-09-01": 1.245,
+      "2018-10-01": 1.17,
+      "2018-11-01": 1.166,
+      "2018-12-01": 1.088
+    },
+    "RETRO_weekly_corr_predicted_vs_remainder": 0.815,
+    "RETRO_remainder_mean": 20.59,
+    "predicted_demand_change_mean": 27.0,
+    "RETRO_remainder_left_after_demand_mean": -6.41,
+    "RETRO_remainder_left_after_demand_abs_mean": 7.55,
+    "RETRO_share_of_remainder_variance_explained": 0.616,
+    "RETRO_weekly_corr_excess_vs_leak": 0.815,
+    "RETRO_weekly_corr_excess_after_demand_vs_leak": 0.918
+  },
+  "D3": {
+    "RETRO_weekly_corr_with_labelled_leak": {
+      "night_02_04": 0.951,
+      "day_08_20": 0.753
+    },
+    "RETRO_mean_night_excess_minus_leak": 8.05,
+    "RETRO_mean_day_excess_minus_leak": 25.64,
+    "metered_demand_seasonal_rise_jul_vs_jan": {
+      "night_02_04": 1.689,
+      "day_08_20": 1.342
+    }
+  }
+}
