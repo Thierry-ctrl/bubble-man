@@ -1,0 +1,168 @@
+{
+  "definitions": "excess = observed - expected (new baseline); leak = 12 labelled main-zone leaks; remainder = excess - leak",
+  "actual_alert": {
+    "runs": 42,
+    "share_open": 0.8611,
+    "longest_h": 5826,
+    "longest_from": "2018-05-03 06:00:00",
+    "longest_to": "2018-12-31 23:00:00"
+  },
+  "diagnostic_without_known_leak_flow": {
+    "runs": 220,
+    "share_open": 0.5462,
+    "longest_h": 143,
+    "longest_from": "2018-07-12 05:00:00",
+    "longest_to": "2018-07-18 03:00:00"
+  },
+  "diagnostic_known_leak_flow_alone": {
+    "runs": 6,
+    "share_open": 0.6222,
+    "longest_h": 2817,
+    "longest_from": "2018-09-05 15:00:00",
+    "longest_to": "2018-12-31 23:00:00"
+  },
+  "longest_run_window": [
+    "2018-05-03 06:00:00",
+    "2018-12-31 23:00:00"
+  ],
+  "during_longest_run_mean": {
+    "excess": 46.98,
+    "leak": 20.65,
+    "remainder": 26.32
+  },
+  "before_longest_run_mean": {
+    "excess": 23.89,
+    "leak": 15.02,
+    "remainder": 8.86
+  },
+  "during_longest_run_share_of_excess_from_leak": 0.44,
+  "hours_over_threshold_during_longest_run": {
+    "excess": 1.0,
+    "leak_alone": 0.7357,
+    "remainder_alone": 0.8617
+  },
+  "no_labelled_leak_window_15_23_Jan_remainder": {
+    "mean": -0.06,
+    "p95": 5.17
+  },
+  "monthly_mean_m3_per_hour": {
+    "2018-01-01": {
+      "excess": 0.08,
+      "leak": 0.13,
+      "remainder": -0.05
+    },
+    "2018-02-01": {
+      "excess": 14.23,
+      "leak": 11.72,
+      "remainder": 2.51
+    },
+    "2018-03-01": {
+      "excess": 50.02,
+      "leak": 37.75,
+      "remainder": 12.27
+    },
+    "2018-04-01": {
+      "excess": 19.46,
+      "leak": 3.9,
+      "remainder": 15.56
+    },
+    "2018-05-01": {
+      "excess": 64.34,
+      "leak": 39.36,
+      "remainder": 24.97
+    },
+    "2018-06-01": {
+      "excess": 44.4,
+      "leak": 13.71,
+      "remainder": 30.7
+    },
+    "2018-07-01": {
+      "excess": 43.26,
+      "leak": 5.24,
+      "remainder": 38.02
+    },
+    "2018-08-01": {
+      "excess": 50.16,
+      "leak": 20.3,
+      "remainder": 29.87
+    },
+    "2018-09-01": {
+      "excess": 42.68,
+      "leak": 12.12,
+      "remainder": 30.56
+    },
+    "2018-10-01": {
+      "excess": 57.26,
+      "leak": 32.82,
+      "remainder": 24.44
+    },
+    "2018-11-01": {
+      "excess": 45.29,
+      "leak": 22.69,
+      "remainder": 22.6
+    },
+    "2018-12-01": {
+      "excess": 26.43,
+      "leak": 17.35,
+      "remainder": 9.08
+    }
+  },
+  "baseline_variants": [
+    {
+      "grouping": "MonFri|SatSun",
+      "training": "1 week (8-14 Jan)",
+      "note": "old (Experiment A)",
+      "sunday_11_cross_9_10": 1.0,
+      "monday_11_cross_9_10": 0.0,
+      "mean_excess_whole_window": 39.84,
+      "mean_excess_15_23_Jan": 0.04,
+      "runs": 129,
+      "share_open": 0.7822,
+      "longest_h": 646,
+      "longest_from": "2018-05-12 08:00:00",
+      "longest_to": "2018-06-08 05:00:00"
+    },
+    {
+      "grouping": "MonFri|SatSun",
+      "training": "2 weeks (1-14 Jan)",
+      "note": "diagnostic",
+      "sunday_11_cross_9_10": 1.0,
+      "monday_11_cross_9_10": 0.0,
+      "mean_excess_whole_window": 39.39,
+      "mean_excess_15_23_Jan": -0.47,
+      "runs": 129,
+      "share_open": 0.7781,
+      "longest_h": 646,
+      "longest_from": "2018-05-12 08:00:00",
+      "longest_to": "2018-06-08 05:00:00"
+    },
+    {
+      "grouping": "SunThu|Fri|Sat",
+      "training": "1 week (8-14 Jan)",
+      "note": "DIAGNOSTIC ONLY - not deployable",
+      "sunday_11_cross_9_10": 0.12,
+      "monday_11_cross_9_10": 0.412,
+      "mean_excess_whole_window": 40.23,
+      "mean_excess_15_23_Jan": 0.34,
+      "runs": 47,
+      "share_open": 0.861,
+      "longest_h": 5796,
+      "longest_from": "2018-05-03 04:00:00",
+      "longest_to": "2018-12-30 15:00:00"
+    },
+    {
+      "grouping": "SunThu|Fri|Sat",
+      "training": "2 weeks (1-14 Jan)",
+      "note": "new (frozen)",
+      "sunday_11_cross_9_10": 0.1,
+      "monday_11_cross_9_10": 0.314,
+      "mean_excess_whole_window": 39.86,
+      "mean_excess_15_23_Jan": -0.06,
+      "runs": 42,
+      "share_open": 0.8611,
+      "longest_h": 5826,
+      "longest_from": "2018-05-03 06:00:00",
+      "longest_to": "2018-12-31 23:00:00"
+    }
+  ]
+}
