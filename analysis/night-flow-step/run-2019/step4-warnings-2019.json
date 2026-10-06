@@ -1,0 +1,303 @@
+{
+  "protocol": "9724c60",
+  "leak_records_opened": false,
+  "warnings_2019": 46,
+  "warnings_by_month": {
+    "Jan": 4,
+    "Feb": 2,
+    "Mar": 4,
+    "Apr": 5,
+    "May": 2,
+    "Jun": 4,
+    "Jul": 4,
+    "Aug": 4,
+    "Sep": 5,
+    "Oct": 3,
+    "Nov": 4,
+    "Dec": 5
+  },
+  "warnings_by_weekday": {
+    "Mon": 28,
+    "Sun": 18
+  },
+  "nights_with_step_ge_10_2019": 95,
+  "nights_2019": 365,
+  "warnings": [
+    {
+      "night": "2019-01-06",
+      "weekday": "Sunday",
+      "issued_at": "2019-01-06 04:00:00",
+      "step_m3_per_hour": 10.22
+    },
+    {
+      "night": "2019-01-14",
+      "weekday": "Monday",
+      "issued_at": "2019-01-14 04:00:00",
+      "step_m3_per_hour": 13.62
+    },
+    {
+      "night": "2019-01-21",
+      "weekday": "Monday",
+      "issued_at": "2019-01-21 04:00:00",
+      "step_m3_per_hour": 24.39
+    },
+    {
+      "night": "2019-01-28",
+      "weekday": "Monday",
+      "issued_at": "2019-01-28 04:00:00",
+      "step_m3_per_hour": 31.89
+    },
+    {
+      "night": "2019-02-18",
+      "weekday": "Monday",
+      "issued_at": "2019-02-18 04:00:00",
+      "step_m3_per_hour": 12.67
+    },
+    {
+      "night": "2019-02-25",
+      "weekday": "Monday",
+      "issued_at": "2019-02-25 04:00:00",
+      "step_m3_per_hour": 13.22
+    },
+    {
+      "night": "2019-03-04",
+      "weekday": "Monday",
+      "issued_at": "2019-03-04 04:00:00",
+      "step_m3_per_hour": 14.42
+    },
+    {
+      "night": "2019-03-11",
+      "weekday": "Monday",
+      "issued_at": "2019-03-11 04:00:00",
+      "step_m3_per_hour": 14.91
+    },
+    {
+      "night": "2019-03-18",
+      "weekday": "Monday",
+      "issued_at": "2019-03-18 04:00:00",
+      "step_m3_per_hour": 16.36
+    },
+    {
+      "night": "2019-03-25",
+      "weekday": "Monday",
+      "issued_at": "2019-03-25 04:00:00",
+      "step_m3_per_hour": 16.65
+    },
+    {
+      "night": "2019-04-01",
+      "weekday": "Monday",
+      "issued_at": "2019-04-01 04:00:00",
+      "step_m3_per_hour": 16.22
+    },
+    {
+      "night": "2019-04-08",
+      "weekday": "Monday",
+      "issued_at": "2019-04-08 04:00:00",
+      "step_m3_per_hour": 23.24
+    },
+    {
+      "night": "2019-04-15",
+      "weekday": "Monday",
+      "issued_at": "2019-04-15 04:00:00",
+      "step_m3_per_hour": 16.39
+    },
+    {
+      "night": "2019-04-22",
+      "weekday": "Monday",
+      "issued_at": "2019-04-22 04:00:00",
+      "step_m3_per_hour": 26.62
+    },
+    {
+      "night": "2019-04-29",
+      "weekday": "Monday",
+      "issued_at": "2019-04-29 04:00:00",
+      "step_m3_per_hour": 16.29
+    },
+    {
+      "night": "2019-05-13",
+      "weekday": "Monday",
+      "issued_at": "2019-05-13 04:00:00",
+      "step_m3_per_hour": 12.18
+    },
+    {
+      "night": "2019-05-20",
+      "weekday": "Monday",
+      "issued_at": "2019-05-20 04:00:00",
+      "step_m3_per_hour": 14.92
+    },
+    {
+      "night": "2019-06-02",
+      "weekday": "Sunday",
+      "issued_at": "2019-06-02 04:00:00",
+      "step_m3_per_hour": 10.05
+    },
+    {
+      "night": "2019-06-10",
+      "weekday": "Monday",
+      "issued_at": "2019-06-10 04:00:00",
+      "step_m3_per_hour": 13.01
+    },
+    {
+      "night": "2019-06-17",
+      "weekday": "Monday",
+      "issued_at": "2019-06-17 04:00:00",
+      "step_m3_per_hour": 31.39
+    },
+    {
+      "night": "2019-06-24",
+      "weekday": "Monday",
+      "issued_at": "2019-06-24 04:00:00",
+      "step_m3_per_hour": 16.26
+    },
+    {
+      "night": "2019-07-01",
+      "weekday": "Monday",
+      "issued_at": "2019-07-01 04:00:00",
+      "step_m3_per_hour": 16.52
+    },
+    {
+      "night": "2019-07-08",
+      "weekday": "Monday",
+      "issued_at": "2019-07-08 04:00:00",
+      "step_m3_per_hour": 16.81
+    },
+    {
+      "night": "2019-07-15",
+      "weekday": "Monday",
+      "issued_at": "2019-07-15 04:00:00",
+      "step_m3_per_hour": 19.67
+    },
+    {
+      "night": "2019-07-28",
+      "weekday": "Sunday",
+      "issued_at": "2019-07-28 04:00:00",
+      "step_m3_per_hour": 12.0
+    },
+    {
+      "night": "2019-08-04",
+      "weekday": "Sunday",
+      "issued_at": "2019-08-04 04:00:00",
+      "step_m3_per_hour": 11.83
+    },
+    {
+      "night": "2019-08-11",
+      "weekday": "Sunday",
+      "issued_at": "2019-08-11 04:00:00",
+      "step_m3_per_hour": 12.71
+    },
+    {
+      "night": "2019-08-18",
+      "weekday": "Sunday",
+      "issued_at": "2019-08-18 04:00:00",
+      "step_m3_per_hour": 13.96
+    },
+    {
+      "night": "2019-08-25",
+      "weekday": "Sunday",
+      "issued_at": "2019-08-25 04:00:00",
+      "step_m3_per_hour": 16.92
+    },
+    {
+      "night": "2019-09-01",
+      "weekday": "Sunday",
+      "issued_at": "2019-09-01 04:00:00",
+      "step_m3_per_hour": 19.82
+    },
+    {
+      "night": "2019-09-08",
+      "weekday": "Sunday",
+      "issued_at": "2019-09-08 04:00:00",
+      "step_m3_per_hour": 21.06
+    },
+    {
+      "night": "2019-09-15",
+      "weekday": "Sunday",
+      "issued_at": "2019-09-15 04:00:00",
+      "step_m3_per_hour": 13.57
+    },
+    {
+      "night": "2019-09-23",
+      "weekday": "Monday",
+      "issued_at": "2019-09-23 04:00:00",
+      "step_m3_per_hour": 11.46
+    },
+    {
+      "night": "2019-09-30",
+      "weekday": "Monday",
+      "issued_at": "2019-09-30 04:00:00",
+      "step_m3_per_hour": 15.01
+    },
+    {
+      "night": "2019-10-13",
+      "weekday": "Sunday",
+      "issued_at": "2019-10-13 04:00:00",
+      "step_m3_per_hour": 10.35
+    },
+    {
+      "night": "2019-10-20",
+      "weekday": "Sunday",
+      "issued_at": "2019-10-20 04:00:00",
+      "step_m3_per_hour": 12.17
+    },
+    {
+      "night": "2019-10-27",
+      "weekday": "Sunday",
+      "issued_at": "2019-10-27 04:00:00",
+      "step_m3_per_hour": 26.06
+    },
+    {
+      "night": "2019-11-03",
+      "weekday": "Sunday",
+      "issued_at": "2019-11-03 04:00:00",
+      "step_m3_per_hour": 12.08
+    },
+    {
+      "night": "2019-11-10",
+      "weekday": "Sunday",
+      "issued_at": "2019-11-10 04:00:00",
+      "step_m3_per_hour": 12.81
+    },
+    {
+      "night": "2019-11-17",
+      "weekday": "Sunday",
+      "issued_at": "2019-11-17 04:00:00",
+      "step_m3_per_hour": 13.89
+    },
+    {
+      "night": "2019-11-24",
+      "weekday": "Sunday",
+      "issued_at": "2019-11-24 04:00:00",
+      "step_m3_per_hour": 14.32
+    },
+    {
+      "night": "2019-12-01",
+      "weekday": "Sunday",
+      "issued_at": "2019-12-01 04:00:00",
+      "step_m3_per_hour": 14.36
+    },
+    {
+      "night": "2019-12-09",
+      "weekday": "Monday",
+      "issued_at": "2019-12-09 04:00:00",
+      "step_m3_per_hour": 14.92
+    },
+    {
+      "night": "2019-12-16",
+      "weekday": "Monday",
+      "issued_at": "2019-12-16 04:00:00",
+      "step_m3_per_hour": 14.29
+    },
+    {
+      "night": "2019-12-23",
+      "weekday": "Monday",
+      "issued_at": "2019-12-23 04:00:00",
+      "step_m3_per_hour": 15.08
+    },
+    {
+      "night": "2019-12-30",
+      "weekday": "Monday",
+      "issued_at": "2019-12-30 04:00:00",
+      "step_m3_per_hour": 13.58
+    }
+  ]
+}
