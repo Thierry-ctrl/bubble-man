@@ -1,0 +1,84 @@
+{
+  "missing_nights": 0,
+  "night_to_night_change_std_full_window": 6.04,
+  "january_reference_std": 2.25,
+  "stop_limit": 4.5,
+  "noise_stop_triggered": true,
+  "change_percentiles": {
+    "p1": -26.23,
+    "p5": -6.31,
+    "p50": 0.82,
+    "p95": 4.91,
+    "p99": 19.64
+  },
+  "step_ge_10_nights": 37,
+  "step_nights": 351,
+  "step_percentiles": {
+    "p50": 0.2,
+    "p90": 10.87,
+    "p95": 15.98,
+    "p99": 27.55
+  },
+  "by_month": {
+    "Jan": {
+      "change_std": 2.33,
+      "nights_with_step_ge_10": 0,
+      "nights": 17
+    },
+    "Feb": {
+      "change_std": 5.85,
+      "nights_with_step_ge_10": 6,
+      "nights": 28
+    },
+    "Mar": {
+      "change_std": 7.86,
+      "nights_with_step_ge_10": 7,
+      "nights": 31
+    },
+    "Apr": {
+      "change_std": 5.79,
+      "nights_with_step_ge_10": 0,
+      "nights": 30
+    },
+    "May": {
+      "change_std": 9.74,
+      "nights_with_step_ge_10": 15,
+      "nights": 31
+    },
+    "Jun": {
+      "change_std": 8.01,
+      "nights_with_step_ge_10": 0,
+      "nights": 30
+    },
+    "Jul": {
+      "change_std": 3.62,
+      "nights_with_step_ge_10": 0,
+      "nights": 31
+    },
+    "Aug": {
+      "change_std": 3.93,
+      "nights_with_step_ge_10": 4,
+      "nights": 31
+    },
+    "Sep": {
+      "change_std": 4.44,
+      "nights_with_step_ge_10": 0,
+      "nights": 30
+    },
+    "Oct": {
+      "change_std": 7.78,
+      "nights_with_step_ge_10": 5,
+      "nights": 31
+    },
+    "Nov": {
+      "change_std": 4.51,
+      "nights_with_step_ge_10": 0,
+      "nights": 30
+    },
+    "Dec": {
+      "change_std": 2.56,
+      "nights_with_step_ge_10": 0,
+      "nights": 31
+    }
+  }
+}

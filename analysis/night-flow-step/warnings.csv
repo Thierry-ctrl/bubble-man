@@ -1,0 +1,6 @@
+run_start,issuable_at,outcome,matched_leak,match_confidence,leaks_running,candidates
+2018-02-03 03:00:00,2018-02-03 04:00:00,credited,p232,single_candidate,"['p461', 'p232']",['p232']
+2018-03-06 03:00:00,2018-03-06 04:00:00,credited,p673,single_candidate,"['p461', 'p427', 'p673']",['p673']
+2018-05-11 03:00:00,2018-05-11 04:00:00,unattributable,,,"['p427', 'p628']",[]
+2018-08-08 03:00:00,2018-08-08 04:00:00,credited,p183,single_candidate,"['p427', 'p654', 'p810', 'p183']",['p183']
+2018-10-06 03:00:00,2018-10-06 04:00:00,credited,p158,single_candidate,"['p427', 'p654', 'p810', 'p158']",['p158']

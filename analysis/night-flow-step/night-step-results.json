@@ -1,0 +1,736 @@
+{
+  "label": "2018 DEVELOPMENT TEST \u2014 leaks examined before; 2019 sealed",
+  "rule": "RULE-FROZEN.md (b944498)",
+  "warnings_full_window": 5,
+  "warning_nights": [
+    "2018-02-03",
+    "2018-03-06",
+    "2018-05-11",
+    "2018-08-08",
+    "2018-10-06"
+  ],
+  "full_window": {
+    "alert_events_total": 5,
+    "outcomes": {
+      "credited": 4,
+      "false_alert": 0,
+      "unattributable": 1,
+      "repeat_of_credited_leak": 0,
+      "coincides_with_excluded_leak": 0,
+      "retrospective_association": 0,
+      "issuable_after_window": 0
+    },
+    "overall": {
+      "eligible_leaks": 12,
+      "credited": 4,
+      "missed": 8,
+      "ambiguous": 0,
+      "median_delay_hours": 18.84
+    },
+    "abrupt": {
+      "eligible_leaks": 6,
+      "credited": 3,
+      "missed": 3,
+      "ambiguous": 0,
+      "median_delay_hours": 12.25
+    },
+    "incipient": {
+      "eligible_leaks": 6,
+      "credited": 1,
+      "missed": 5,
+      "ambiguous": 0,
+      "median_delay_hours": 72.25
+    }
+  },
+  "per_leak": [
+    {
+      "link": "p461",
+      "type": "incipient",
+      "zone": "main",
+      "start": "2018-01-23 23:55:00",
+      "end": "2018-04-02 11:40:00",
+      "eligibility": "eligible",
+      "censored_end": false,
+      "outcome": "missed",
+      "alert_index": null,
+      "match_confidence": null,
+      "delay_hours_from_first_flow": null,
+      "delay_hours_from_configured_onset": null,
+      "silent_hours_after_onset": 19.5
+    },
+    {
+      "link": "p232",
+      "type": "incipient",
+      "zone": "main",
+      "start": "2018-01-31 03:45:00",
+      "end": "2018-02-10 09:20:00",
+      "eligibility": "eligible",
+      "censored_end": false,
+      "outcome": "credited",
+      "alert_index": 0,
+      "match_confidence": "single_candidate",
+      "delay_hours_from_first_flow": 72.25,
+      "delay_hours_from_configured_onset": 73.42,
+      "silent_hours_after_onset": 1.17
+    },
+    {
+      "link": "p427",
+      "type": "incipient",
+      "zone": "main",
+      "start": "2018-02-16 04:15:00",
+      "end": "2018-12-31 23:55:00",
+      "eligibility": "eligible",
+      "censored_end": true,
+      "outcome": "missed",
+      "alert_index": null,
+      "match_confidence": null,
+      "delay_hours_from_first_flow": null,
+      "delay_hours_from_configured_onset": null,
+      "silent_hours_after_onset": 67.83
+    },
+    {
+      "link": "p673",
+      "type": "abrupt",
+      "zone": "main",
+      "start": "2018-03-05 15:45:00",
+      "end": "2018-03-23 10:25:00",
+      "eligibility": "eligible",
+      "censored_end": false,
+      "outcome": "credited",
+      "alert_index": 1,
+      "match_confidence": "single_candidate",
+      "delay_hours_from_first_flow": 12.25,
+      "delay_hours_from_configured_onset": 12.25,
+      "silent_hours_after_onset": 0.0
+    },
+    {
+      "link": "p628",
+      "type": "incipient",
+      "zone": "main",
+      "start": "2018-05-02 18:50:00",
+      "end": "2018-05-29 21:20:00",
+      "eligibility": "eligible",
+      "censored_end": false,
+      "outcome": "missed",
+      "alert_index": null,
+      "match_confidence": null,
+      "delay_hours_from_first_flow": null,
+      "delay_hours_from_configured_onset": null,
+      "silent_hours_after_onset": 3.92
+    },
+    {
+      "link": "p538",
+      "type": "abrupt",
+      "zone": "main",
+      "start": "2018-05-18 08:35:00",
+      "end": "2018-06-02 06:05:00",
+      "eligibility": "eligible",
+      "censored_end": false,
+      "outcome": "missed",
+      "alert_index": null,
+      "match_confidence": null,
+      "delay_hours_from_first_flow": null,
+      "delay_hours_from_configured_onset": null,
+      "silent_hours_after_onset": 0.0
+    },
+    {
+      "link": "p866",
+      "type": "abrupt",
+      "zone": "main",
+      "start": "2018-06-01 09:05:00",
+      "end": "2018-06-12 03:00:00",
+      "eligibility": "eligible",
+      "censored_end": false,
+      "outcome": "missed",
+      "alert_index": null,
+      "match_confidence": null,
+      "delay_hours_from_first_flow": null,
+      "delay_hours_from_configured_onset": null,
+      "silent_hours_after_onset": 0.0
+    },
+    {
+      "link": "p654",
+      "type": "incipient",
+      "zone": "main",
+      "start": "2018-07-07 09:10:00",
+      "end": "2018-12-31 23:55:00",
+      "eligibility": "eligible",
+      "censored_end": true,
+      "outcome": "missed",
+      "alert_index": null,
+      "match_confidence": null,
+      "delay_hours_from_first_flow": null,
+      "delay_hours_from_configured_onset": null,
+      "silent_hours_after_onset": 53.5
+    },
+    {
+      "link": "p810",
+      "type": "incipient",
+      "zone": "main",
+      "start": "2018-07-30 18:40:00",
+      "end": "2018-12-31 23:55:00",
+      "eligibility": "eligible",
+      "censored_end": true,
+      "outcome": "missed",
+      "alert_index": null,
+      "match_confidence": null,
+      "delay_hours_from_first_flow": null,
+      "delay_hours_from_configured_onset": null,
+      "silent_hours_after_onset": 63.58
+    },
+    {
+      "link": "p183",
+      "type": "abrupt",
+      "zone": "main",
+      "start": "2018-08-07 02:35:00",
+      "end": "2018-09-01 17:10:00",
+      "eligibility": "eligible",
+      "censored_end": false,
+      "outcome": "credited",
+      "alert_index": 3,
+      "match_confidence": "single_candidate",
+      "delay_hours_from_first_flow": 25.42,
+      "delay_hours_from_configured_onset": 25.42,
+      "silent_hours_after_onset": 0.0
+    },
+    {
+      "link": "p158",
+      "type": "abrupt",
+      "zone": "main",
+      "start": "2018-10-06 02:35:00",
+      "end": "2018-10-23 13:35:00",
+      "eligibility": "eligible",
+      "censored_end": false,
+      "outcome": "credited",
+      "alert_index": 4,
+      "match_confidence": "single_candidate",
+      "delay_hours_from_first_flow": 1.42,
+      "delay_hours_from_configured_onset": 1.42,
+      "silent_hours_after_onset": 0.0
+    },
+    {
+      "link": "p369",
+      "type": "abrupt",
+      "zone": "main",
+      "start": "2018-10-26 02:05:00",
+      "end": "2018-11-08 20:25:00",
+      "eligibility": "eligible",
+      "censored_end": false,
+      "outcome": "missed",
+      "alert_index": null,
+      "match_confidence": null,
+      "delay_hours_from_first_flow": null,
+      "delay_hours_from_configured_onset": null,
+      "silent_hours_after_onset": 0.0
+    }
+  ],
+  "events": [
+    {
+      "run_start": "2018-02-03 03:00:00",
+      "issuable_at": "2018-02-03 04:00:00",
+      "outcome": "credited",
+      "matched_leak": "p232",
+      "match_confidence": "single_candidate",
+      "leaks_running": [
+        "p461",
+        "p232"
+      ],
+      "candidates": [
+        "p232"
+      ]
+    },
+    {
+      "run_start": "2018-03-06 03:00:00",
+      "issuable_at": "2018-03-06 04:00:00",
+      "outcome": "credited",
+      "matched_leak": "p673",
+      "match_confidence": "single_candidate",
+      "leaks_running": [
+        "p461",
+        "p427",
+        "p673"
+      ],
+      "candidates": [
+        "p673"
+      ]
+    },
+    {
+      "run_start": "2018-05-11 03:00:00",
+      "issuable_at": "2018-05-11 04:00:00",
+      "outcome": "unattributable",
+      "matched_leak": null,
+      "match_confidence": null,
+      "leaks_running": [
+        "p427",
+        "p628"
+      ],
+      "candidates": []
+    },
+    {
+      "run_start": "2018-08-08 03:00:00",
+      "issuable_at": "2018-08-08 04:00:00",
+      "outcome": "credited",
+      "matched_leak": "p183",
+      "match_confidence": "single_candidate",
+      "leaks_running": [
+        "p427",
+        "p654",
+        "p810",
+        "p183"
+      ],
+      "candidates": [
+        "p183"
+      ]
+    },
+    {
+      "run_start": "2018-10-06 03:00:00",
+      "issuable_at": "2018-10-06 04:00:00",
+      "outcome": "credited",
+      "matched_leak": "p158",
+      "match_confidence": "single_candidate",
+      "leaks_running": [
+        "p427",
+        "p654",
+        "p810",
+        "p158"
+      ],
+      "candidates": [
+        "p158"
+      ]
+    }
+  ],
+  "per_month": {
+    "Jan": {
+      "warnings": 0,
+      "credited": 0,
+      "not_credited": 0
+    },
+    "Feb": {
+      "warnings": 1,
+      "credited": 1,
+      "not_credited": 0
+    },
+    "Mar": {
+      "warnings": 1,
+      "credited": 1,
+      "not_credited": 0
+    },
+    "Apr": {
+      "warnings": 0,
+      "credited": 0,
+      "not_credited": 0
+    },
+    "May": {
+      "warnings": 1,
+      "credited": 0,
+      "not_credited": 1
+    },
+    "Jun": {
+      "warnings": 0,
+      "credited": 0,
+      "not_credited": 0
+    },
+    "Jul": {
+      "warnings": 0,
+      "credited": 0,
+      "not_credited": 0
+    },
+    "Aug": {
+      "warnings": 1,
+      "credited": 1,
+      "not_credited": 0
+    },
+    "Sep": {
+      "warnings": 0,
+      "credited": 0,
+      "not_credited": 0
+    },
+    "Oct": {
+      "warnings": 1,
+      "credited": 1,
+      "not_credited": 0
+    },
+    "Nov": {
+      "warnings": 0,
+      "credited": 0,
+      "not_credited": 0
+    },
+    "Dec": {
+      "warnings": 0,
+      "credited": 0,
+      "not_credited": 0
+    }
+  },
+  "shift_comparison": {
+    "domain": "15 Jan - 30 Dec 2018, 350 nights",
+    "distinct_shifts": 49,
+    "real_in_domain": {
+      "warnings": 5,
+      "abrupt": 3,
+      "all": 4,
+      "median_delay_h": 18.84
+    },
+    "shifts_abrupt_distribution": {
+      "0": 25,
+      "1": 21,
+      "2": 3
+    },
+    "shifts_all_distribution": {
+      "0": 14,
+      "1": 20,
+      "2": 10,
+      "3": 5
+    },
+    "shifts_beaten_on_abrupt": 49,
+    "needed_to_pass": 47,
+    "p_one_sided_abrupt": 0.02,
+    "p_one_sided_all": 0.02,
+    "shifts_with_a_gap_under_7_days": 0,
+    "shift_median_delay_h_median": 93.58
+  },
+  "shifts": [
+    {
+      "k_weeks": 1,
+      "abrupt": 0,
+      "all": 0,
+      "median_delay_h": null,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 2,
+      "abrupt": 1,
+      "all": 2,
+      "median_delay_h": 93.58,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 3,
+      "abrupt": 1,
+      "all": 1,
+      "median_delay_h": 25.92,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 4,
+      "abrupt": 1,
+      "all": 1,
+      "median_delay_h": 162.92,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 5,
+      "abrupt": 1,
+      "all": 1,
+      "median_delay_h": 108.25,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 6,
+      "abrupt": 0,
+      "all": 0,
+      "median_delay_h": null,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 7,
+      "abrupt": 0,
+      "all": 0,
+      "median_delay_h": null,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 8,
+      "abrupt": 0,
+      "all": 0,
+      "median_delay_h": null,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 9,
+      "abrupt": 1,
+      "all": 3,
+      "median_delay_h": 129.17,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 10,
+      "abrupt": 0,
+      "all": 0,
+      "median_delay_h": null,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 11,
+      "abrupt": 1,
+      "all": 1,
+      "median_delay_h": 91.42,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 12,
+      "abrupt": 1,
+      "all": 2,
+      "median_delay_h": 101.62,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 13,
+      "abrupt": 2,
+      "all": 3,
+      "median_delay_h": 73.42,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 14,
+      "abrupt": 0,
+      "all": 1,
+      "median_delay_h": 76.08,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 15,
+      "abrupt": 1,
+      "all": 2,
+      "median_delay_h": 45.84,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 16,
+      "abrupt": 0,
+      "all": 0,
+      "median_delay_h": null,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 17,
+      "abrupt": 1,
+      "all": 2,
+      "median_delay_h": 21.34,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 18,
+      "abrupt": 0,
+      "all": 1,
+      "median_delay_h": 66.83,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 19,
+      "abrupt": 0,
+      "all": 0,
+      "median_delay_h": null,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 20,
+      "abrupt": 1,
+      "all": 1,
+      "median_delay_h": 108.25,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 21,
+      "abrupt": 0,
+      "all": 1,
+      "median_delay_h": 9.33,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 22,
+      "abrupt": 2,
+      "all": 3,
+      "median_delay_h": 4.08,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 23,
+      "abrupt": 0,
+      "all": 1,
+      "median_delay_h": 162.83,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 24,
+      "abrupt": 1,
+      "all": 1,
+      "median_delay_h": 1.92,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 25,
+      "abrupt": 0,
+      "all": 0,
+      "median_delay_h": null,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 26,
+      "abrupt": 0,
+      "all": 2,
+      "median_delay_h": 112.54,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 27,
+      "abrupt": 1,
+      "all": 1,
+      "median_delay_h": 97.42,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 28,
+      "abrupt": 1,
+      "all": 2,
+      "median_delay_h": 46.71,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 29,
+      "abrupt": 0,
+      "all": 0,
+      "median_delay_h": null,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 30,
+      "abrupt": 1,
+      "all": 1,
+      "median_delay_h": 19.42,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 31,
+      "abrupt": 1,
+      "all": 1,
+      "median_delay_h": 73.42,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 32,
+      "abrupt": 1,
+      "all": 1,
+      "median_delay_h": 18.92,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 33,
+      "abrupt": 0,
+      "all": 0,
+      "median_delay_h": null,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 34,
+      "abrupt": 1,
+      "all": 1,
+      "median_delay_h": 97.92,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 35,
+      "abrupt": 1,
+      "all": 2,
+      "median_delay_h": 26.75,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 36,
+      "abrupt": 0,
+      "all": 1,
+      "median_delay_h": 48.25,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 37,
+      "abrupt": 0,
+      "all": 1,
+      "median_delay_h": 153.17,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 38,
+      "abrupt": 1,
+      "all": 2,
+      "median_delay_h": 94.38,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 39,
+      "abrupt": 1,
+      "all": 2,
+      "median_delay_h": 141.59,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 40,
+      "abrupt": 0,
+      "all": 0,
+      "median_delay_h": null,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 41,
+      "abrupt": 2,
+      "all": 3,
+      "median_delay_h": 105.33,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 42,
+      "abrupt": 1,
+      "all": 1,
+      "median_delay_h": 97.42,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 43,
+      "abrupt": 0,
+      "all": 0,
+      "median_delay_h": null,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 44,
+      "abrupt": 0,
+      "all": 0,
+      "median_delay_h": null,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 45,
+      "abrupt": 0,
+      "all": 1,
+      "median_delay_h": 148.08,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 46,
+      "abrupt": 0,
+      "all": 2,
+      "median_delay_h": 117.54,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 47,
+      "abrupt": 0,
+      "all": 0,
+      "median_delay_h": null,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 48,
+      "abrupt": 0,
+      "all": 1,
+      "median_delay_h": 95.75,
+      "min_gap_days": 31
+    },
+    {
+      "k_weeks": 49,
+      "abrupt": 0,
+      "all": 3,
+      "median_delay_h": 33.33,
+      "min_gap_days": 31
+    }
+  ]
+}
