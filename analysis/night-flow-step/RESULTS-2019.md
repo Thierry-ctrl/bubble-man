@@ -150,9 +150,10 @@ No code defect was found. No setting was changed, and nothing was rerun.
 - **The 2018 result did not carry over.** In 2018, five widely spaced warnings beat every
   shift. In 2019, the same rule fired weekly and matched everything — and so did chance.
 - **The baseline's calendar assumption did not transfer.** A profile tied to calendar
-  weekdays broke when the simulated weekly cycle moved by one day. Whether that would happen
-  in a real network is a separate question; in a real network it would not happen this way,
-  but holidays, schedule changes or supply rotas could do something similar.
+  weekdays broke when the simulated weekly cycle moved by one day. That one-day slip is an
+  artefact of how the simulation repeats its demand cycle; a real network would not slip
+  like this, but holidays, schedule changes or supply rotas could misalign a calendar-based
+  baseline in similar ways.
 - It does **not** show that night flow carries no information about new leaks, or that a
   correctly aligned baseline would fail. Neither was tested, and 2019 can no longer test
   them fairly — it has now been used.
