@@ -1,0 +1,31 @@
+{
+  "protocol": "9724c60",
+  "file": "2019_SCADA_Flows.csv",
+  "md5": "28fc99fdcbf80fcd26079e7fe602d6dc",
+  "md5_matches_zenodo": true,
+  "rows": 105120,
+  "first": "2019-01-01 00:00:00",
+  "last": "2019-12-31 23:55:00",
+  "continuous_with_2018": true,
+  "missing_5min_values": {
+    "p227": 0,
+    "p235": 0,
+    "PUMP_1": 0
+  },
+  "missing_nights_2019": 0,
+  "noise_2019_common_basis": {
+    "basis": "nights 15 Jan - 31 Dec 2019, changes within span (16 Jan - 31 Dec)",
+    "changes": 350,
+    "original_statistic_std": 17.34,
+    "original_cutoff": 4.5,
+    "robust_sigma": 16.77,
+    "like_for_like_robust_cutoff": 2.22,
+    "role": "REPORTED, NOT GATING (option B). The original 2018 noise stop failed and remains failed.",
+    "std_above_original_cutoff": true,
+    "robust_above_like_for_like_cutoff": true
+  },
+  "noise_2018_for_reference": {
+    "std": 6.04,
+    "robust_sigma": 2.98
+  }
+}
