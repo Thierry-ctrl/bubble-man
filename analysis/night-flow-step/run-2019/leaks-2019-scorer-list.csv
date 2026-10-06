@@ -1,0 +1,21 @@
+link,type,zone,start,end,status
+p427,incipient,main,2018-02-16 04:15:00,2019-12-31 23:55:00,carried over (excluded)
+p654,incipient,main,2018-07-07 09:10:00,2019-12-31 23:55:00,carried over (excluded)
+p810,incipient,main,2018-07-30 18:40:00,2019-12-31 23:55:00,carried over (excluded)
+p523,abrupt,main,2019-01-15 23:00:00,2019-02-01 09:50:00,eligible
+p827,abrupt,main,2019-01-24 18:30:00,2019-02-07 09:05:00,eligible
+p653,incipient,main,2019-03-04 08:40:00,2019-05-05 12:10:00,eligible
+p710,abrupt,main,2019-03-24 14:15:00,2019-12-31 23:55:00,eligible
+p514,abrupt,main,2019-04-02 20:40:00,2019-05-23 14:55:00,eligible
+p331,abrupt,main,2019-04-20 10:10:00,2019-12-31 23:55:00,eligible
+p193,incipient,main,2019-05-20 21:55:00,2019-12-31 23:55:00,eligible
+p142,abrupt,main,2019-06-12 19:55:00,2019-07-17 09:25:00,eligible
+p680,abrupt,main,2019-07-10 08:45:00,2019-12-31 23:55:00,eligible
+p586,incipient,main,2019-07-27 02:55:00,2019-09-16 03:20:00,eligible
+p721,incipient,main,2019-08-03 03:20:00,2019-12-31 23:55:00,eligible
+p800,incipient,main,2019-08-16 22:05:00,2019-10-01 16:35:00,eligible
+p123,incipient,main,2019-09-15 15:40:00,2019-12-31 23:55:00,eligible
+p455,incipient,main,2019-10-05 03:35:00,2019-12-31 23:55:00,eligible
+p762,incipient,main,2019-10-10 09:40:00,2019-12-31 23:55:00,eligible
+p426,abrupt,main,2019-10-25 13:25:00,2019-12-31 23:55:00,eligible
+p879,incipient,main,2019-11-21 09:15:00,2019-12-31 23:55:00,eligible

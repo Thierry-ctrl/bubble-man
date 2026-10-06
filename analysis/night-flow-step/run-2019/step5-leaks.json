@@ -1,0 +1,27 @@
+{
+  "protocol": "9724c60",
+  "file": "2019_Leakages.csv",
+  "md5": "e1f0a43683813a90a9fec8562dde599b",
+  "md5_matches_zenodo": true,
+  "leaks_active_in_2019": 23,
+  "flowing_at_first_2019_timestamp": [
+    "p257",
+    "p427",
+    "p654",
+    "p810"
+  ],
+  "carried_over_main_excluded": [
+    "p427",
+    "p654",
+    "p810"
+  ],
+  "area_c_leaks": [
+    "p257",
+    "p277",
+    "p280"
+  ],
+  "eligible_main_zone": 17,
+  "eligible_sudden": 8,
+  "eligible_gradual": 9,
+  "S1_at_least_3_eligible_sudden": true
+}
