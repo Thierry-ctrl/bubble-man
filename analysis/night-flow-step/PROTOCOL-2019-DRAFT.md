@@ -1,11 +1,37 @@
-# Draft protocol — one locked 2019 evaluation of the night-flow step check
+# Protocol — one locked 2019 evaluation of the night-flow step check (revised, exploratory)
 
-**Status: DRAFT for review, revision 2 (7 October 2026). Nothing in this document has been
-run on 2019.** No 2019 reading is present in the project; none has been downloaded.
-Approval of this protocol, and a decision under §4.5, is required before anything in §11.
+**Status: revision 3 (7 October 2026) — option B chosen by the user. This is a revised,
+exploratory evaluation, not the evaluation originally planned.** Committed before any 2019
+file is obtained; the commit hash is the protocol ID.
+
+> **The original 2018 noise stop failed and remains failed.** It was not passed, waived on
+> merit, or reinterpreted. In this revised protocol the 2019 noise measures are **reported
+> but do not gate** the result.
+>
+> **The week-shift comparison does not replace the noise check.** It tests something
+> different: whether the warning *dates* line up with leak starts better than the same
+> pattern moved to other weeks. It says nothing about whether ordinary night-to-night
+> variation is small relative to the 10 m³/h threshold.
+>
+> **If S1–S4 are met, the result is described as "promising under the revised exploratory
+> protocol"** — never as validation, and never as a pass of the original test.
+>
+> **The 2019 leak schedule was previously visible** (§2.4). This evaluation is blind to the
+> 2019 readings, not to the list of 2019 leaks.
 
 Scope: **detecting an additional new leak in the main zone.** Not a measure of losses
 present for months.
+
+### Revision 3 — what changed from revision 2
+
+1. Option **B** recorded as chosen; the framing box above added; §4.5 and §10 wording
+   aligned with it.
+2. **Clarifications fixed before the run, not changes to the criteria:** S2 and S4 are
+   computed on the full 2019 window (1 Jan – 31 Dec); S3 on the 52-week shift domain
+   (1 Jan – 30 Dec), as §9 already required. The scorer's leak list contains the eligible
+   2019 main-zone leaks **and** the three carried-over leaks (with their 2018 start times,
+   so they are classed "began before the window"); Area C leaks are not in the list, as in
+   2018. File checksums are checked against the md5 values published by the Zenodo record.
 
 ### Revision 2 — what changed from revision 1
 
@@ -154,19 +180,19 @@ route past the noise check, and the recommendation to adopt it is **withdrawn**.
 For the record, the inconsistent version (robust spread vs 4.5) would pass 2018 at 2.98.
 It is not proposed.
 
-### 4.5 Decision required
+### 4.5 Decision — option B chosen
+
+**Chosen: (B).** The options as they were presented:
 
 - **(A) Drop.** The noise check failed on 2018 under the original statistic and under a
   like-for-like robust version. On that evidence the method is not taken to 2019, and
   this protocol is not run.
 - **(B) Run, with the noise check reported but not gating.** Both statistics (§4.1, §4.4)
   are computed on 2019 readings and reported; neither decides the outcome, which rests on
-  S1–S4 (§10). The argument: the noise check was a *proxy* for whether a 10 m³/h step stands
-  out from ordinary variation; S3 tests the underlying question directly — whether warnings
-  beat the same pattern moved to other weeks — and its reference is the year's own data,
-  not eight January nights. The argument against: this **demotes a gate after it failed**,
-  which is what moving the goalposts looks like. It is a weaker protocol and must be
-  labelled as one in every result.
+  S1–S4 (§10). This **demotes a gate after it failed**, which is what moving the goalposts
+  looks like; it is a weaker protocol and is labelled as one in every result. The noise
+  question — is a 10 m³/h step clearly above ordinary night-to-night variation? — remains
+  **unanswered by S3**, which tests only whether warning dates align with leak starts.
 - **(C) Not offered:** any other cutoff now (for example one tied to the threshold, 10/3 =
   3.33) would be chosen after seeing 2018's 2.98.
 
@@ -263,13 +289,14 @@ with few warnings the distribution is coarse.
 
 | | Criterion |
 |---|---|
-| **S0 — noise** | Under §4.5 (B): **reported, not gating** — both statistics on the §4.2 basis, labelled "failed on 2018". Under (A) the run does not happen. |
+| **S0 — noise** | **Reported, not gating** (option B) — both statistics on the §4.2 basis. The original 2018 noise stop **failed and remains failed**. |
 | **S1 — enough events** | At least **3** eligible sudden main-zone leaks exist in 2019 |
-| **S2 — real hits** | The real warnings associate at least **2** eligible sudden leaks |
+| **S2 — real hits** | The real warnings associate at least **2** eligible sudden leaks (full 2019 window) |
 | **S3 — beyond chance** | p_sudden ≤ **0.05** — at most 1 of the 51 shifts does as well or better ((1 + 1)/52 = 0.038; (1 + 2)/52 = 0.058) |
-| **S4 — workload** | Yield ≥ **50%** — a **proposed operational target**, not a validated utility requirement |
+| **S4 — workload** | Yield ≥ **50%** over the full 2019 window — a **proposed operational target**, not a validated utility requirement |
 
-- **Pass:** S1–S4 all met.
+- **Promising under the revised exploratory protocol:** S1–S4 all met. Not validation;
+  not a pass of the original test, whose noise stop failed.
 - **Inconclusive:** S1 not met — too few events to judge, whatever else happens.
 - **Fail:** S1 met and any of S2–S4 fails.
 
@@ -279,8 +306,7 @@ warnings were associated). A real deployment would set it with the utility's cre
 
 ## 11. Exactly what would happen in the single run
 
-1. **You decide §4.5 and approve** this protocol. The approved version is committed; its
-   git hash becomes the protocol ID. Under (A), nothing further happens.
+1. Option B approved; this version is committed and its git hash becomes the protocol ID.
 2. Download **`2019_SCADA_Flows.csv` only**; verify its checksum against the Zenodo record;
    assert continuity with 2018. Report missing readings.
 3. Compute night residuals, steps and **both** noise statistics on the §4.2 basis. Record
@@ -299,7 +325,8 @@ A failure is reported as a failure.
 ## 12. What remains uncertain
 
 - **Noise gate:** failed on 2018 under both the original and a like-for-like robust
-  statistic; both cutoffs rest on eight January changes (§4.3).
+  statistic, and remains failed; both cutoffs rest on eight January changes (§4.3). In this
+  revised protocol it does not gate, and nothing in 2019 can change the 2018 failure.
 - **Label blindness:** the 2019 leak schedule was displayed during earlier work (§2.4).
 - **Overlap:** all three 2018 misses came from overlapping leaks; 2019 will likely contain
   similar overlaps, and the protocol does not correct for them.

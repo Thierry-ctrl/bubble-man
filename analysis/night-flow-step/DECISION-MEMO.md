@@ -1,6 +1,14 @@
 # Decision memo — should we run the one locked 2019 test?
 
-*Revision 2, 7 October 2026. Nothing has been run on 2019.*
+*Revision 3, 7 October 2026. **Decision: option B.** Nothing has been run on 2019 at the
+time of this commit.*
+
+> **The original 2018 noise stop failed and remains failed.** The 2019 run is a **revised,
+> exploratory evaluation** in which the noise measures are reported but do not decide the
+> outcome. The week-shift comparison tests whether warning dates align with leak starts; it
+> does **not** replace the noise check. If the remaining criteria are met, the result will
+> be called **"promising under the revised exploratory protocol"** — not validation, and not
+> a pass of the original test. The 2019 leak schedule was previously visible.
 
 ## Where we are
 
@@ -45,11 +53,10 @@ exclusion of the three leaks carried over from 2018 (p427, p654, p810); and coun
 
 - **(A) Drop.** The noise check failed on 2018, both as written and in a like-for-like
   robust form. On that evidence, no 2019 run.
-- **(B) Run, with the noise check reported but not deciding.** The outcome rests on the
-  other criteria, especially the comparison with week-shifted warnings, which tests the
-  noise check's underlying question directly — do the warnings beat the same pattern
-  placed at other times? — using the year's own data instead of eight January nights.
-  **This demotes a gate after it failed.** It must be labelled a weaker protocol in every
+- **(B) Run, with the noise check reported but not deciding — CHOSEN.** The outcome rests
+  on the other criteria. The week-shift comparison checks whether warning dates line up
+  with leak starts; it does not answer the noise question, which stays open.
+  **This demotes a gate after it failed** and is labelled a weaker protocol in every
   result.
 
 | If (B) | Required |
@@ -64,8 +71,9 @@ exclusion of the three leaks carried over from 2018 (p427, p654, p810); and coun
 **(B), as a judgement call — and (A) is a defensible choice if you weigh strict
 pre-registration above learning from one more run.**
 
-My reasoning: the noise gate rests on a reference too small to decide anything, and the
-shift comparison measures what the gate was standing in for. The run costs little, its
+My reasoning: the noise gate rests on a reference too small to decide anything, and a
+locked run can still show whether warning dates line up with leaks — a different question
+from noise, but a useful one. The run costs little, its
 outcome is fixed in advance, and a fail would be reported as a fail. But I want to be plain:
 this is moving a goalpost, and nobody reading the result should be left unaware of it.
 
