@@ -1,6 +1,6 @@
 # Decision memo — should we run the one locked 2019 test?
 
-*6 October 2026. Nothing has been run on 2019.*
+*Revision 2, 7 October 2026. Nothing has been run on 2019.*
 
 ## Where we are
 
@@ -10,64 +10,72 @@ distinct shifts beaten, p = 0.02). I re-checked every one of those numbers indep
 they hold.
 
 Against that:
-- it **failed the noise check it set itself** (6.04 against a limit of 4.5);
-- it **missed half the sudden leaks**, each time because another leak was starting,
-  ending or growing at the same moment;
+- it **failed the noise check it set itself**;
+- it **missed half the sudden leaks**, each time because another leak was starting, ending
+  or growing at the same moment;
 - the idea was motivated by 2018 data, so 2018 cannot confirm it.
 
-## Two problems found in review
+## What changed since the first draft
 
-1. **A leak carried over from 2018 would have been scored as a new 2019 leak.** The 2019
-   file starts at the window's first moment, so the scorer would see those leaks
-   "begin" on 1 January. Fixed in the protocol by excluding p427, p654 and p810 by name,
-   using 2018 data only.
-2. **The 2019 leak schedule is not truly sealed.** It sits in a file next to the 2018
-   schedule and was printed on screen during the scorer work on 28–29 September. The 2019
-   flow readings have never been downloaded. So the test can be blind to readings, not to
-   the list of leaks. The rule was not built from that list, but you should know.
+**1. The robust noise amendment does not survive a consistent calculation.**
+I had proposed swapping the standard deviation for a robust spread while keeping the
+4.5 cutoff. But 4.5 was twice January's *standard deviation*. Measured the same robust way,
+January's reference is 1.11, so the like-for-like cutoff is **2.22** — and 2018 scores
+2.98. **2018 fails the amended check too.** I have withdrawn the recommendation to adopt it.
+
+Both January references come from just **eight** night-to-night changes, so neither cutoff
+is reliable. That cuts both ways: the gate cannot be trusted to say the method is too
+noisy, and it cannot be trusted to say it is fine.
+
+**2. I was wrong about late credits.** I said a credit more than 48 hours after a leak began
+was unlikely to be caused by it. The step compares the last two nights with the seven
+before, so a leak's onset stays in the comparison for up to eight nights, fading by
+one-seventh each night. A 20 m³/h leak keeps the step above 10 for about five nights.
+Delays are now reported without drawing conclusions about cause from them.
+
+**3. The 50% warning yield is a proposed target, not a validated requirement.** It is my
+suggestion for acceptable workload. A real utility would set it from its crew capacity.
+
+Kept from the first draft: the disclosure that the 2019 leak schedule was displayed during
+earlier work (so the test is blind to readings, not to the list of leaks); the explicit
+exclusion of the three leaks carried over from 2018 (p427, p654, p810); and counting
+**every** warning as an operator investigation.
 
 ## The decision in front of you
 
-**First: does the failed noise check stand?**
+- **(A) Drop.** The noise check failed on 2018, both as written and in a like-for-like
+  robust form. On that evidence, no 2019 run.
+- **(B) Run, with the noise check reported but not deciding.** The outcome rests on the
+  other criteria, especially the comparison with week-shifted warnings, which tests the
+  noise check's underlying question directly — do the warnings beat the same pattern
+  placed at other times? — using the year's own data instead of eight January nights.
+  **This demotes a gate after it failed.** It must be labelled a weaker protocol in every
+  result.
 
-- **If yes**, the method is dropped on 2018's evidence and the protocol is not run.
-- **If you accept the amendment**, the check is redone with a robust measure (interquartile
-  range instead of standard deviation) at the **same** cutoff of 4.5. The reason: the
-  standard deviation was inflated by the very leak events the method detects. It would be
-  recorded throughout as an amendment made after seeing 2018, and 2018's failure stays on
-  record.
-
-**Then: approve or change the draft protocol** — especially the success criteria:
-
-| | Required |
+| If (B) | Required |
 |---|---|
-| Gate | approved noise check passes on 2019 readings |
-| Enough events | at least 3 eligible sudden leaks |
+| Enough events | at least 3 eligible sudden leaks (else "inconclusive") |
 | Real hits | at least 2 sudden leaks associated |
 | Beyond chance | at most 1 of 51 week-shifts does as well (p ≤ 0.05) |
-| Workload | at least half of all warnings associate a new leak |
-
-The workload criterion is my suggestion, not a statistical result. Please confirm or
-change it.
+| Workload | at least half of all warnings associate a new leak — *proposed target* |
 
 ## My recommendation
 
-**Accept the amended noise check, openly labelled, and approve the protocol** — with eyes
-open about the weak points. This is the first method in the project to beat its own
-random comparison under a test fixed in advance, at a workload of a few warnings a year,
-and its misses have a clear cause. A single locked 2019 run is the cheapest way to learn
-whether 2018 was luck.
+**(B), as a judgement call — and (A) is a defensible choice if you weigh strict
+pre-registration above learning from one more run.**
 
-Expect it may well fail, or come back inconclusive if 2019 holds few sudden main-zone
-leaks. Either outcome is informative; neither would be rerun.
+My reasoning: the noise gate rests on a reference too small to decide anything, and the
+shift comparison measures what the gate was standing in for. The run costs little, its
+outcome is fixed in advance, and a fail would be reported as a fail. But I want to be plain:
+this is moving a goalpost, and nobody reading the result should be left unaware of it.
 
-## If you approve, the single run does exactly this
+## If you choose (B), the single run does exactly this
 
 1. Commit the approved protocol.
-2. Download 2019 flow readings only; check them; compute the noise check; **commit**.
+2. Download 2019 flow readings only; check them; compute both noise statistics; **commit**.
 3. Generate the warnings; **commit them before any 2019 leak record is opened**.
 4. Download 2019 leak records; build the eligible list; **commit**.
 5. Score, compare with 51 week-shifts, and report every specified number — including every
-   warning an operator would have had to investigate, not only the "false alerts".
+   warning an operator would have had to investigate.
 
 No second run. No changes afterwards.
