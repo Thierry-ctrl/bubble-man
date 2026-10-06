@@ -1,0 +1,77 @@
+{
+  "warnings": [
+    "2018-02-03",
+    "2018-03-06",
+    "2018-05-11",
+    "2018-08-08",
+    "2018-10-06"
+  ],
+  "credited": 4,
+  "abrupt": "3/6",
+  "gradual": "1/6",
+  "outcomes": {
+    "credited": 4,
+    "false_alert": 0,
+    "unattributable": 1,
+    "repeat_of_credited_leak": 0,
+    "coincides_with_excluded_leak": 0,
+    "retrospective_association": 0,
+    "issuable_after_window": 0
+  },
+  "events": [
+    [
+      "2018-02-03 03:00",
+      "credited",
+      "p232",
+      "single_candidate",
+      [
+        "p232"
+      ]
+    ],
+    [
+      "2018-03-06 03:00",
+      "credited",
+      "p673",
+      "single_candidate",
+      [
+        "p673"
+      ]
+    ],
+    [
+      "2018-05-11 03:00",
+      "unattributable",
+      null,
+      null,
+      []
+    ],
+    [
+      "2018-08-08 03:00",
+      "credited",
+      "p183",
+      "single_candidate",
+      [
+        "p183"
+      ]
+    ],
+    [
+      "2018-10-06 03:00",
+      "credited",
+      "p158",
+      "single_candidate",
+      [
+        "p158"
+      ]
+    ]
+  ],
+  "distinct_whole_week_patterns_including_original": 50,
+  "real_in_domain_abrupt": 3,
+  "shift_abrupt_counts": {
+    "0": 25,
+    "1": 21,
+    "2": 3
+  },
+  "p_abrupt": 0.02,
+  "p_all": 0.02,
+  "noise_std": 6.04,
+  "noise_robust_sigma": 2.98
+}
