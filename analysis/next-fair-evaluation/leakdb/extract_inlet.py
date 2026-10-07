@@ -15,6 +15,9 @@ from pathlib import Path
 FLOW_IN_HANOI = re.compile(r'(?:^|/)Hanoi_CMH/Scenario-(\d+)/Flows/Link_1\.csv$')
 FLOW_IN_INNER = re.compile(r'^(?:[^/]*/)?Scenario-(\d+)/Flows/Link_1\.csv$')
 INNER_HANOI = re.compile(r'(?:^|/)Hanoi_CMH\.zip$')
+LEAK_IN_HANOI = re.compile(r'(?:^|/)Hanoi_CMH/Scenario-(\d+)/Leaks/(Leak_[^/]+\.csv)$')
+LEAK_IN_INNER = re.compile(r'^(?:[^/]*/)?Scenario-(\d+)/Leaks/(Leak_[^/]+\.csv)$')
+PATTERNS = {'inlet': (FLOW_IN_HANOI, FLOW_IN_INNER), 'leaks': (LEAK_IN_HANOI, LEAK_IN_INNER)}
 
 
 def md5_of(path, chunk=1 << 24):
@@ -34,13 +37,16 @@ def matches(names, pattern):
     return found
 
 
-def extract(archive, out_dir, min_scenario, tmp_parent=None):
+def extract(archive, out_dir, min_scenario, tmp_parent=None, what='inlet', only=None):
+    """what='inlet': Flows/Link_1.csv only. what='leaks': Leaks/Leak_*.csv for the scenarios in
+    `only` -- permitted ONLY after the warning lists are committed (protocol section 11)."""
+    outer_pat, inner_pat = PATTERNS[what]
     out_dir = Path(out_dir); out_dir.mkdir(parents=True, exist_ok=True)
     report = {}
     with zipfile.ZipFile(archive) as z:
         names = z.namelist()
         report['entries_in_archive'] = len(names)
-        found, source, inner_tmp = matches(names, FLOW_IN_HANOI), z, None
+        found, source, inner_tmp = matches(names, outer_pat), z, None
         report['layout'] = 'flat'
         if not found:
             inner = [n for n in names if INNER_HANOI.search(n)]
@@ -54,8 +60,20 @@ def extract(archive, out_dir, min_scenario, tmp_parent=None):
             report['layout'] = 'nested Hanoi_CMH.zip'
             source = zipfile.ZipFile(inner_tmp / 'inner.zip')
             report['entries_in_inner_archive'] = len(source.namelist())
-            found = matches(source.namelist(), FLOW_IN_INNER)
+            found = matches(source.namelist(), inner_pat)
         dup = [k for k, v in found.items() if len(v) != 1]
+        if what == 'leaks':
+            keep = sorted(k for k in found if k >= min_scenario and (only is None or k in only))
+            for k in keep:
+                (out_dir / f'Scenario-{k}').mkdir(exist_ok=True)
+                for n in found[k]:
+                    with source.open(n) as src, open(out_dir / f'Scenario-{k}' / Path(n).name, 'wb') as dst:
+                        shutil.copyfileobj(src, dst)
+            report.update({'scenarios_with_leak_files': len(keep),
+                           'leak_files_extracted': sum(len(found[k]) for k in keep)})
+            if inner_tmp:
+                source.close(); shutil.rmtree(inner_tmp)
+            return report
         if dup:
             report['layout'] += f' - STOPPED: {len(dup)} scenarios have more than one inlet file'
             return report

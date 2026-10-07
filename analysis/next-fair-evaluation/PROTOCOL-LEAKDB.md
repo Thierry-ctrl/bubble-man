@@ -1,9 +1,11 @@
-# LeakDB Hanoi protocol — revision 2
+# LeakDB Hanoi protocol — revision 3
 
-**Status: committed, NOT yet approved for execution.** Nothing from the full LeakDB archive
+**Status: approved for one run (7 Oct 2026), with the correction below: all scoring and
+week-shift code written, tested on invented leak cases, and committed before the download.** Nothing from the full LeakDB archive
 has been downloaded. No new leak record has been opened. The 2019 L-Town failure
 (`analysis/night-flow-step/RESULTS-2019.md`) is unchanged and is not re-scored here.
-Revision 1 was the draft `EXPERIMENT-TO-FREEZE.md` (commit 5874bea); this file replaces it.
+Revision 1 was the draft `EXPERIMENT-TO-FREEZE.md` (commit 5874bea); revision 2 was commit
+043c7e4. Detector settings and success criteria are identical in all three.
 Exploratory, synthetic data — **never "validation"**.
 
 ## 1. Two separate questions
@@ -17,7 +19,24 @@ LeakDB's weekly demand pattern repeats exactly every 7 days and never shifts. **
 nothing about Q2.** In ordinary LeakDB scenarios the self-aligning step should simply agree
 with the fixed weekday map; a Q1 pass is not evidence that the repair works.
 
-## 2. What changed from revision 1
+## 2. What changed
+
+**Revision 3 (this one)** — code frozen before data. No setting or criterion changed.
+- Scoring, week-shift and Q2 code (`leakdb/scoring.py`, `step3_extract.py` … `step6_score.py`)
+  written and committed **before any LeakDB leak record is opened**, and before the download.
+- Tested on invented cases (`leakdb/test_scoring.py`, 30/30): issue timing, the 168-hour
+  deadline (exactly 168 h credited, 168.5 h not), leaks already flowing at day 29 and the
+  window edge, one-to-one matching (repeat, two candidates, two leaks), never-repaired leaks,
+  per-scenario scoring when node names repeat, week shifts wrapping across the year boundary,
+  47 shifts and the p formula, Q2 leak-time mapping, leak-file reading and exposure hours.
+- End-to-end run of steps 3–6 on an invented 32-scenario archive (`leakdb/test_pipeline.py`,
+  10/10), including that no leak file exists before step 5.
+- Leak-file details fixed from the generator code (§9): format; leak times placed on the
+  inlet file's grid by row position; two leaks on one node appear as one record.
+- Q2: leaks first flowing on day 150 are removed from the leak table in all four Q2 runs.
+- Step 5 refuses to run unless the warning list is committed and unchanged in git.
+
+**Revision 2** — relative to revision 1:
 
 1. Q1 and Q2 separated; a controlled weekly-slip stress check added for Q2 (§7).
 2. Rules for missing readings and unusable scenarios declared before any data (§6).
@@ -204,6 +223,14 @@ scenarios. They are **never** reported as a rate on their own.
   from day 29 00:00 to the scenario's last timestamp.
 - Leak activity is taken from `Leak_*_demand.csv` (first to last positive flow), and leak
   type from `Leak_*_info.csv`.
+  - The demand file has columns `Timestamp, Description` (m³/h).
+  - Rows are placed on the inlet file's 30-minute grid by position, and whether the
+    timestamps agree is recorded.
+  - LeakDB writes one file pair per leak node. If two leaks share a node, they appear as one
+    record, with the type from the surviving info file.
+  - A record that never flows is reported and not scored.
+- Each scenario is scored separately (node names repeat across scenarios); counts are then
+  pooled.
 - Abrupt leaks are judged. Gradual (incipient) leaks are reported, not judged.
 - Every warning counts as an investigation:
   - **yield** = credited ÷ total warnings (a credit to a leak of either type counts);
@@ -250,17 +277,19 @@ nor saved. No setting was changed after the checks.
 
 ## 11. Order of operations
 
-1. You approve this revision and the 13.9 GB download. Any change → revision 3, committed
-   before data.
-2. Check free space ≥ 30 GiB. Download to `data/leakdb/raw/`, then verify size and md5.
-3. Run `extract_inlet.py --min-scenario 11`. Commit the manifest: scenario IDs, row counts,
-   SHA-256.
-4. Generate the four warning lists and the assessability table. **Commit before any leak
-   file is extracted.**
-5. Extract `Leaks/` for the same scenarios (scenario 11 and above). Build the leak table
-   and commit it.
-6. Write the scoring script to this protocol, then score Q1, run the shifts, and score Q2.
-   Report every number in §7–§9, whatever it shows. No reruns.
+1. Revision 3 and all code committed; tests pass. Any later change → a new revision,
+   committed before the step it affects, with the original output kept.
+2. Check free space ≥ 30 GiB. Download to `data/leakdb/raw/`; `step3_extract.py` verifies
+   size and md5.
+3. `step3_extract.py` extracts the inlet files (scenarios ≥ 11). Commit the manifest:
+   scenario IDs, row counts, SHA-256.
+4. `step4_warnings.py`: the four warning lists, the assessability table, and the label-free
+   Q2 measures and verdict. **Commit before any leak file is extracted.**
+5. `step5_leaks.py`: extract `Leaks/` for the manifest scenarios, build the leak table, and
+   commit it.
+6. `step6_score.py`, once: Q1, the shifts, the early-leak sensitivity, and Q2 after labels.
+   Report every number, whatever it shows. No reruns. A data-layout or code defect is
+   documented, and the original output kept, before any correction.
 
 ## 12. Known exposures
 
