@@ -1,0 +1,205 @@
+{
+  "what_this_is": "CODE CHECK on LeakDB public sample scenarios 1-10 (excluded from the experiment). Not scored; warning counts, dates and thresholds deliberately not recorded.",
+  "all_pass": true,
+  "checks": {
+    "extract_flat_layout_only_inlet_files_scenarios_ge_11": {
+      "pass": true
+    },
+    "extract_flat_layout_never_prints_or_writes_leak_names": {
+      "pass": true
+    },
+    "extract_nested_layout_only_inlet_files_scenarios_ge_11": {
+      "pass": true
+    },
+    "extract_nested_layout_never_prints_or_writes_leak_names": {
+      "pass": true
+    },
+    "extract_unknown_layout_only_inlet_files_scenarios_ge_11": {
+      "pass": true
+    },
+    "extract_unknown_layout_never_prints_or_writes_leak_names": {
+      "pass": true
+    },
+    "sample_excluded_entirely_at_min_scenario_11": {
+      "pass": true,
+      "report": {
+        "entries_in_archive": 1,
+        "layout": "nested Hanoi_CMH.zip",
+        "inner_hanoi_archives": 1,
+        "entries_in_inner_archive": 1078,
+        "scenarios_with_inlet_file": 10,
+        "scenario_range_in_archive": [
+          1,
+          10
+        ],
+        "excluded_below_min_scenario": 10,
+        "extracted": 0,
+        "gaps_in_numbering": []
+      }
+    },
+    "sample_extracts_10_inlet_files_for_code_check": {
+      "pass": true
+    },
+    "loader_rows_17520_regular_30_min_no_missing": {
+      "pass": true
+    },
+    "timing_series_start_at_midnight": {
+      "pass": true
+    },
+    "units_m3_per_hour_flow_positive_and_near_hanoi_base_demand": {
+      "pass": true,
+      "per_scenario": [
+        {
+          "scenario": "Scenario-1",
+          "rows": 17520,
+          "first_timestamp": "2017-01-01 00:00:00",
+          "steps_all_30_min": true,
+          "missing_after_load": 0,
+          "min_flow": 2066.4,
+          "mean_flow_over_base_demand": 1.023
+        },
+        {
+          "scenario": "Scenario-2",
+          "rows": 17520,
+          "first_timestamp": "2017-01-01 00:00:00",
+          "steps_all_30_min": true,
+          "missing_after_load": 0,
+          "min_flow": 2106.0,
+          "mean_flow_over_base_demand": 1.002
+        },
+        {
+          "scenario": "Scenario-3",
+          "rows": 17520,
+          "first_timestamp": "2017-01-01 00:00:00",
+          "steps_all_30_min": true,
+          "missing_after_load": 0,
+          "min_flow": 2282.4,
+          "mean_flow_over_base_demand": 1.023
+        },
+        {
+          "scenario": "Scenario-4",
+          "rows": 17520,
+          "first_timestamp": "2017-01-01 00:00:00",
+          "steps_all_30_min": true,
+          "missing_after_load": 0,
+          "min_flow": 1954.8,
+          "mean_flow_over_base_demand": 0.956
+        },
+        {
+          "scenario": "Scenario-5",
+          "rows": 17520,
+          "first_timestamp": "2017-01-01 00:00:00",
+          "steps_all_30_min": true,
+          "missing_after_load": 0,
+          "min_flow": 2235.6,
+          "mean_flow_over_base_demand": 1.064
+        },
+        {
+          "scenario": "Scenario-6",
+          "rows": 17520,
+          "first_timestamp": "2017-01-01 00:00:00",
+          "steps_all_30_min": true,
+          "missing_after_load": 0,
+          "min_flow": 2073.6,
+          "mean_flow_over_base_demand": 0.993
+        },
+        {
+          "scenario": "Scenario-7",
+          "rows": 17520,
+          "first_timestamp": "2017-01-01 00:00:00",
+          "steps_all_30_min": true,
+          "missing_after_load": 0,
+          "min_flow": 2005.2,
+          "mean_flow_over_base_demand": 0.977
+        },
+        {
+          "scenario": "Scenario-8",
+          "rows": 17520,
+          "first_timestamp": "2017-01-01 00:00:00",
+          "steps_all_30_min": true,
+          "missing_after_load": 0,
+          "min_flow": 2073.6,
+          "mean_flow_over_base_demand": 0.996
+        },
+        {
+          "scenario": "Scenario-9",
+          "rows": 17520,
+          "first_timestamp": "2017-01-01 00:00:00",
+          "steps_all_30_min": true,
+          "missing_after_load": 0,
+          "min_flow": 2044.8,
+          "mean_flow_over_base_demand": 0.977
+        },
+        {
+          "scenario": "Scenario-10",
+          "rows": 17520,
+          "first_timestamp": "2017-01-01 00:00:00",
+          "steps_all_30_min": true,
+          "missing_after_load": 0,
+          "min_flow": 2167.2,
+          "mean_flow_over_base_demand": 1.149
+        }
+      ]
+    },
+    "hourly_reshape_365_by_24": {
+      "pass": true
+    },
+    "all_40_runs_assessable": {
+      "pass": true
+    },
+    "warnings_respect_day29_threshold_issue_hour_and_7_day_spacing": {
+      "pass": true
+    },
+    "assigned_day_types_are_learned_types": {
+      "pass": true
+    },
+    "stress_copy_repeats_day_150_and_is_366_days": {
+      "pass": true
+    },
+    "stress_leaves_warnings_before_day_150_unchanged": {
+      "pass": true
+    },
+    "label_free_structure_per_sample_scenario": [
+      {
+        "distinct_day_types_learned": 4,
+        "night_window_start_hour": 2
+      },
+      {
+        "distinct_day_types_learned": 4,
+        "night_window_start_hour": 2
+      },
+      {
+        "distinct_day_types_learned": 4,
+        "night_window_start_hour": 2
+      },
+      {
+        "distinct_day_types_learned": 4,
+        "night_window_start_hour": 2
+      },
+      {
+        "distinct_day_types_learned": 4,
+        "night_window_start_hour": 2
+      },
+      {
+        "distinct_day_types_learned": 4,
+        "night_window_start_hour": 2
+      },
+      {
+        "distinct_day_types_learned": 4,
+        "night_window_start_hour": 2
+      },
+      {
+        "distinct_day_types_learned": 4,
+        "night_window_start_hour": 2
+      },
+      {
+        "distinct_day_types_learned": 4,
+        "night_window_start_hour": 2
+      },
+      {
+        "distinct_day_types_learned": 4,
+        "night_window_start_hour": 2
+      }
+    ]
+  }
+}

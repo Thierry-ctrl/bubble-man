@@ -89,11 +89,12 @@ real pipes.
   archive.
 - LeakDB leaks are **never repaired** and hole sizes run 0.02–0.2 m. On a 5,500 m³/h network
   that is roughly 0.4% to 40% of demand. Many will be easy. And the weekly cycle never slips,
-  so Idea A's repair is not exercised.
+  so ordinary LeakDB scenarios do not exercise Idea A's repair (revision 2 of the protocol
+  adds a separate, controlled slip check for that).
 
 ## 4. Recommendation
 
-**Use LeakDB Hanoi as the next testbed**, with the experiment in `EXPERIMENT-TO-FREEZE.md`
+**Use LeakDB Hanoi as the next testbed**, with the experiment in `PROTOCOL-LEAKDB.md` (revision 2)
 approved and committed before any leak record is opened. Treat a pass as "promising under an
 exploratory transfer test", and a fail as decisive for this idea.
 
@@ -110,7 +111,9 @@ request is unchanged in spirit from the input audit, made specific:
 
 ## 5. The next experiment — summary
 
-Fully specified in `EXPERIMENT-TO-FREEZE.md`:
+Fully specified in `PROTOCOL-LEAKDB.md` (revision 2, which supersedes the first draft
+`EXPERIMENT-TO-FREEZE.md`; it separates transfer (Q1) from the weekly-slip repair (Q2) and
+adds rules for missing readings and early leaks):
 
 - LeakDB Hanoi, every scenario numbered 11 and above; **only the inlet flow file read**
   before warnings are committed.
@@ -118,7 +121,8 @@ Fully specified in `EXPERIMENT-TO-FREEZE.md`:
   last 2 nights vs the 7 before; threshold **4 × robust σ** of days 9–28; warnings from
   day 29; re-arm and 7-day spacing as before.
 - Existing scorer unchanged; abrupt leaks judged, gradual reported; every warning counted as
-  an investigation; false alerts measurable for the first time.
+  an investigation; false alerts counted with exposure (only possible before a scenario's
+  first leak, because LeakDB leaks never stop).
 - **47 pooled whole-week shifts**; pass needs ≥ 20 eligible abrupt leaks, p ≤ 0.05, and yield
   ≥ 50% (a proposed target).
 - Warnings committed before leak files are extracted. One run; no reruns.
