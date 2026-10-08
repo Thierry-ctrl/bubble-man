@@ -1,0 +1,17 @@
+{
+  "extraction": {
+    "entries_in_archive": 226,
+    "layout": "named nested archive (LeakDB/Hanoi_CMH.zip)",
+    "entries_in_inner_archive": 54039,
+    "scenarios_with_leak_files": 374,
+    "leak_files_extracted": 1018
+  },
+  "leak_records": 509,
+  "scenarios_with_any_leak": 374,
+  "by_type": {
+    "abrupt": 255,
+    "incipient": 254
+  },
+  "never_flowed": 1,
+  "timestamps_disagree_with_inlet": -1018
+}

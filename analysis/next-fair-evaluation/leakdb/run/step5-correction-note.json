@@ -1,0 +1,7 @@
+{
+  "defect": "step5 summary computed int((~col).sum()) on an object-dtype boolean column after pd.concat; ~True gave -2 per record, so the printed value -1018 (= 509 x -2) is meaningless. The leak table itself is unaffected.",
+  "original_value_kept_in": "step5-leaks.json (unchanged)",
+  "corrected_timestamps_disagree_with_inlet": 0,
+  "records_checked": 509,
+  "scoring_effect": "none: step6 does not use this column"
+}
