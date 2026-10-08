@@ -1,0 +1,19 @@
+{
+  "archive_bytes": 13888061642,
+  "archive_md5": "d607929ef7caea432e663aee8071f2d7",
+  "md5_matches_zenodo": true,
+  "free_gib_after_extraction": 30.6,
+  "extraction": {
+    "entries_in_archive": 226,
+    "layout": "named nested archive (LeakDB/Hanoi_CMH.zip)",
+    "entries_in_inner_archive": 54039,
+    "scenarios_with_inlet_file": 500,
+    "scenario_range_in_archive": [
+      1,
+      500
+    ],
+    "excluded_below_min_scenario": 10,
+    "extracted": 490,
+    "gaps_in_numbering": []
+  }
+}
