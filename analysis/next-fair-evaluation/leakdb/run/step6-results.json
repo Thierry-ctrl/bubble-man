@@ -1,0 +1,166 @@
+{
+  "Q1_network_transfer": {
+    "criteria": {
+      "E1_eligible_abrupt": 234,
+      "E1_met": true,
+      "E2_p_abrupt": 0.0208,
+      "E2_met": true,
+      "E3_yield": 0.1809,
+      "E3_met": false,
+      "verdict": "FAIL"
+    },
+    "full_window": {
+      "warnings_total_all_investigations": 2217,
+      "outcomes": {
+        "credited": 401,
+        "false_alert": 932,
+        "unattributable": 878,
+        "repeat_of_credited_leak": 0,
+        "coincides_with_excluded_leak": 4,
+        "retrospective_association": 2,
+        "issuable_after_window": 0
+      },
+      "credited": 401,
+      "investigations_without_a_new_eligible_leak": 1816,
+      "yield": 0.1809,
+      "abrupt": {
+        "eligible": 234,
+        "credited": 212
+      },
+      "incipient": {
+        "eligible": 238,
+        "credited": 189
+      },
+      "median_delay_hours_credited": 16.5,
+      "false_alerts": 932,
+      "false_alert_exposure_hours_no_leak_flowing": 3195348
+    },
+    "shift_comparison": {
+      "real_in_domain_abrupt": 212,
+      "real_in_domain_all": 401,
+      "distinct_shifts": 47,
+      "p_abrupt": 0.020833333333333332,
+      "p_all": 0.020833333333333332,
+      "shifts_with_wrapped_gap_under_7_days": 47
+    },
+    "real_warnings_on_day_365_outside_shift_domain": 0,
+    "not_assessable": {
+      "scenarios": 0,
+      "their_leaks": {}
+    },
+    "leak_records_never_flowed": 1,
+    "early_leak_sensitivity": {
+      "assessable_scenarios_with_leak_before_day_29": 36,
+      "of_which_first_flow_in_days_1_14": 22,
+      "of_which_first_flow_in_days_15_28": 14,
+      "threshold_ratio_to_clean_median": {
+        "count": 36.0,
+        "mean": 9.796,
+        "std": 10.671,
+        "min": 0.527,
+        "25%": 2.017,
+        "50%": 7.116,
+        "75%": 11.255,
+        "max": 48.641
+      },
+      "their_warnings_by_outcome": {
+        "warnings": 63,
+        "credited": 9,
+        "false_alert": 1,
+        "unattributable": 49,
+        "repeat_of_credited_leak": 0,
+        "coincides_with_excluded_leak": 4,
+        "retrospective_association": 0,
+        "issuable_after_window": 0
+      },
+      "their_eligible_abrupt": 6,
+      "criteria_without_them": {
+        "E1_eligible_abrupt": 228,
+        "E1_met": true,
+        "E2_p_abrupt": 0.0208,
+        "E2_met": true,
+        "E3_yield": 0.182,
+        "E3_met": false,
+        "verdict": "FAIL"
+      }
+    }
+  },
+  "Q2_controlled_weekly_slip": {
+    "label_free_verdict_from_step4": "IDEA A RE-ALIGNED AFTER A ONE-DAY SLIP IN THIS CONTROLLED CHECK",
+    "label_free_measures": {
+      "label_free": true,
+      "exercised_scenarios": 474,
+      "M1_type_agreement_settled": {
+        "selfaligning_plain": 0.9925457102672293,
+        "selfaligning_stress": 0.9925457102672293
+      },
+      "M2_excess_warnings": {
+        "self_aligning": {
+          "settled": -2,
+          "transition": 608
+        },
+        "calendar": {
+          "settled": 10690,
+          "transition": 1015
+        }
+      },
+      "calendar_settled_excess_per_exercised_scenario": 22.552742616033754,
+      "informative": true,
+      "verdict": "IDEA A RE-ALIGNED AFTER A ONE-DAY SLIP IN THIS CONTROLLED CHECK"
+    },
+    "after_labels_reported_not_judged": {
+      "Q1_selfaligning_plain": {
+        "warnings_total_all_investigations": 2211,
+        "credited": 396,
+        "yield": 0.1791,
+        "abrupt": {
+          "eligible": 231,
+          "credited": 210
+        },
+        "incipient": {
+          "eligible": 232,
+          "credited": 186
+        }
+      },
+      "Q2_calendar_plain": {
+        "warnings_total_all_investigations": 2182,
+        "credited": 396,
+        "yield": 0.1815,
+        "abrupt": {
+          "eligible": 231,
+          "credited": 210
+        },
+        "incipient": {
+          "eligible": 232,
+          "credited": 186
+        }
+      },
+      "Q2_selfaligning_stress": {
+        "warnings_total_all_investigations": 2828,
+        "credited": 396,
+        "yield": 0.14,
+        "abrupt": {
+          "eligible": 231,
+          "credited": 209
+        },
+        "incipient": {
+          "eligible": 232,
+          "credited": 187
+        }
+      },
+      "Q2_calendar_stress": {
+        "warnings_total_all_investigations": 13898,
+        "credited": 375,
+        "yield": 0.027,
+        "abrupt": {
+          "eligible": 231,
+          "credited": 189
+        },
+        "incipient": {
+          "eligible": 232,
+          "credited": 186
+        }
+      }
+    }
+  }
+}
