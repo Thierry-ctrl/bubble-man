@@ -1,0 +1,8 @@
+LeakDB/Hanoi_CMH.zip entries 54039 scenarios with inlet file 500 range 1 500 dup 0 path prefixes ['Hanoi_CMH/']
+LeakDB/Hanoi_CMH_1000scenarios.zip entries 109047 scenarios with inlet file 1000 range 1 1000 dup 0 path prefixes ['Hanoi_CMH/']
+scenario numbers in both 500
+inlet files byte-identical in both sets: 0 of 500
+loose scenario 1 identical to Hanoi_CMH.zip: False | to 1000-set: False
+loose scenario 2 identical to Hanoi_CMH.zip: False | to 1000-set: False
+GitHub sample scenarios 1-10 byte-identical to LeakDB/Hanoi_CMH.zip : 10 of 10
+GitHub sample scenarios 1-10 byte-identical to LeakDB/Hanoi_CMH_1000scenarios.zip : 0 of 10

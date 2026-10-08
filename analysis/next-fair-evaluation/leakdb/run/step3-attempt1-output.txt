@@ -1,0 +1,2 @@
+step3_extract.py, first run, 8 Oct 2026 (commit d7459a9 code). Archive size and md5 matched (the md5 assertion precedes this line).
+AssertionError: extraction stopped: {'entries_in_archive': 226, 'layout': 'flat', 'scenarios_with_inlet_file': 2, 'scenario_range_in_archive': [1, 2], 'excluded_below_min_scenario': 2, 'extracted': 0, 'gaps_in_numbering': []}

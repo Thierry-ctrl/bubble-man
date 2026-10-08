@@ -30,8 +30,15 @@ with tempfile.TemporaryDirectory() as tmp:
                 z.writestr(f'Scenario-{k}/Leaks/Leak_{node}_demand.csv', pd.DataFrame({'Timestamp': grid, 'Description': lf}).to_csv(index=False))
                 z.writestr(f'Scenario-{k}/Leaks/Leak_{node}_info.csv', f'Description , Value\nLeak Node , {node}\nLeak Diameter , 0.1\nLeak Type , abrupt\nLeak Start , x\n')
             truth[k] = leaks
+    decoy = io.BytesIO()
+    with zipfile.ZipFile(decoy, 'w') as dz:
+        dz.writestr('Hanoi_CMH/Scenario-13/Flows/Link_1.csv', 'DECOY')
     with zipfile.ZipFile(data / 'raw/LeakDB.zip', 'w') as outer:
         outer.writestr('LeakDB/Hanoi_CMH.zip', inner.getvalue())
+        # decoys matching the real layout (revision 4): loose examples and a second Hanoi set
+        outer.writestr('LeakDB/Hanoi_CMH/Scenario-12/Flows/Link_1.csv', 'DECOY')
+        outer.writestr('LeakDB/Hanoi_CMH/Scenario-12/Leaks/Leak_DECOY_info.csv', 'DECOY')
+        outer.writestr('LeakDB/Hanoi_CMH_1000scenarios.zip', decoy.getvalue())
     run = lambda *a: subprocess.run([sys.executable, *map(str, a)], capture_output=True, text=True)
     p3 = run(HERE / 'step3_extract.py', data, out, '--test')
     p4 = run(HERE / 'step4_warnings.py', data / 'hanoi-inlet', out)
@@ -47,6 +54,8 @@ with tempfile.TemporaryDirectory() as tmp:
         'all four steps ran': ok,
         'nested layout: 22 scenarios >= 11 extracted, 10 excluded': r3['extraction']['extracted'] == 22 and r3['extraction']['excluded_below_min_scenario'] == 10,
         'no leak file existed before step 5': no_leaks_before_step5,
+        'decoy loose folder and second set ignored': 'DECOY' not in ''.join(p.read_text() for p in (data / 'hanoi-inlet').glob('*.csv'))
+            and not any('DECOY' in p.name for p in (data / 'hanoi-leaks').rglob('*')),
         'leak table: one record per invented leak in scenarios >= 11': len(L) == sum(len(truth[k]) for k in range(11, 33)),
         'Q1 eligible abrupt = invented leaks starting on/after day 29': r6['Q1_network_transfer']['full_window']['abrupt']['eligible'] == sum(1 for k in range(11, 33) for _, st, _ in truth[k] if st >= 28 * 48),
         'every warning has exactly one outcome': sum(r6['Q1_network_transfer']['full_window']['outcomes'].values()) == r6['Q1_network_transfer']['full_window']['warnings_total_all_investigations'],

@@ -37,7 +37,7 @@ def matches(names, pattern):
     return found
 
 
-def extract(archive, out_dir, min_scenario, tmp_parent=None, what='inlet', only=None):
+def extract(archive, out_dir, min_scenario, tmp_parent=None, what='inlet', only=None, inner_member=None):
     """what='inlet': Flows/Link_1.csv only. what='leaks': Leaks/Leak_*.csv for the scenarios in
     `only` -- permitted ONLY after the warning lists are committed (protocol section 11)."""
     outer_pat, inner_pat = PATTERNS[what]
@@ -48,7 +48,15 @@ def extract(archive, out_dir, min_scenario, tmp_parent=None, what='inlet', only=
         report['entries_in_archive'] = len(names)
         found, source, inner_tmp = matches(names, outer_pat), z, None
         report['layout'] = 'flat'
-        if not found:
+        if inner_member is not None:
+            # Revision 4 correction: the full archive holds loose example scenarios AND two
+            # Hanoi sets; read only the named nested archive (stored, so opened directly).
+            assert inner_member in names, 'named inner archive not found - stopped'
+            source = zipfile.ZipFile(z.open(inner_member))
+            report['layout'] = f'named nested archive ({inner_member})'
+            report['entries_in_inner_archive'] = len(source.namelist())
+            found = matches(source.namelist(), inner_pat)
+        elif not found:
             inner = [n for n in names if INNER_HANOI.search(n)]
             report['inner_hanoi_archives'] = len(inner)
             if len(inner) != 1:

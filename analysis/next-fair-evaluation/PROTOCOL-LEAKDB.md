@@ -1,4 +1,4 @@
-# LeakDB Hanoi protocol — revision 3
+# LeakDB Hanoi protocol — revision 4
 
 **Status: approved for one run (7 Oct 2026), with the correction below: all scoring and
 week-shift code written, tested on invented leak cases, and committed before the download.** Nothing from the full LeakDB archive
@@ -21,7 +21,37 @@ with the fixed weekday map; a Q1 pass is not evidence that the repair works.
 
 ## 2. What changed
 
-**Revision 3 (this one)** — code frozen before data. No setting or criterion changed.
+**Revision 4 (this one) — data-layout correction, 8 Oct 2026.** No setting, criterion or
+code path that touches flow values changed.
+- **What happened.** The download matched Zenodo's size and md5. The first
+  `step3_extract.py` run then stopped, extracting nothing. The output is kept in
+  `leakdb/run/step3-attempt1-output.txt`.
+- **Archive layout.** The archive is not one Hanoi folder. It holds:
+  - two loose example scenarios, `LeakDB/Hanoi_CMH/Scenario-1` and `Scenario-2`;
+  - `LeakDB/Hanoi_CMH.zip`, 500 scenarios;
+  - `LeakDB/Hanoi_CMH_1000scenarios.zip`, 1000 scenarios;
+  - Net1 and the paper's code.
+  The extractor found the two loose scenarios, excluded them as below 11, and stopped.
+- **Label-free diagnosis** (`leakdb/run/layout-diagnosis.txt`), from inlet files and file
+  counts only. No leak, label or `.inp` file was opened or listed.
+  - The GitHub public sample is byte-identical to scenarios 1–10 of
+    `Hanoi_CMH.zip`, and matches none of the 1000-scenario set.
+  - The two sets share no identical inlet file among their 500 common scenario numbers.
+    They are separate simulations.
+  - The loose examples match neither set.
+- **Decision.** The test set is `LeakDB/Hanoi_CMH.zip` — the 500-scenario benchmark of the
+  2018 paper that this protocol describes — **scenarios 11–500 (490)**. Scenarios 1–10 stay
+  excluded, because they are the public sample.
+  - The 1000-scenario set is **not used**. It is a separate simulation whose leak outcomes
+    are untouched; only its inlet files were hashed. That makes it the natural held-out set
+    for any future replication, which would need its own protocol.
+  - The two loose examples are not used.
+- **Code change.** `extract()` gains `inner_member`. Steps 3 and 5 name
+  `LeakDB/Hanoi_CMH.zip` explicitly.
+- **Tests.** The pipeline test now includes decoys copying this layout: a loose folder and a
+  second Hanoi archive. Results: 11/11, plus invented-case scoring 30/30.
+
+**Revision 3** — code frozen before data. No setting or criterion changed.
 - Scoring, week-shift and Q2 code (`leakdb/scoring.py`, `step3_extract.py` … `step6_score.py`)
   written and committed **before any LeakDB leak record is opened**, and before the download.
 - Tested on invented cases (`leakdb/test_scoring.py`, 30/30): issue timing, the 168-hour
@@ -60,8 +90,8 @@ scorer, the chance comparison, E1–E3.
   (12.93 GiB)**, `md5:d607929ef7caea432e663aee8071f2d7` (Zenodo API, 7 Oct 2026). CC BY 4.0.
 - **Network:** Hanoi (`Hanoi_CMH`): 31 junctions, one reservoir, no tanks, pumps or valves;
   base demand 5,538.9 m³/h. Inlet = pipe `1`, file `Scenario-N/Flows/Link_1.csv`.
-- **Scenarios:** every Hanoi scenario numbered **11 or higher** in the archive. Expected
-  about 500 (the 2018 paper); the actual list is committed at extraction. **Scenarios 1–10
+- **Scenarios:** scenarios **11–500** of the benchmark set `LeakDB/Hanoi_CMH.zip` (§2,
+  revision 4). The actual list is committed at extraction. **Scenarios 1–10
   are excluded**: they match the public sample, whose file names revealed 9 leaks.
 - **Read before warnings are committed:** only `Flows/Link_1.csv` per scenario.
 - **Not opened until warnings are committed:** `Leaks/`, `Labels.csv`, each scenario's

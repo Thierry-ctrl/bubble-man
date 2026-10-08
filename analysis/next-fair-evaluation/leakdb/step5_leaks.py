@@ -19,7 +19,7 @@ if '--test' not in sys.argv:   # guard: warnings must be committed and unchanged
     assert tracked.strip() and not st.strip(), 'warning list not committed - stop'
 man = pd.read_csv(OUT / 'manifest-inlet.csv')
 rep = extract(DATA / 'raw/LeakDB.zip', DATA / 'hanoi-leaks', 11, tmp_parent=DATA, what='leaks',
-              only=set(man.scenario))
+              only=set(man.scenario), inner_member='LeakDB/Hanoi_CMH.zip')
 tables = []
 for k in man.scenario:
     grid = M.read_inlet(DATA / f'hanoi-inlet/Scenario-{k}_Link_1.csv').index
