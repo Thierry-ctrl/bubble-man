@@ -1,0 +1,32 @@
+{
+  "scenarios": 490,
+  "q1_assessable": 490,
+  "not_assessable_reasons": {},
+  "warnings_per_run": {
+    "Q1_selfaligning_plain": 2217,
+    "Q2_calendar_plain": 2188,
+    "Q2_calendar_stress": 13904,
+    "Q2_selfaligning_stress": 2834
+  },
+  "Q2": {
+    "label_free": true,
+    "exercised_scenarios": 474,
+    "M1_type_agreement_settled": {
+      "selfaligning_plain": 0.9925457102672293,
+      "selfaligning_stress": 0.9925457102672293
+    },
+    "M2_excess_warnings": {
+      "self_aligning": {
+        "settled": -2,
+        "transition": 608
+      },
+      "calendar": {
+        "settled": 10690,
+        "transition": 1015
+      }
+    },
+    "calendar_settled_excess_per_exercised_scenario": 22.552742616033754,
+    "informative": true,
+    "verdict": "IDEA A RE-ALIGNED AFTER A ONE-DAY SLIP IN THIS CONTROLLED CHECK"
+  }
+}
