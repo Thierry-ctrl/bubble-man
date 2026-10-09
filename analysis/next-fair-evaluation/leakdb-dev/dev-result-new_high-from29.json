@@ -1,0 +1,19 @@
+{
+  "variant": "new_high",
+  "window_from_day": 29,
+  "warnings": 1049,
+  "credited": 316,
+  "yield": 0.3012,
+  "without_new_leak": 733,
+  "false_alerts": 648,
+  "leak_free_exposure_hours": 3195348,
+  "unattributable": 81,
+  "abrupt_eligible": 234,
+  "abrupt_credited": 168,
+  "incipient_eligible": 238,
+  "incipient_credited": 148,
+  "abrupt_median_delay_h": 14.5,
+  "shift_domain_weeks": 48,
+  "p_abrupt": 0.0208,
+  "shift_abrupt_max": 16
+}

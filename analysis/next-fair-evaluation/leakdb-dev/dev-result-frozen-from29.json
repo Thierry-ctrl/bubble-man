@@ -1,0 +1,19 @@
+{
+  "variant": "frozen",
+  "window_from_day": 29,
+  "warnings": 2217,
+  "credited": 401,
+  "yield": 0.1809,
+  "without_new_leak": 1816,
+  "false_alerts": 932,
+  "leak_free_exposure_hours": 3195348,
+  "unattributable": 878,
+  "abrupt_eligible": 234,
+  "abrupt_credited": 212,
+  "incipient_eligible": 238,
+  "incipient_credited": 189,
+  "abrupt_median_delay_h": 14.5,
+  "shift_domain_weeks": 48,
+  "p_abrupt": 0.0208,
+  "shift_abrupt_max": 28
+}

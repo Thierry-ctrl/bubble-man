@@ -1,0 +1,127 @@
+{
+  "warnings_per_scenario": {
+    "frozen": {
+      "0.5": 2.0,
+      "0.75": 6.0,
+      "0.9": 12.0,
+      "1.0": 29.0
+    },
+    "adaptive": {
+      "0.5": 1.0,
+      "0.75": 3.0,
+      "0.9": 4.100000000000023,
+      "1.0": 9.0
+    }
+  },
+  "false_alerts_per_scenario": {
+    "frozen": {
+      "0.5": 0.0,
+      "0.75": 2.75,
+      "0.9": 6.0,
+      "1.0": 18.0
+    },
+    "adaptive": {
+      "0.5": 0.0,
+      "0.75": 0.0,
+      "0.9": 1.0,
+      "1.0": 3.0
+    }
+  },
+  "scenarios_with_5plus_false_alerts": {
+    "frozen": 79,
+    "adaptive": 0
+  },
+  "scenarios_with_any_eligible_sudden_leak": 205,
+  "of_those_all_sudden_found": {
+    "frozen": 183,
+    "adaptive": 179
+  },
+  "scenarios_more_sudden_found_adaptive": 2,
+  "scenarios_fewer_sudden_found_adaptive": 6,
+  "sudden_leaks_changing_outcome": [
+    {
+      "scenario": 82,
+      "leak": 19,
+      "frozen": "credited",
+      "adaptive": "missed",
+      "frozen_T": 92.1,
+      "adaptive_T_at_onset": 1765.0,
+      "max_step_first_8_nights": 846.4,
+      "another_leak_in_previous_9_weeks": [
+        "incipient"
+      ]
+    },
+    {
+      "scenario": 100,
+      "leak": 4,
+      "frozen": "credited",
+      "adaptive": "missed",
+      "frozen_T": 78.0,
+      "adaptive_T_at_onset": 85.4,
+      "max_step_first_8_nights": 78.9,
+      "another_leak_in_previous_9_weeks": []
+    },
+    {
+      "scenario": 105,
+      "leak": 16,
+      "frozen": "missed",
+      "adaptive": "credited",
+      "frozen_T": 1799.4,
+      "adaptive_T_at_onset": 95.1,
+      "max_step_first_8_nights": 575.3,
+      "another_leak_in_previous_9_weeks": []
+    },
+    {
+      "scenario": 166,
+      "leak": 2,
+      "frozen": "credited",
+      "adaptive": "missed",
+      "frozen_T": 91.8,
+      "adaptive_T_at_onset": 121.4,
+      "max_step_first_8_nights": 109.9,
+      "another_leak_in_previous_9_weeks": [
+        "abrupt"
+      ]
+    },
+    {
+      "scenario": 181,
+      "leak": 16,
+      "frozen": "credited",
+      "adaptive": "missed",
+      "frozen_T": 43.2,
+      "adaptive_T_at_onset": 124.4,
+      "max_step_first_8_nights": 115.8,
+      "another_leak_in_previous_9_weeks": []
+    },
+    {
+      "scenario": 183,
+      "leak": 32,
+      "frozen": "missed",
+      "adaptive": "credited",
+      "frozen_T": 116.3,
+      "adaptive_T_at_onset": 96.6,
+      "max_step_first_8_nights": 102.9,
+      "another_leak_in_previous_9_weeks": []
+    },
+    {
+      "scenario": 297,
+      "leak": 9,
+      "frozen": "credited",
+      "adaptive": "missed",
+      "frozen_T": 91.9,
+      "adaptive_T_at_onset": 122.5,
+      "max_step_first_8_nights": 121.1,
+      "another_leak_in_previous_9_weeks": []
+    },
+    {
+      "scenario": 358,
+      "leak": 23,
+      "frozen": "credited",
+      "adaptive": "missed",
+      "frozen_T": 80.6,
+      "adaptive_T_at_onset": 123.1,
+      "max_step_first_8_nights": 97.6,
+      "another_leak_in_previous_9_weeks": []
+    }
+  ]
+}

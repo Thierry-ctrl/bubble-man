@@ -1,0 +1,18 @@
+{
+  "share_nights_near_zero": {
+    "abrupt": 0.0,
+    "incipient": 0.307
+  },
+  "on_off_switches_per_week": {
+    "abrupt": 0.0,
+    "incipient": 2.681
+  },
+  "max_night_leak_flow": {
+    "abrupt": 1016.55,
+    "incipient": 882.0
+  },
+  "share_of_leaks_switching_at_least_weekly": {
+    "abrupt": 0.004,
+    "incipient": 0.979
+  }
+}
