@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "G1_eligible_abrupt": 473,
+    "G1": true,
+    "G2_p_abrupt": 0.0208,
+    "G2": true,
+    "G3_abrupt_rate_adaptive_vs_frozen": [
+      0.8858,
+      0.9049
+    ],
+    "G3": true,
+    "G4_without_new_leak_adaptive_vs_frozen": [
+      877,
+      3475
+    ],
+    "G4": true,
+    "G5_yield": 0.4717,
+    "G5": false,
+    "verdict": "IMPROVED, BUT BELOW THE PRACTICAL TARGET"
+  },
+  "not_assessable": {
+    "scenarios": 0,
+    "their_leaks": {}
+  }
+}
