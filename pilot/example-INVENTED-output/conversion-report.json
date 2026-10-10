@@ -1,0 +1,56 @@
+{
+  "zone_id": "ZONE-A",
+  "local_standard_time": "UTC+02:00",
+  "meters": {
+    "ZN-IN-01": {
+      "role": "inlet",
+      "readings": 190,
+      "first": "2026-03-02 00:00:00",
+      "last": "2026-03-03 23:45:00",
+      "complete_30min_bins": 94,
+      "bins": 96,
+      "median_m3h": 107.22
+    },
+    "ZN-OUT-01": {
+      "role": "outlet",
+      "readings": 192,
+      "first": "2026-03-02 00:00:00",
+      "last": "2026-03-03 23:45:00",
+      "complete_30min_bins": 95,
+      "bins": 96,
+      "median_m3h": 14.0
+    }
+  },
+  "problems": [
+    "ZN-IN-01: readings not used because of quality flag: {'estimated': 1, 'fault': 1}"
+  ],
+  "suitability_flags": [],
+  "readiness": {
+    "days_covered": 2,
+    "complete_days": 0,
+    "share_of_30min_bins_present": 0.969,
+    "first_14_days_complete": false,
+    "note": "The frozen method needs about a year: days 1-14 complete to learn day types, 20 step values on days 9-28 for the threshold, and 300 step values from day 29.",
+    "likely_assessable_by_frozen_method": false
+  },
+  "logs": {
+    "operating_log": {
+      "events": 3,
+      "by_type": {
+        "supply_interruption": 1,
+        "valve_change": 1,
+        "meter_fault": 1
+      },
+      "note": "listed for interpretation; the frozen rule does not read it"
+    },
+    "repair_records": {
+      "records": 2,
+      "with_first_report": 2,
+      "with_confirmation": 1,
+      "with_repair_completed": 1,
+      "records_with_times_out_of_order": 0,
+      "note": "first report is NOT the leak onset; it is an upper bound on when the leak began"
+    }
+  },
+  "output": "zone_net_inflow_30min.csv (Timestamp,Value; m3/h; local standard time)"
+}

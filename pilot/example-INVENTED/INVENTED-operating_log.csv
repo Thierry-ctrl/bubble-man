@@ -1,0 +1,4 @@
+event_id,start,end,event_type,assets,description
+OP-001,2026-03-02T10:00:00+02:00,2026-03-02T12:30:00+02:00,supply_interruption,ZN-IN-01,INVENTED - planned reservoir cleaning
+OP-002,2026-03-03T09:00:00+02:00,,valve_change,BV-17,INVENTED - boundary valve BV-17 opened to neighbouring zone
+OP-003,2026-03-02T10:00:00+02:00,2026-03-02T10:30:00+02:00,meter_fault,ZN-IN-01,INVENTED - logger restart

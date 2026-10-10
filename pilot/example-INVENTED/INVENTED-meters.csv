@@ -1,0 +1,3 @@
+meter_id,role,zone_id,value_type,unit,interval_minutes,timestamp_marks,meter_type,diameter_mm,installed,last_verified,notes
+ZN-IN-01,inlet,ZONE-A,instantaneous_rate,L/s,15,reading_time,electromagnetic,200,2019-06-01,2025-11-10,INVENTED example - main reservoir feed
+ZN-OUT-01,outlet,ZONE-A,cumulative_total,m3,15,reading_time,ultrasonic,150,2021-02-15,2025-08-03,INVENTED example - transfer to neighbouring zone

@@ -1,0 +1,2 @@
+zone_id,name,supply_regime,supply_schedule,internal_storage,storage_level_meter,boundary_valves_confirmed_closed,service_connections,large_night_users,local_time_zone,notes
+ZONE-A,Example Hill,continuous,,none,,yes,2350,"bakery (night shift, about 2 m3/h 01:00-05:00)",UTC+02:00,INVENTED example
