@@ -187,3 +187,24 @@ threshold at onset.
 - **The 1,000-scenario set:** its inlet bytes for scenarios 1–500 were hashed. Nothing else
   was read.
 - **Generator code** was read earlier (`PROTOCOL-LEAKDB.md` §12).
+
+## 10. Corrections during the run
+
+**Correction 1 — file format (10 Oct 2026; before any warning or leak record existed).**
+- **What happened.** The first `step4_warnings.py` run stopped on its first file, and no
+  warning was written. The output is kept in `leakdb1000/run/step4-attempt1-output.txt`.
+- **Cause.** The 1,000-scenario files carry a step counter, not timestamps:
+  - header `Index,Value`, with Index running 1 to 17,520 in every one of the 1,000 inlet
+    files, checked before correcting;
+  - the 500-scenario files used `Timestamp,Value`;
+  - the frozen reader required `Timestamp`.
+- **Fix** (`leakdb1000/io1000.py`):
+  - Step *n* is placed at a nominal time, 1 Jan 2017 00:00 + (n − 1) × 30 min. The method
+    uses only position in the series, so the nominal origin changes no warning or score.
+  - A gap or disorder in Index stops the run rather than being realigned.
+  - Leak files are read with the same rule, still placed by row position. Each record
+    notes its format and whether its positions agree with the inlet grid.
+  - Timestamp-format files pass through unchanged to the frozen reader.
+- **Tests:** `test_io1000.py` 4/4. The pipeline test now uses the Index format for the
+  target set: 12/12. Invented-case scoring: 31/31.
+- **Unchanged:** every rule, setting and criterion.

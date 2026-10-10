@@ -6,6 +6,7 @@ import pandas as pd
 HERE = Path(__file__).resolve().parent; sys.path.insert(0, str(HERE))
 import prospective as P
 import rules as R
+import io1000
 ROOT = HERE.parents[2]
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else HERE / 'run'
 DATA = Path(sys.argv[2]) if len(sys.argv) > 2 else ROOT / 'data/leakdb'
@@ -90,7 +91,7 @@ m = m[m.eligible_frozen & (m.outcome_frozen != m.outcome_adaptive)]
 diff = []
 for r in m.itertuples():
     a = OK[OK.scenario == r.scenario].iloc[0]
-    s = R.M.read_inlet(DATA / f'hanoi1000-inlet/Scenario-{r.scenario}_Link_1.csv'); rr = R.M.run(s, 'self_aligning')
+    s = io1000.read_inlet(DATA / f'hanoi1000-inlet/Scenario-{r.scenario}_Link_1.csv'); rr = R.M.run(s, 'self_aligning')
     d0 = int((pd.Timestamp(r.start_frozen) - pd.Timestamp(a.day0).normalize()) / pd.Timedelta(days=1))
     Ta = R.adaptive_thresholds(rr.step, rr.threshold)
     diff.append({'scenario': r.scenario, 'leak': r.link, 'type': r.type_frozen, 'frozen': r.outcome_frozen,
@@ -109,7 +110,7 @@ for r in inc.itertuples():
     ns = int(a.night_start_hour.iloc[0])
     v = pd.to_numeric(pd.read_csv(DATA / f'hanoi1000-leaks/Scenario-{r.scenario}/Leak_{r.link}_demand.csv').iloc[:, 1], errors='coerce').values
     n = v.reshape(-1, 2).mean(1).reshape(-1, 24)[:, ns:ns + 2].mean(1)
-    s0 = R.M.read_inlet(DATA / f'hanoi1000-inlet/Scenario-{r.scenario}_Link_1.csv').index[0]
+    s0 = io1000.read_inlet(DATA / f'hanoi1000-inlet/Scenario-{r.scenario}_Link_1.csv').index[0]
     d0 = int((r.start - s0) / pd.Timedelta(days=1)) + 1; d1 = int((r.end - s0) / pd.Timedelta(days=1))
     act = n[d0:d1]
     if len(act) >= 7 and act.max() > 0:

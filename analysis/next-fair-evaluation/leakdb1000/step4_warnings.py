@@ -4,13 +4,14 @@ from pathlib import Path
 import pandas as pd
 HERE = Path(__file__).resolve().parent; sys.path.insert(0, str(HERE))
 import rules as R
+import io1000
 M = R.M
 ROOT = HERE.parents[2]
 INLET = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / 'data/leakdb/hanoi1000-inlet'
 OUT = Path(sys.argv[2]) if len(sys.argv) > 2 else HERE / 'run'
 wr, sr = [], []
 for f in sorted(INLET.glob('Scenario-*_Link_1.csv'), key=lambda p: int(p.name.split('-')[1].split('_')[0])):
-    k = int(f.name.split('-')[1].split('_')[0]); s = M.read_inlet(f)
+    k = int(f.name.split('-')[1].split('_')[0]); s = io1000.read_inlet(f)
     r, fz, ad = R.both_rules(s)
     sr.append({'scenario': k, 'day0': str(s.index[0]), 'assessable': r.assessable, 'reason': r.reason,
                'frozen_threshold': r.threshold, 'night_start_hour': r.night_start_hour,

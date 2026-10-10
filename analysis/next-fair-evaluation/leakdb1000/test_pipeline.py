@@ -23,9 +23,10 @@ def scen_zip(n, prefix, decoy=False):
                 for d in range(st // 48, min(364, st // 48 + 60)):
                     if (d // 2) % 2: lf[d * 48:(d + 1) * 48] = 200.0
                 flow = flow + lf; lk.append(('30', 'incipient', lf))
-            z.writestr(f'{prefix}Scenario-{k}/Flows/Link_1.csv', pd.DataFrame({'Timestamp': grid, 'Value': (flow + (999 if decoy else 0)).round(1)}).to_csv(index=False))
+            first = {'Timestamp': grid} if decoy else {'Index': np.arange(1, len(grid) + 1)}   # target set uses the real Index format
+            z.writestr(f'{prefix}Scenario-{k}/Flows/Link_1.csv', pd.DataFrame({**first, 'Value': (flow + (999 if decoy else 0)).round(1)}).to_csv(index=False))
             for node, typ, lf in lk:
-                z.writestr(f'{prefix}Scenario-{k}/Leaks/Leak_{node}_demand.csv', pd.DataFrame({'Timestamp': grid, 'Description': lf}).to_csv(index=False))
+                z.writestr(f'{prefix}Scenario-{k}/Leaks/Leak_{node}_demand.csv', pd.DataFrame({**first, 'Description': lf}).to_csv(index=False))
                 z.writestr(f'{prefix}Scenario-{k}/Leaks/Leak_{node}_info.csv', f'Description , Value\nLeak Node , {node}\nLeak Diameter , 0.1\nLeak Type , {typ}\nLeak Start , x\n')
             truth[k] = lk
     return buf.getvalue(), truth
@@ -44,6 +45,7 @@ with tempfile.TemporaryDirectory() as tmp:
         for p in (p3, p4, p5, p6): print(p.stderr[-1500:])
     r3 = json.loads((out / 'step3-extract.json').read_text()); r6 = json.loads((out / 'step6-results.json').read_text())
     inlet_text = ''.join(f.read_text()[:200] for f in (data / 'hanoi1000-inlet').glob('*.csv'))
+    r5 = json.loads((out / 'step5-leaks.json').read_text())
     ad, fz = r6['adaptive'], r6['frozen']
     checks = {
         'all steps ran': ok,
@@ -56,6 +58,7 @@ with tempfile.TemporaryDirectory() as tmp:
         'no-leak + older-leak + credited = all warnings': all(x['warnings_no_leak_flowing'] + x['warnings_during_an_older_leak'] + x['credited'] == x['warnings_all_investigations'] for x in (ad, fz)),
         '47 shifts each rule': ad['shift']['distinct_shifts'] == 47 and fz['shift']['distinct_shifts'] == 47,
         'criteria and verdict present': 'verdict' in r6['criteria'],
+        'Index-format files read; leak positions agree': r5['file_index_formats'] == {'Index': r5['leak_records']} and r5['positions_disagree_with_inlet'] == 0,
         'on/off gradual leaks detected by the recurrence check': r6['development_findings_recur']['share_of_gradual_leaks_switching_on_off_weekly'] == 1.0,
     }
     for k, v in checks.items(): print(('PASS ' if v else 'FAIL ') + k)

@@ -1,0 +1,4 @@
+step4_warnings.py, first run, 10 Oct 2026 (code at commit bf45959). Stopped on the first file; no warnings written.
+  File ".../leakdb/method.py", line 31, in read_inlet
+    assert list(raw.columns) == ['Timestamp', 'Value'], f'unexpected columns {list(raw.columns)}'
+AssertionError: unexpected columns ['Index', 'Value']
