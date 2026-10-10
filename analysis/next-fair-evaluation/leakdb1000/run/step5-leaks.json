@@ -1,0 +1,20 @@
+{
+  "extraction": {
+    "entries_in_archive": 226,
+    "layout": "named nested archive (LeakDB/Hanoi_CMH_1000scenarios.zip)",
+    "entries_in_inner_archive": 109047,
+    "scenarios_with_leak_files": 763,
+    "leak_files_extracted": 2044
+  },
+  "leak_records": 1022,
+  "scenarios_with_any_leak": 763,
+  "by_type": {
+    "incipient": 516,
+    "abrupt": 506
+  },
+  "never_flowed": 2,
+  "positions_disagree_with_inlet": 0,
+  "file_index_formats": {
+    "Index": 1022
+  }
+}
