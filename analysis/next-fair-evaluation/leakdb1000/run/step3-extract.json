@@ -1,0 +1,18 @@
+{
+  "archive_md5_verified": true,
+  "set": "LeakDB/Hanoi_CMH_1000scenarios.zip",
+  "extraction": {
+    "entries_in_archive": 226,
+    "layout": "named nested archive (LeakDB/Hanoi_CMH_1000scenarios.zip)",
+    "entries_in_inner_archive": 109047,
+    "scenarios_with_inlet_file": 1000,
+    "scenario_range_in_archive": [
+      1,
+      1000
+    ],
+    "excluded_below_min_scenario": 0,
+    "extracted": 1000,
+    "gaps_in_numbering": []
+  },
+  "free_gib": 43.1
+}
