@@ -21,16 +21,18 @@ leak flow, as the protocol specified. False alerts were counted only when no lea
 flowing. The explanation of `unattributable` in `RESULTS-LEAKDB.md` should read: "a leak
 was flowing, but it had started more than 7 days earlier".
 
-## 2. "Gradual" leaks switch on and off
+## 2. "Gradual" leak flows fluctuate strongly
 
-Nearly all of LeakDB's incipient ("gradual") leaks (98%) switch on and off at night at least
-once a week. Their median is 2.7 switches per week, and about 31% of their active nights
-carry almost no leak flow. Sudden leaks do not do this (0.4%). Their documented intent is
+In nearly all of LeakDB's incipient ("gradual") leaks (98%), night leak flow changes by more than
+half of its peak from one night to the next at least once a week (median 2.7 such changes per
+week), and night-window leak flow is exactly zero on a median 31% of active nights. Sudden leaks do not do this (0.4%). Their documented intent is
 steady growth from zero; the archived flows do not show it
 (`leakdb-dev/dev-leak-night-behaviour.json`).
 
 **Effect on scores: none.** But it changes how the 878 `unattributable` warnings should be
-read: most are re-triggered by a leak switching back on, not by a leak growing.
+read: most coincide in time with a fluctuating older leak flow, not a steadily growing one.
+(11 Oct 2026: "switch on and off" overstated what the weekly-change statistic measures; see
+`CORRECTION-NOTE-2026-10-11.md`.)
 
 ## 3. Scoring timing at the edge of the night window
 

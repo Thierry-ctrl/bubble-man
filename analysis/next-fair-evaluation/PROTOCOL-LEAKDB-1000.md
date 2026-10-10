@@ -18,8 +18,9 @@ lead to no newly eligible leak, without losing sudden leaks? And does it reach t
 provisional practical target? The frozen method runs alongside on the same scenarios as the
 comparator.
 
-Warnings during an older leak are reported as their own group. They point at a leak that
-was already flowing, and are **not necessarily wasted investigations**.
+Warnings during an older leak are reported as their own group. They coincide in time with a
+leak that started earlier, which is an association, not evidence of cause or of prior
+knowledge, and are **not assumed to be wasted**. *(wording corrected 11 Oct 2026; see `CORRECTION-NOTE-2026-10-11.md`)*
 
 ## 2. What this test can and cannot show
 

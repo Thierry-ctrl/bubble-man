@@ -23,7 +23,7 @@ duration 45 days), contrary to what the protocol said.
 - **They barely cross the line.** The median step is 1.12× the threshold; credited
   warnings have a median of 5.0×.
 - **They happen at weekends in the high-demand months.**
-  - 89% fall in February, June or July.
+  - 89.6% fall in February, June or July (by exact calendar date).
   - 77% fall on Friday or Saturday nights.
 - **Why.** LeakDB's demand is a weekly pattern *multiplied* by a yearly curve.
   - Median night flow rises about 26% from January (2,399 m³/h) to July (3,028 m³/h).
@@ -42,21 +42,26 @@ duration 45 days), contrary to what the protocol said.
   |---|---|---|---|---|
   | False alerts per scenario (mean) | 5.7 | 1.5 | 0.3 | 0.06 |
 
-### Group 2 — an older leak flowing (884): LeakDB's "gradual" leaks switch on and off
+### Group 2 — an older leak flowing (884): LeakDB's "gradual" leak flows fluctuate strongly
 
 - 719 of the 884 occurred while only a "gradual" (incipient) leak was flowing; another 53
   had both kinds, and 112 a sudden leak only.
 - In **81%** of these warnings, the change in the leak's own night flow, by itself,
-  exceeded the threshold. The warning was a reaction to the leak, not to demand.
-- **But the leak was not growing.** 98% of LeakDB's gradual leaks switch on and off at
-  night at least once a week: a median of 2.7 switches per week, with 31% of their active
-  nights near zero. Sudden leaks do this 0.4% of the time.
-  - Each time the leak switches back on, the step jumps and the rule fires again (trace B).
+  exceeded the threshold. That is a timing association, consistent with the leak's flow
+  change driving the step, but it does not prove cause.
+- **The leak flow was not growing steadily.** In 97.9% of LeakDB's gradual leaks, the
+  night leak flow changes by more than half of its peak from one night to the next at least
+  once a week. That fluctuation alone does not prove the flow drops to zero. A separate
+  measure does show that night-window leak flow is exactly zero on a median 31% of active
+  nights, and on at least one night for every gradual leak. Sudden leaks show such changes
+  0.4% of the time.
+  - When the leak flow rises again, the step jumps and the rule can fire again (trace B).
   - A median warning came 44 days after that leak began, long past the 7-day window in
     which it could count as new.
-- **Reading it plainly:** these warnings point at a real, already-known leak. Whether that
-  is wasted effort depends on whether the leak is already being handled. They also say as
-  much about the simulator's on–off leaks as about the method.
+- **Reading it plainly:** these warnings coincided in time with a leak that had started
+  earlier. That is an association, not proof the leak caused them, and it says nothing about
+  whether anyone knew of the leak. They say as much about the simulator's fluctuating leak
+  flows as about the method. *(wording corrected 11 Oct 2026; see `CORRECTION-NOTE-2026-10-11.md`)*
 
 ### How it varies across scenarios (not only pooled totals)
 
@@ -139,13 +144,13 @@ on the same data makes its result optimistic. That is why it needs a fresh test.
 - **Shows, in this simulation:** most wasted investigations came from two specific
   mismatches:
   - a threshold set in January, applied to a year whose demand and variability grow;
-  - a simulator whose gradual leaks switch on and off.
+  - a simulator whose gradual leak flows fluctuate strongly, often to zero at night.
 
   Letting the threshold follow recent variability cut investigations without a new leak by
   three-quarters, at a cost of about 2% of sudden leaks.
 - **Does not show:**
   - that the change works on a fresh dataset — the 1,000-scenario set is needed for that;
-  - that it works on real networks, where leaks do not switch on and off on a simulator's
+  - that it works on real networks, where leaks do not fluctuate on a simulator's
     schedule;
   - anything about how real gradual leaks behave.
 - **What would help beyond rule changes:** something that tells demand apart from leakage

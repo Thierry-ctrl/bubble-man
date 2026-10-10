@@ -49,8 +49,10 @@ The detailed outcomes of warnings during an older leak:
 | `coincides_with_excluded_leak` | 11 | 11 |
 | `retrospective_association` | 1 | 1 |
 
-These warnings point at a leak that was already flowing. They are **not necessarily wasted
-investigations**: if that leak was not yet being handled, a visit would still find it.
+These warnings coincided in time with a leak that had started more than 7 days earlier. That
+is a temporal association only: it shows neither that the leak caused the warning nor that
+anyone already knew about the leak. These warnings are reported separately and not assumed to
+be wasted. *(wording corrected 11 Oct 2026; see `CORRECTION-NOTE-2026-10-11.md`)*
 
 ## Across scenarios
 
@@ -84,9 +86,10 @@ only by frozen, 10 only by adaptive. The list is in `leakdb1000/run/step6-result
 
 | Finding from the 500-scenario development set | Here |
 |---|---|
-| Leaks stop before the end of the year | 99.9% of flowing leaks |
-| Gradual leaks switch on and off at least weekly | 98.2% |
-| Frozen no-leak warnings fall in February, June or July | 87.2% (development 89%) |
+| Last leak flow precedes the dataset's final timestamp | 100% of flowing leaks (development 100%) |
+| Gradual leaks with a night-to-night change above half their peak night flow at least once a week | 98.2% (development 97.9%) |
+| Gradual leaks with night-window leak flow at exactly zero, median share of active nights | 31% (development 31%) |
+| Frozen no-leak warnings in February, June or July (exact calendar date; nominal calendar here) | 88.7% (development 89.6%) |
 | …and on the weekday positions that dominated (index mod 7 = 5 or 6) | 77.4% (development 77%) |
 
 **Early leaks:** 65 scenarios had a leak before day 29. Without them: G3 88.9% vs 91.3%, G4
@@ -120,8 +123,8 @@ only by frozen, 10 only by adaptive. The list is in `leakdb1000/run/step6-result
     the same timing rule, here 47.2%.
 - **Does not establish:**
   - that the 50% practical target is met;
-  - that the method works on real networks. Real leaks don't switch on and off on a
-    simulator's schedule, and real demand isn't a smooth seasonal curve;
+  - that the method works on real networks. Real leaks don't follow this simulator's
+    fluctuating leak flows, and real demand isn't a smooth seasonal curve;
   - a utility false-alert rate;
   - leak location;
   - anything about other night-flow methods.

@@ -1,0 +1,50 @@
+{
+  "development_500set": {
+    "final_dataset_timestamp_example": "2017-12-31 23:30:00",
+    "share_of_flowing_leaks_whose_last_flow_precedes_the_final_dataset_timestamp": 1.0,
+    "frozen_no_leak_warnings_by_calendar_month": {
+      "1": 23,
+      "2": 153,
+      "3": 28,
+      "4": 1,
+      "5": 30,
+      "6": 394,
+      "7": 288,
+      "8": 1,
+      "9": 1,
+      "10": 1,
+      "11": 3,
+      "12": 9
+    },
+    "share_in_feb_jun_jul_exact_calendar": 0.896,
+    "gradual_leaks_with_at_least_weekly_large_night_to_night_change": 0.979,
+    "gradual_leaks_with_any_active_night_at_exactly_zero_leak_flow": 1.0,
+    "gradual_leaks_median_share_of_active_nights_at_zero": 0.307,
+    "gradual_leaks_counted": 193,
+    "calendar_note": "timestamps in the files (2017)"
+  },
+  "heldout_1000set": {
+    "final_dataset_timestamp_example": "2017-12-31 23:30:00",
+    "share_of_flowing_leaks_whose_last_flow_precedes_the_final_dataset_timestamp": 1.0,
+    "frozen_no_leak_warnings_by_calendar_month": {
+      "1": 61,
+      "2": 293,
+      "3": 57,
+      "4": 1,
+      "5": 44,
+      "6": 777,
+      "7": 549,
+      "8": 5,
+      "9": 1,
+      "10": 4,
+      "11": 9,
+      "12": 24
+    },
+    "share_in_feb_jun_jul_exact_calendar": 0.887,
+    "gradual_leaks_with_at_least_weekly_large_night_to_night_change": 0.982,
+    "gradual_leaks_with_any_active_night_at_exactly_zero_leak_flow": 0.995,
+    "gradual_leaks_median_share_of_active_nights_at_zero": 0.31,
+    "gradual_leaks_counted": 383,
+    "calendar_note": "NOMINAL calendar: files carry a step counter; dates = 2017-01-01 + position"
+  }
+}
