@@ -1,0 +1,9 @@
+{
+  "scenarios": 1000,
+  "assessable": 1000,
+  "not_assessable_reasons": {},
+  "warnings": {
+    "adaptive": 1660,
+    "frozen": 4286
+  }
+}
