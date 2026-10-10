@@ -1,0 +1,66 @@
+{
+  "frozen": {
+    "warnings": 2217,
+    "outcomes": {
+      "credited": 407,
+      "false_alert": 926,
+      "unattributable": 878,
+      "repeat_of_credited_leak": 0,
+      "coincides_with_excluded_leak": 4,
+      "retrospective_association": 2
+    },
+    "yield": 0.1836,
+    "without_new_eligible_leak": 1810,
+    "abrupt": [
+      234,
+      217
+    ],
+    "incipient": [
+      238,
+      190
+    ],
+    "abrupt_median_delay_h": 14.5,
+    "leak_free_hours": 3195584.0,
+    "shifts": {
+      "real_in_domain_abrupt": 217,
+      "real_in_domain_all": 407,
+      "distinct_shifts": 47,
+      "shift_abrupt_max": 28,
+      "shift_abrupt_median": 14.0,
+      "p_abrupt": 0.020833333333333332
+    }
+  },
+  "adaptive": {
+    "warnings": 831,
+    "outcomes": {
+      "credited": 387,
+      "false_alert": 132,
+      "unattributable": 306,
+      "repeat_of_credited_leak": 0,
+      "coincides_with_excluded_leak": 4,
+      "retrospective_association": 2
+    },
+    "yield": 0.4657,
+    "without_new_eligible_leak": 444,
+    "abrupt": [
+      234,
+      213
+    ],
+    "incipient": [
+      238,
+      174
+    ],
+    "abrupt_median_delay_h": 14.5,
+    "leak_free_hours": 3195584.0,
+    "shifts": {
+      "real_in_domain_abrupt": 213,
+      "real_in_domain_all": 387,
+      "distinct_shifts": 47,
+      "shift_abrupt_max": 11,
+      "shift_abrupt_median": 4.0,
+      "p_abrupt": 0.020833333333333332
+    }
+  },
+  "codes_identical_to_development_and_locked_warnings": true,
+  "label": "DEVELOPMENT SENSITIVITY; locked 490-scenario result unchanged; not used to retune"
+}

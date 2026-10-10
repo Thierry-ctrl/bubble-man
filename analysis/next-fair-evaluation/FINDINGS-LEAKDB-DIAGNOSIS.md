@@ -157,5 +157,5 @@ on the same data makes its result optimistic. That is why it needs a fresh test.
 ## 4. Next step
 
 A draft protocol for **one** test on the untouched 1,000-scenario set is in
-`PROTOCOL-LEAKDB-1000-DRAFT.md`. Nothing from that set has been opened beyond the
+`PROTOCOL-LEAKDB-1000-DRAFT.md` (since frozen as `PROTOCOL-LEAKDB-1000.md`). Nothing from that set has been opened beyond the
 inlet-file hashes recorded in revision 4.
