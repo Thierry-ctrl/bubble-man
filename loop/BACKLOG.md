@@ -11,8 +11,10 @@ Each iteration completes one highest-priority unblocked item. Detector experimen
 | 5 | Storage correction design | Done — iteration 5, standalone draft | `pilot/loop/STORAGE-DESIGN.md`, `storage_correction.py` and invented-case checks. Multiple tanks, approved geometry, exact interval endpoints, gaps/quality, receipt timing and conditional uncertainty; 36/36 checks pass. No integration, field accuracy or detector performance established. |
 | 6 | Additional export adapters | Done — iteration 6, invented-file checks | `pilot/loop/export_adapters.py`, `ADAPTERS.md`, labelled CSV/Excel fixtures, mapping/builder and tests. Explicit long/wide CSV/XLSX, decimal/group marks, quality/time/metadata mappings and row audit; 36/36 checks pass, including unchanged-converter compatibility. Real-export fit remains unverified; converter/detectors unchanged. |
 | 7 | Pilot paperwork | Done — iteration 7, drafts only | `pilot/loop/paperwork/DATA-SHARING-OUTLINE-DRAFT.md`, `ENGINEER-FAQ-DRAFT.md` and editable `EXPLAINER-DRAFT.md` plus verified one-page PDF. Purpose/confidentiality/retention/deletion/publication, source-labelled limits and open decisions. Not sent, signed or legally approved; no data permission granted. |
-| 8 | Repository index | Pending | `loop/REPO-MAP.md`: folders, locked results, and pilot materials. |
+| 8 | Repository index | Done — iteration 8 | `loop/REPO-MAP.md`: reading route, folder purposes, locked/development/superseded results and pilot materials; `loop/COMPLETION-AUDIT.md` checks all eight requirements and retained limits. Local links verified; 111 invented checks pass; protected content unchanged. |
 
 ## Stop conditions
 
 Stop an iteration after recording and committing its one item. End the loop when every item is done or blocked, or when the next available step needs real data or a human decision. A public-dataset search that finds no suitable data does not itself block the independent preparation items.
+
+**Verified (completion evidence):** all eight requested preparation items are done within their stated scopes; see [COMPLETION-AUDIT.md](/Users/uwonkundathierryrugira/Bubble-man/loop/COMPLETION-AUDIT.md). **My inference:** close this preparation loop after the final commit. A real-data trial remains a separate, unapproved stage.
