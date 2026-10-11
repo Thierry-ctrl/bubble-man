@@ -1,0 +1,23 @@
+{
+  "source_format": "csv",
+  "layout": "long",
+  "delimiter": ";",
+  "decimal_mark": ",",
+  "header_row": 1,
+  "columns": {"meter_id": "Meter", "timestamp": "Time", "value": "Reading", "unit": "Units", "quality": "Status"},
+  "quality_map": {"GOOD": "ok", "EST": "estimated", "FAULT": "fault", "MISSING": "missing"},
+  "missing_tokens": ["", "NA"],
+  "zone": {
+    "zone_id": "INVENTED-ZONE",
+    "supply_regime": "continuous",
+    "internal_storage": "none",
+    "storage_level_meter": "",
+    "boundary_valves_confirmed_closed": "yes",
+    "local_time_zone": "UTC+02:00",
+    "notes": "Entirely INVENTED for adapter checks; not utility data"
+  },
+  "meters": [
+    {"meter_id": "INVENTED-M1", "role": "inlet", "zone_id": "INVENTED-ZONE", "value_type": "interval_average_rate", "unit": "L/s", "interval_minutes": 15, "timestamp_marks": "interval_start", "notes": "INVENTED"},
+    {"meter_id": "INVENTED-M2", "role": "outlet", "zone_id": "INVENTED-ZONE", "value_type": "interval_average_rate", "unit": "m3/h", "interval_minutes": 15, "timestamp_marks": "interval_start", "notes": "INVENTED"}
+  ]
+}
