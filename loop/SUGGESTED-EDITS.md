@@ -17,3 +17,9 @@ Existing files are not changed by this loop.
 **Verified (source link):** the publisher names the 2019 SPC authors as Jaehyun Ahn and **Donghwi Jung**; the earlier report says “Ahn & Jun.” [Publisher issue and abstract](https://ascelibrary.com/toc/jwrmd5/145/9).
 
 **My inference — suggested correction:** fix the author's name in both older documents. Replace the categorical explanation of the gap between published accuracies and blind-test results with a caution that the studies' metrics and conditions are not directly comparable. The retrieved review supports a comparability concern; it does not establish that lack of blind testing alone caused every gap. This changes attribution and interpretation, not any locked detector result.
+
+## 3. Bridge the warning export to a future approved real-record scorer
+
+**Verified (local source links):** [run_frozen_rule.py](/Users/uwonkundathierryrugira/Bubble-man/pilot/run_frozen_rule.py:16) exports both rules with `issue_time_local`, but no stable warning ID. [convert_utility_data.py](/Users/uwonkundathierryrugira/Bubble-man/pilot/convert_utility_data.py:72) deliberately converts timestamps to naive local standard time and retains the offset in its report. This is the existing frozen-reader convention, not a detector defect.
+
+**My inference — proposed integration work after approval:** an adapter for the [scoring draft](/Users/uwonkundathierryrugira/Bubble-man/pilot/loop/SCORING-DRAFT.md) should select one rule per evaluation, derive stable warning IDs and restore explicit offsets using the conversion metadata. Do not assume UTC or merge comparator/primary warnings into one investigation stream. The standalone draft currently has no file loader or integration; these existing tools were not modified.
