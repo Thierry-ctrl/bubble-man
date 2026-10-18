@@ -1,0 +1,48 @@
+{
+  "finished_utc": "2026-10-18T21:18:59.909695+00:00",
+  "calculation_status": "All 12000 separate injected copies and 24000 rule rows saved before chart error; trials share real backgrounds and overlap in time",
+  "reporting_recovery": "Original run stopped at import matplotlib; rendered saved outcomes only, no detector/injection rerun",
+  "calculation_tables_unchanged_by_reporting": true,
+  "calculation_csv_reads_guarded": true,
+  "calculation_csv_read_allowlist": [
+    "data/yorkshire/N4_2016_2017.csv",
+    "analysis/yorkshire-n4/run/dma-assessability.csv",
+    "analysis/yorkshire-n4/run/warnings-both-rules.csv",
+    "analysis/real-zone-study/step1-detectability/run/selection.csv",
+    "analysis/real-zone-study/step1-detectability/run/onsets.csv"
+  ],
+  "calculation_read_trace_persisted": false,
+  "repair_records_accepted_by_guard": false,
+  "rules_and_original_inputs_unchanged": true,
+  "baseline_warnings_match_saved_lists": true,
+  "new_pass_fail_claim": false,
+  "trial_rule_rows": 24000,
+  "report_environment": {
+    "python": "3.9.6",
+    "matplotlib": "3.9.4",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3"
+  },
+  "reporting_script_sha256": "3b75acafa217ab94e34671e0e4c1a31d2089994111172a5988cba5220a10c103",
+  "files_sha256": {
+    "dma-1586-detectability.svg": "be12935ab6d762c92cedce70c023dad893eff038cb93d9f9576688e50352e782",
+    "trials.csv": "d2efcec1cdff20992175ccabc1c33ad2fa2f16f7f8cdd6da297cbe63fd91b1cc",
+    "dma-526-detectability.png": "862a3546e40cb216204548b5d9732ecdbd1192eb1e6280f191c1723438ee7de2",
+    "prepared.json": "bd61d356ead62cc8613fe097e21088c318f8ede7d0b39b8c37aca77b352b1f6b",
+    "untouched.csv": "d857c912aa6d94b8aaca0f6d26497c0fcedeb8e5784ce7ebbc2e9decb6bd0b32",
+    "dma-526-detectability.svg": "e8b01d76d25cb6c7f4e4c067395ff640969333dbb02b035c8a9f40b71b7e1bea",
+    "minimum-sizes.csv": "da90baf6f91793d6835b5d4a8611ed694c5be43ba19970679cc498985a3554ae",
+    "dma-1586-detectability.png": "65427f8e964336f1fbbc872aa16ca9222c1dec32d309000c700f3e4da0281353",
+    "dma-784-detectability.svg": "e0f1e5986a58d277727679e3c434acb47b88662a3469e03d7561f4893000c097",
+    "dma-698-detectability.svg": "41bfbde34ac6fc7a4cb07f2cdb8610a9bfa5417924b52da0a8c0d70b72e4d09e",
+    "dma-664-detectability.svg": "8270bebe3a9bd50b1c1ad409030fe19920d1ec7459aa26c9b6516c000b55421e",
+    "FINDINGS.md": "184580311a113321127d19c8e56f65020d53af5272bfcdd879f484bcd6ad5e61",
+    "onsets.csv": "eae2c48dc7c9e029886d0a12f588814986997ef5ed4e5fec54a2b6ce78ef252b",
+    "dma-664-detectability.png": "34dc918d82d4e39159d5ac66b72c5f4d43ef0ca1a8189d8f9e348e64705326ac",
+    "dma-698-detectability.png": "d11b61bf968bc5493829001eee80dea1d6cff9795b9f20aa3cae31501155c01c",
+    "dma-784-detectability.png": "1919887200ce60f264acfba67f6fc69711b43d4937175b159d7ef32d4c827545",
+    "selection.csv": "2beb99db9b84ee191d6ba955e88d0046366602678e81206a5351ee2e1f53a576",
+    "curves.csv": "cd3f82623af4df733fed09c8ca048666554dce9d0b7e431164475f11503a1e12"
+  },
+  "reporting_metadata_note": "Wording clarified from independent to separate copies; no outcome table, curve or fixed study source changed."
+}

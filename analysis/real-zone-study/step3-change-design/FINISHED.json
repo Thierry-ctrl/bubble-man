@@ -1,0 +1,16 @@
+{
+  "status": "Step 3 written revision2 complete; requested secondary dominance added; stop for founder review; steps4\u20135 not started",
+  "files": {
+    "PREREGISTRATION.md": "3c18853067c9fde428f8a2b057717f178eae0ed19eabf83502d6ae14fce85fc9",
+    "zone-reservation.csv": "2ff130f7d3a1ab822cef95baa71676b47a5a168292bf9e342a8a57b6657df85a",
+    "reservation.json": "23c222628483b36778ceb09a026dca7907513d195f509e8123a7b230b1720410",
+    "DESIGN-AUDIT.json": "c97043f95e18a97ed6ffd6908a47e0f3d099d994594356d853ae0466fb4db8f4",
+    "REVIEW.md": "b46520908fe6029b1af5815d502bd985424bd75d0de0fefc87a175eeb610d935",
+    "design.json": "ce81971c2829a8debfe7273253a9d929ef0157490aaa0b449595742073098373"
+  },
+  "protected_earlier_files_unchanged": 68,
+  "new_detector_runs": 0,
+  "new_reserved_value_analysis": false,
+  "review_copy_not_committed_or_public": true,
+  "revision": 2
+}

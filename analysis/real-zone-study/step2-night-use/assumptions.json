@@ -1,0 +1,15 @@
+{
+  "household_l_property_h": [1.0, 4.0],
+  "nonhousehold_l_property_h": [0.7, 60.6],
+  "household_range_status": "Analyst-chosen sensitivity envelope informed by historical UK references; not an empirical interval",
+  "nonhousehold_range_status": "Historical customer-category means; not individual limits or guaranteed DMA bounds",
+  "training_days": 28,
+  "minimum_training_weekdays": 10,
+  "evaluation_last_day": 364,
+  "require_all_six_night_hours": true,
+  "weekdays_only": true,
+  "quantiles": [0.1, 0.5, 0.9],
+  "time_basis": "Original wall-clock grid; no claim about interval timestamp semantics",
+  "not_a_confidence_interval": true,
+  "output_feeds_detector": false
+}

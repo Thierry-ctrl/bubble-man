@@ -1,0 +1,17 @@
+{
+  "requested_url": "https://datamillnorth.org/download/2zlgn/730cc173-e932-4dcb-9d01-f01f6233f40a/DMA%20Property%20Count%202016_2017.csv?step2=20261018",
+  "resolved_url_without_signed_query": "https://datamillnorth.org/download/2zlgn/730cc173-e932-4dcb-9d01-f01f6233f40a/DMA%20Property%20Count%202016_2017.csv",
+  "bytes": 39098,
+  "sha256": "32fa20aad2bd0530a14952f6cfa54b3f2be59d8dd8e1c163f5a0bba1aff40ae8",
+  "downloaded_utc": "2026-10-18T21:50:17.515515+00:00",
+  "catalogue_bytes": 39098,
+  "catalogue_md5": "98e08e78ae4ead4c3ce85e34f2c9629c",
+  "md5": "98e08e78ae4ead4c3ce85e34f2c9629c",
+  "download_note": "Initial canonical URL returned 403. A cache-busting query was used to refresh the public download redirect.",
+  "publisher": "Yorkshire Water",
+  "catalogue": "https://datamillnorth.org/dataset/yorkshire-water-leakage-dma-15-minute-data-2zlgn",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "period": "Apr 2016\u2013Mar 2017",
+  "authorisation": "User explicitly approved this 39 kB property-count download for step 2; no repair or outcome data."
+}

@@ -1,0 +1,11 @@
+dma,rule,smallest_tested_90pct_m3h,percent_reference,status
+784,frozen,4.0,71.9259050254567,reached on tested grid
+784,adaptive,4.0,71.9259050254567,reached on tested grid
+1586,frozen,7.1824158,40.0,reached on tested grid
+1586,adaptive,8.0,44.553254630565945,reached on tested grid
+664,frozen,1.1090012494500001,10.0,reached on tested grid
+664,adaptive,2.0,18.034244785494007,reached on tested grid
+526,frozen,4.0,30.793628606181517,reached on tested grid
+526,adaptive,8.0,61.587257212363035,reached on tested grid
+698,frozen,2.0,19.427566474084156,reached on tested grid
+698,adaptive,4.0,38.85513294816831,reached on tested grid

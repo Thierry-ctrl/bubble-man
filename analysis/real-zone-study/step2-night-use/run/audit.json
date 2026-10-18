@@ -1,0 +1,63 @@
+{
+  "method": "Independent CSV streaming reader and hand-written calendar/quarter-hour aggregation; no detector or repairs read",
+  "selected_zones": [
+    {
+      "dma": "784",
+      "fixed_hour": 2,
+      "night_count": 241,
+      "q10_q50_q90": [
+        4.7568166650000006,
+        5.456348955000001,
+        6.601039587
+      ],
+      "all_match_saved": true
+    },
+    {
+      "dma": "1586",
+      "fixed_hour": 3,
+      "night_count": 241,
+      "q10_q50_q90": [
+        15.846148799999998,
+        18.5934015,
+        20.813181300000004
+      ],
+      "all_match_saved": true
+    },
+    {
+      "dma": "664",
+      "fixed_hour": 2,
+      "night_count": 240,
+      "q10_q50_q90": [
+        9.600012495,
+        11.140012498499999,
+        11.8000124919
+      ],
+      "all_match_saved": true
+    },
+    {
+      "dma": "526",
+      "fixed_hour": 2,
+      "night_count": 241,
+      "q10_q50_q90": [
+        11.040299964,
+        13.470300009,
+        15.871500216000001
+      ],
+      "all_match_saved": true
+    },
+    {
+      "dma": "698",
+      "fixed_hour": 2,
+      "night_count": 241,
+      "q10_q50_q90": [
+        9.149399900999999,
+        10.350900144,
+        12.879899883
+      ],
+      "all_match_saved": true
+    }
+  ],
+  "protected_files_verified": 42,
+  "numeric_output_hashes_match": true,
+  "invented_tests_passed": 9
+}

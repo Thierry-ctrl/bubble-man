@@ -1,0 +1,19 @@
+{
+  "study": "development: constant injected flow on real Yorkshire N4 background",
+  "seed": 20261018,
+  "zones": 5,
+  "selection": "previously assessable; exact finite 30-minute bins descending; numeric DMA ID ascending",
+  "starts_per_zone": 200,
+  "first_start_day_index": 56,
+  "horizon_hours": 168,
+  "absolute_sizes_m3h": [0.5, 1, 2, 4, 8, 16, 32],
+  "relative_sizes_percent": [5, 10, 20, 40, 80],
+  "reference": "median daily minimum two-hour flow in complete 00:00-06:00 nights, day indices 28..364",
+  "minimum_response_probability": 0.9,
+  "minimum_size_definition": "smallest tested size reaching primary response >= 0.9 at this and every larger tested size",
+  "primary": "warning within 168 hours with issue absent from the paired untouched run and final contributing bin >= onset",
+  "warnings_from_day_index": 28,
+  "preserve_missing": true,
+  "new_pass_fail_test": false,
+  "repair_records_used": false
+}

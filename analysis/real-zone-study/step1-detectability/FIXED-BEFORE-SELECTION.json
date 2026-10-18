@@ -1,0 +1,11 @@
+{
+  "fixed_before_selection_utc": "2026-10-18T21:14:40.804718+00:00",
+  "note": "No selected zone or injected outcome exists yet. SHA-256 fixes the pre-outcome study choices and implementation.",
+  "files_sha256": {
+    "PLAN.md": "d72dd9ac0f3fb87908b963005b6f2ecfe38480a062efb0b087671aa57f489fca",
+    "plan.json": "91d20f463a29f3b1d30f8f528afa208a1660dc7fe75ff90ba874d9c4ab4e7f31",
+    "study.py": "fe04712777c87004cfe0b06f25c0a82daeda4e4f6816465ad718438264ff0c08",
+    "test_study_INVENTED.py": "cd074a740faec69eff5f99c13a3e13e239b38de083bd715aa81a64311dad72af"
+  },
+  "invented_checks": 14
+}

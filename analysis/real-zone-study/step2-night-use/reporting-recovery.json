@@ -1,0 +1,11 @@
+{
+  "reason": "All five numeric CSVs were saved. The CSV read guard then rejected reading an output for its own checksum. It has been corrected for the post-calculation hashing phase. No detector was run.",
+  "first_attempt_csv_hashes": {
+    "summary.csv": "ff2f7be17470eb4c9cb9bd742f9934c8769aaa052ba85d96a5a1089cc5aa31b8",
+    "properties.csv": "da2a61d67da57e8418212c4d390a4f01eb9e9bd64e2d65645b85dd69d33f4f1f",
+    "hour-selection.csv": "6be1abb5f5817647393a3d467426208fbf47cef090dba7fac337a1c2cb1ba984",
+    "monthly.csv": "a3a15c59c312b1313e9d38989c45f2c918f4bc30b700ff3fa2f611f6815bfa83",
+    "nights.csv": "4c4e5a02629adece08e91b2729bd6101ad0de6799ee3727c3dc8691fe81c3692"
+  },
+  "numeric_csvs_identical_after_guard_correction": true
+}

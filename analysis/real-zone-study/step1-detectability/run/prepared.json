@@ -1,0 +1,330 @@
+{
+  "prepared_utc": "2026-10-18T21:14:44.833146+00:00",
+  "input_hashes": {
+    "analysis/real-zone-study/step1-detectability/PLAN.md": "d72dd9ac0f3fb87908b963005b6f2ecfe38480a062efb0b087671aa57f489fca",
+    "analysis/real-zone-study/step1-detectability/plan.json": "91d20f463a29f3b1d30f8f528afa208a1660dc7fe75ff90ba874d9c4ab4e7f31",
+    "analysis/real-zone-study/step1-detectability/study.py": "fe04712777c87004cfe0b06f25c0a82daeda4e4f6816465ad718438264ff0c08",
+    "analysis/real-zone-study/step1-detectability/test_study_INVENTED.py": "cd074a740faec69eff5f99c13a3e13e239b38de083bd715aa81a64311dad72af",
+    "PILOT-READINESS.md": "2db4d503985f31f79593c9f4f5cfc68aa3027a6511722cf648ae6144abd19729",
+    "pilot/loop/NEXT-REAL-EVIDENCE.md": "1c310079099c5d9b0e09f395629f7ab02ca7915afccbfdf4ad9fb21d76f2bf56",
+    "pilot/loop/SCORING-DRAFT.md": "3ff86f4f3a59b3a2a22fbffc4437657c1d1ec4381f8623b7179075009080f9a6",
+    "analysis/yorkshire-n4/PROTOCOL-YORKSHIRE-N4.md": "08f3ec38e4198e69e61fd20fa06e8c06abd190a3fcc876c360c25d8fed8036ee",
+    "analysis/yorkshire-n4/RESULTS-YORKSHIRE-N4.md": "1d946ae371752b26a8665d10b0f35ecc6696f80eba8d3e8df6c9a8adf38b5c2d",
+    "analysis/yorkshire-n4/yw.py": "145f13813460bb1630fe064065287371fa5029002e4e39a3b1bcb05d94da13c2",
+    "analysis/next-fair-evaluation/leakdb1000/rules.py": "54bca0f9b204f1faf3bcb7076721c6ac683dbe849f2487f3b1c9cecac5b1e82b",
+    "analysis/next-fair-evaluation/leakdb/method.py": "eeda079531d047fea013c8a78bf2a4e4a848f976f7559fb0c2db25d1b234f5c5",
+    "analysis/next-fair-evaluation/RESULTS-LEAKDB.md": "1b6aec1d22a2fa3317bc987e3fe2019930c69d8539f3bb286b4863adecab2197",
+    "analysis/next-fair-evaluation/RESULTS-LEAKDB-1000.md": "9b845bb40644c10709bfbde8a300744e0d1dde15c73fd46d8c8ebdbfba384819",
+    "analysis/night-flow-step/RESULTS-2019.md": "e18df938c38dde5bae3130839e76a4e5eaf637ffa58faac7f13463cb9c5fbed9",
+    "analysis/yorkshire-n4/run/dma-assessability.csv": "a7a25106c366da8d93adeba90b017a82f4285a773671826ddc78eb17f854506b",
+    "analysis/yorkshire-n4/run/warnings-both-rules.csv": "e1e5bcd33c0527026bbf8600b884224680863c302b955af7b2c3edca587a0bc6",
+    "analysis/yorkshire-n4/run/step1-download.json": "7b4d854ad2901418d6f7368727245cf23742c1101e59e7853e27a393739b4c8c",
+    "data/yorkshire/N4_2016_2017.csv": "8c428c68def7940ad224bb130c3e6235013e091ff3ac8a1666d3b6e90d8af208"
+  },
+  "reader_report": {
+    "rows": 2555957,
+    "unparseable_stamps": 0,
+    "validity_codes": {
+      "V": 2403130,
+      "I": 130260,
+      "M": 22567
+    },
+    "negative_valid_flows": 6534,
+    "duplicated_stamps": 0,
+    "duplicated_stamp_dates": [],
+    "autumn_ambiguous_hour_readings_set_missing": 292,
+    "dmas": 74
+  },
+  "candidate_zones": 43,
+  "selected": [
+    {
+      "dma": "784",
+      "finite_bins": 17518,
+      "total_bins": 17520,
+      "reference_m3h": 5.56127865,
+      "reference_complete_nights": 336,
+      "sizes": [
+        [
+          0.2780639325,
+          "5% reference"
+        ],
+        [
+          0.5,
+          "absolute"
+        ],
+        [
+          0.556127865,
+          "10% reference"
+        ],
+        [
+          1.0,
+          "absolute"
+        ],
+        [
+          1.11225573,
+          "20% reference"
+        ],
+        [
+          2.0,
+          "absolute"
+        ],
+        [
+          2.22451146,
+          "40% reference"
+        ],
+        [
+          4.0,
+          "absolute"
+        ],
+        [
+          4.44902292,
+          "80% reference"
+        ],
+        [
+          8.0,
+          "absolute"
+        ],
+        [
+          16.0,
+          "absolute"
+        ],
+        [
+          32.0,
+          "absolute"
+        ]
+      ]
+    },
+    {
+      "dma": "1586",
+      "finite_bins": 17518,
+      "total_bins": 17520,
+      "reference_m3h": 17.9560395,
+      "reference_complete_nights": 336,
+      "sizes": [
+        [
+          0.5,
+          "absolute"
+        ],
+        [
+          0.897801975,
+          "5% reference"
+        ],
+        [
+          1.0,
+          "absolute"
+        ],
+        [
+          1.79560395,
+          "10% reference"
+        ],
+        [
+          2.0,
+          "absolute"
+        ],
+        [
+          3.5912079,
+          "20% reference"
+        ],
+        [
+          4.0,
+          "absolute"
+        ],
+        [
+          7.1824158,
+          "40% reference"
+        ],
+        [
+          8.0,
+          "absolute"
+        ],
+        [
+          14.3648316,
+          "80% reference"
+        ],
+        [
+          16.0,
+          "absolute"
+        ],
+        [
+          32.0,
+          "absolute"
+        ]
+      ]
+    },
+    {
+      "dma": "664",
+      "finite_bins": 17517,
+      "total_bins": 17520,
+      "reference_m3h": 11.0900124945,
+      "reference_complete_nights": 335,
+      "sizes": [
+        [
+          0.5,
+          "absolute"
+        ],
+        [
+          0.5545006247250001,
+          "5% reference"
+        ],
+        [
+          1.0,
+          "absolute"
+        ],
+        [
+          1.1090012494500001,
+          "10% reference"
+        ],
+        [
+          2.0,
+          "absolute"
+        ],
+        [
+          2.2180024989000002,
+          "20% reference"
+        ],
+        [
+          4.0,
+          "absolute"
+        ],
+        [
+          4.4360049978000005,
+          "40% reference"
+        ],
+        [
+          8.0,
+          "absolute"
+        ],
+        [
+          8.872009995600001,
+          "80% reference"
+        ],
+        [
+          16.0,
+          "absolute"
+        ],
+        [
+          32.0,
+          "absolute"
+        ]
+      ]
+    },
+    {
+      "dma": "526",
+      "finite_bins": 17516,
+      "total_bins": 17520,
+      "reference_m3h": 12.989700081,
+      "reference_complete_nights": 335,
+      "sizes": [
+        [
+          0.5,
+          "absolute"
+        ],
+        [
+          0.6494850040500001,
+          "5% reference"
+        ],
+        [
+          1.0,
+          "absolute"
+        ],
+        [
+          1.2989700081000002,
+          "10% reference"
+        ],
+        [
+          2.0,
+          "absolute"
+        ],
+        [
+          2.5979400162000004,
+          "20% reference"
+        ],
+        [
+          4.0,
+          "absolute"
+        ],
+        [
+          5.195880032400001,
+          "40% reference"
+        ],
+        [
+          8.0,
+          "absolute"
+        ],
+        [
+          10.391760064800001,
+          "80% reference"
+        ],
+        [
+          16.0,
+          "absolute"
+        ],
+        [
+          32.0,
+          "absolute"
+        ]
+      ]
+    },
+    {
+      "dma": "698",
+      "finite_bins": 17516,
+      "total_bins": 17520,
+      "reference_m3h": 10.294650144,
+      "reference_complete_nights": 335,
+      "sizes": [
+        [
+          0.5,
+          "absolute"
+        ],
+        [
+          0.5147325072000001,
+          "5% reference"
+        ],
+        [
+          1.0,
+          "absolute"
+        ],
+        [
+          1.0294650144000002,
+          "10% reference"
+        ],
+        [
+          2.0,
+          "absolute"
+        ],
+        [
+          2.0589300288000003,
+          "20% reference"
+        ],
+        [
+          4.0,
+          "absolute"
+        ],
+        [
+          4.117860057600001,
+          "40% reference"
+        ],
+        [
+          8.0,
+          "absolute"
+        ],
+        [
+          8.235720115200001,
+          "80% reference"
+        ],
+        [
+          16.0,
+          "absolute"
+        ],
+        [
+          32.0,
+          "absolute"
+        ]
+      ]
+    }
+  ],
+  "selection_sha256": "2beb99db9b84ee191d6ba955e88d0046366602678e81206a5351ee2e1f53a576",
+  "onsets_sha256": "eae2c48dc7c9e029886d0a12f588814986997ef5ed4e5fec54a2b6ce78ef252b",
+  "outcomes_computed": false,
+  "note": "Selection and starts saved before baseline or injected warning runs."
+}
