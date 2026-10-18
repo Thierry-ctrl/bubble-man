@@ -1,0 +1,28 @@
+{
+  "read_report": {
+    "rows": 2555957,
+    "unparseable_stamps": 0,
+    "validity_codes": {
+      "V": 2403130,
+      "I": 130260,
+      "M": 22567
+    },
+    "negative_valid_flows": 6534,
+    "duplicated_stamps": 0,
+    "duplicated_stamp_dates": [],
+    "autumn_ambiguous_hour_readings_set_missing": 292,
+    "dmas": 74
+  },
+  "dmas": 74,
+  "assessable": 43,
+  "not_assessable_reasons": {
+    "days 1-14 incomplete": 24,
+    "fewer than 300 step values from day 29": 6,
+    "only 6 of 20 threshold steps": 1
+  },
+  "warnings": {
+    "adaptive": 138,
+    "frozen": 167
+  },
+  "assessable_dma_days_from_day_29": 14491
+}
