@@ -1,0 +1,55 @@
+{
+  "repairs_file": {
+    "rows": 5148,
+    "columns": [
+      "DMA",
+      "Date"
+    ],
+    "unparseable_dates": 0
+  },
+  "repairs_in_n4_dmas": 261,
+  "repairs_in_assessable_dmas": 143,
+  "frozen": {
+    "eligible_repairs": 130,
+    "preceded": 52,
+    "same_day_only": 8,
+    "median_days_before": 11.5,
+    "warnings": 167,
+    "warnings_followed_by_repair_within_28d": 46,
+    "share_of_repairs_preceded": 0.4,
+    "share_of_warnings_followed": 0.2754,
+    "warnings_per_dma_month": 0.351,
+    "shift": {
+      "real_in_domain": 52,
+      "shifts": 47,
+      "shift_max": 59,
+      "shift_median": 32.0,
+      "p": 0.0625
+    }
+  },
+  "adaptive": {
+    "eligible_repairs": 130,
+    "preceded": 50,
+    "same_day_only": 10,
+    "median_days_before": 10.5,
+    "warnings": 138,
+    "warnings_followed_by_repair_within_28d": 40,
+    "share_of_repairs_preceded": 0.3846,
+    "share_of_warnings_followed": 0.2899,
+    "warnings_per_dma_month": 0.29,
+    "shift": {
+      "real_in_domain": 50,
+      "shifts": 47,
+      "shift_max": 58,
+      "shift_median": 31.0,
+      "p": 0.0625
+    }
+  },
+  "criteria": {
+    "Y1_eligible_repairs": 130,
+    "Y1": true,
+    "Y2_p_adaptive": 0.0625,
+    "Y2": false,
+    "verdict": "NO ASSOCIATION BEYOND CHANCE DETECTED"
+  }
+}
