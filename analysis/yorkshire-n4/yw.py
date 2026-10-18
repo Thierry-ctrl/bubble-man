@@ -11,6 +11,7 @@ import rules as R
 M = R.M
 
 START = pd.Timestamp('2016-04-01 00:00')          # wall-clock (UK local) time, as in the file
+AUTUMN_AMBIGUOUS = pd.Timestamp('2016-10-30 01:00')  # the UK hour that occurred twice
 N_DAYS = 365
 LOOKBACK = 28                                      # days before the completion date (protocol section 6)
 WARN_FROM = M.WARN_FROM                            # day index 28 = day 29
@@ -44,6 +45,11 @@ def read_area(path) -> tuple[dict, dict]:
     rep['duplicated_stamps'] = int(dup.sum())
     rep['duplicated_stamp_dates'] = sorted({str(d.date()) for d in t.ts[dup]})[:10]
     t = t[~dup]
+    # Revision 1 (see protocol section 9): the file holds ONE copy of the repeated autumn hour,
+    # so it cannot be told which of the two hours it is; treat it as missing, as section 4 intends.
+    amb = (t.ts >= AUTUMN_AMBIGUOUS) & (t.ts < AUTUMN_AMBIGUOUS + pd.Timedelta(hours=1))
+    rep['autumn_ambiguous_hour_readings_set_missing'] = int(amb.sum())
+    t.loc[amb, 'v'] = np.nan
     grid15 = pd.date_range(START, periods=N_DAYS * 96, freq='15min')
     out = {}
     t['DMA'] = t.DMA.map(dma_key)

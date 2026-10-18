@@ -133,3 +133,19 @@ Anything else stops the run for a documented correction.
   The data are from 2016–17.
 - **Either way, the next step** remains a utility pilot with first-report times and field
   checks (`PILOT-READINESS.md`).
+
+## 9. Revisions during the run
+
+**Revision 1 — autumn clock change (before any repair record was downloaded).**
+- **What happened.** Step 1 downloaded the flow file at exactly the published size. The
+  first step 2 run then reported **0 duplicated timestamps**. That output is kept in
+  `run/attempt1/`.
+- **What the file actually does at the clock changes**, inspected from flow readings only:
+  - **Spring (26 Mar 2017):** the 01:00–01:45 stamps are present with empty values. This
+    is already handled as missing.
+  - **Autumn (30 Oct 2016):** the file holds **one** copy of 01:00–01:45, with values, so
+    it can't be told which of the two clock hours they belong to.
+- **Fix.** Section 4 drops ambiguous hours, so the 01:00–01:45 readings on 30 Oct 2016 are
+  now set to missing (`yw.AUTUMN_AMBIGUOUS`). Tests: invented-case 21/21, pipeline 5/5.
+- **Unchanged:** every rule, criterion and setting. The fix was decided from timestamps
+  alone; the repairs file has not been opened.

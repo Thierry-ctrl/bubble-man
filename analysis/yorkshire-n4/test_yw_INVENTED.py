@@ -36,6 +36,16 @@ with tempfile.TemporaryDirectory() as t:
     except AssertionError: ok = True
     check('ambiguous repair date columns -> stop', ok)
 
+with tempfile.TemporaryDirectory() as t:
+    t = Path(t)
+    g2 = pd.date_range('2016-10-30 00:00', periods=12, freq='15min')
+    pd.DataFrame({'DMA': '20', 'Date': g2.strftime('%d/%m/%Y'), 'Time': g2.strftime('%H:%M:%S'), 'Flow': 1.0, 'Flow Validity Code': 'V'}).to_csv(t / 'c.csv', index=False)
+    S2, rep2 = yw.read_area(t / 'c.csv')
+    x = S2['20'].loc['2016-10-30 00:00':'2016-10-30 02:30']
+    check('autumn: the single copy of 01:00-01:45 on 30 Oct is set missing; 00:30 and 02:00 kept',
+          rep2['autumn_ambiguous_hour_readings_set_missing'] == 4 and x.loc['2016-10-30 01:00':'2016-10-30 01:30'].isna().all()
+          and x.loc['2016-10-30 00:30'] == 3.6 and x.loc['2016-10-30 02:00'] == 3.6)
+
 # association windows
 C = 100; rep = pd.DataFrame({'dma': ['A'], 'completed': [yw.START + pd.Timedelta(days=C)]})
 a = lambda w: yw.associate({'A': w}, rep, {'A'})[0]
